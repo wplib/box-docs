@@ -1,0 +1,7 @@
+{
+	"stack" : {
+		"wordpress/cliapp":		"wplib/wp-cli:1.5.1",
+		"mkdocs/webserver":		"wplib/mkdocs:0.15.3",
+		"box/webproxy":			"wplib/proxy:1.14.0"
+	}
+}

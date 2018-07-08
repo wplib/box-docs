@@ -1,0 +1,67 @@
+site_name: 'WPLib Box'
+site_url: 'http://wplib.org/box/'
+docs_dir: 'mkdocs'
+site_dir: 'www/box'
+repo_name: 'WPLib Box'
+repo_url: 'https://github.com/wplib/wplib-box'
+use_directory_urls: true
+theme:
+   name: 'material'
+   palette:
+      primary:pink
+      accent:blue
+
+   feature:
+      tabs: true
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/wplib'
+    - type: 'twitter'
+      link: 'https://twitter.com/wplib'
+
+markdown_extensions:
+  - pymdownx.details
+  - pymdownx.mark
+  - admonition
+  - meta
+  - footnotes
+  - sane_lists
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+
+pages:
+  - 'Home': 'index.md'
+  - 'FAQ': 'faq.md'
+  - 'Glossary': 'glossary.md'
+  - 'Troubleshooting': 'troubleshooting.md'
+  - 'Roadmap': 'roadmap.md'
+  - 'About': 'about.md'
+  - 'Quick Start':
+    - 'Getting Started': 'quick-start/index.md'
+  - 'Docs':
+    - 'Overview': 'docs/index.md'
+    - 'Configuring':
+        - 'Overview': 'docs/configure/index.md'
+        - 'project.json': 'docs/configure/project.json.md'
+    - 'Using':
+        - 'Overview': 'docs/use/index.md'
+        - 'Box command': 'docs/use/box-command.md'
+    - 'Tutorials':
+        - 'Host Entries': 'docs/tutorials/host-entries.md'
+        - 'Secure Shell': 'docs/tutorials/secure-shell.md'
+        - 'Terminal': 'docs/tutorials/terminal.md'
+    - 'Architecture':
+        - 'Overview': 'docs/architecture/index.md'
+        - 'Components': 'docs/architecture/components.md'
+        - 'Stacks': 'docs/architecture/stacks.md'
+  - 'GitHub':
+    - 'Overview': 'github/index.md'
+  - 'Download':
+    - 'Downloading': 'download/index.md'
+
+

@@ -1,0 +1,1174 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "\u00b6\n\n\nIs WPLib Box for you?\n\u00b6\n\n\n\n\nDo you consider yourself a WordPress professional? \n\n\nDo you \n(help)\n build WordPress websites for internal or external clients?\n\n\nAre you a plug-and-play WordPress \n\"\nSite Builder\n?\"\n\n\nAre you an HTML/CSS and/or Javascript \nFront-end Developer\n? \n\n\nAre you a PHP/MySQL \nBackend Developer\n?\n\n\nOr are you any combination of the above?\n\n\n\n\nIf you answered \n\"yes\"\n to any of these questions\n \u00a0\u00a0\u00a0then \nWPLib Box was designed for \nyou\n.\n\u00b6\n\n\nIn summary, WPLib Box's goal is to be: \n\n\n\n\n\"Every WordPress professional's \npreferred\n local development solution.\"",
+            "title": "Home"
+        },
+        {
+            "location": "/#is-wplib-box-for-you",
+            "text": "Do you consider yourself a WordPress professional?   Do you  (help)  build WordPress websites for internal or external clients?  Are you a plug-and-play WordPress  \" Site Builder ?\"  Are you an HTML/CSS and/or Javascript  Front-end Developer ?   Are you a PHP/MySQL  Backend Developer ?  Or are you any combination of the above?",
+            "title": "Is WPLib Box for you?"
+        },
+        {
+            "location": "/#if-you-answered-yes-to-any-of-these-questions-then-wplib-box-was-designed-for-you",
+            "text": "In summary, WPLib Box's goal is to be:    \"Every WordPress professional's  preferred  local development solution.\"",
+            "title": "If you answered \"yes\" to any of these questions &nbsp;&nbsp;&nbsp;then WPLib Box was designed for you."
+        },
+        {
+            "location": "/faq/",
+            "text": "FAQ about WPLib Box\n\u00b6\n\n\nHow do I Run WP-CLI?\n\u00b6\n\n\nEnter WPLib Box using \nvagrant ssh\n and type \nwp\n at the command line to see WP CLI's help.\n\n\nHow do I Deploy My Site from WPLib Box?\n\u00b6\n\n\nDeployment to a production or staging server is extremely simple. Just:\n\n\n\n\nCopy the entire contents of the \nwww/\n directory to the website root of the server where you are hosting your site.\n\n\nUsing a SQL client tool such as \nSequel Pro\n or \nNavicat\n export aka \n\"dump\"\n your database to a \n.sql\n file.\n\n\nImport your \n.sql\n file into your web host's \nMySQL\n or \nMariaDB\n server which may be referred to as \n\"executing\"\n your SQL file.\n\n\nModify \nwww/wp-config-local.php\n on your web host to use your web host's database credentials and any other configuration options that differ on your production or staging server.\n\n\nIn future deployments be sure not to overwrite your web host specific \nwww/wp-config-local.php\n file.\n\n\n\n\nAnd except for the following NOTE, that is it.\n\n\nNOTE:\n You will need to run whatever process you normally run to change the URLs from your local URLs to your production or staging URLs. \nThere are many solutions to this although not one ideal solution thus explaining how to do this is out of the scope of this FAQ. But \n\nlet us google it for you\n.\n\n\nHow do I Use WPLib Box on New Projects?\n\u00b6\n\n\nTo use WPLib Box on new projects just copy the \nVagrantfile\n and the \nscripts/\n directory from this repository to your new project and \nchange \nthe domain name\n to the local domain name for your project.  The only \n\u201dconstraint\u201d (that we are currently aware of)\n is you will need to have \nyour website root in a \nwww/\n directory that is a sibling to \nVagrantfile\n and to \nscripts/\n but otherwise it should all just work using \nvagrant up\n.\n\n\nNOTE:\n: You do not have to organize the WordPress directory structures like we have with \n/www/content\n and \n/www/wp\n; you can easily use the \nstandard directory layout used by WordPress core e.g. \nwww/wp-content/\n and \nwww/\n, respectively.\n\n\nHow do I Use WPLib Box on Pre-Existing Projects?\n\u00b6\n\n\nTo use for an existing project, you follow the same instructions as for new projects; copy the \nVagrantfile\n and the \nscripts/\n directory from \nthis repository to your new project, \nchange the domain name\n to the local domain name for your project and move your website root into a \nwww/\n \ndirectory that is a sibling to \nVagrantfile\n and to \nscripts/\n and then \nvagrant up\n.\n\n\nIf you cannot put your code into a \nwww/\n subdirectory for some reason you can put the \nVagrantfile\n in your web root and change the line that \nstarts with \nconfig.vm.synced_folder\n to be:\n\n\n config.vm.synced_folder \".\", \"/var/www\"\n\n\n\n\n\nIf you cannot create a \nscripts/\n directory in the same directory as your \nVagrantfile\n you can name that directory something else \u2014 such as \n\nwplib-scripts/\n \u2014 and then search for \nscripts/\n in your \nVagrantfile\n and replace it with whatever you named your directory, e.g. \nwith \nwplib-scripts/\n as in our example.\n\n\nHow do I Configure Composer to Work with WPLib Box?\n\u00b6\n\n\nConfigure \ncomposer.json\n however you like; WPLib Box is agnostic with respect to Composer. \n\n\nYes, we do include a \ncomposer.json\n with our WPLib Box repository but only so that WPLib Box will just work, \nout-of-the-box\n \n(yeah, sorry for the pun!)\n\n\nHow do I Import a MySQL Database?\n\u00b6\n\n\nWhen the box is created, a default WordPress database is installed. If you need to import a different dataset or restore a backup of the data, you can simply \nvagrant ssh\n into the guest and perform a MySQL import.\n\n\nTo do this, first copy your MySQL database dump to a \n/sql\n sub directory in your project directory \n(your \nVagrantfile\n is in your project directory.)\n  Assuming you called your database dump \nmy-db.sql\n then run the following commands in your host computer's command line/terminal window when in your project directory:\n\n\ncd /your/project/directory\nvagrant ssh\nbox import-db my-db.sql\n\n\n\n\n\nBe sure to \nbackup your database\n \nBEFORE\n you run the \nimport-db\n command.\n\n\nHow do I backup the MySQL database in the box?\n\u00b6\n\n\nIf you have a live database inside of WPLib Box you may want to backup the database to the \n/sql/\n directory in your project root.  You can do that like so:\n\n\ncd /your/project/directory\nvagrant ssh\nbox backup-db\n\n\n\n\n\nThe above commands will backup your database to \n/your/project/directory/sql/current.sql\n.  If there already was a \ncurrent.sql\n it will be renmed to \nprevious1.sql\n and \n1\n will be incremented each time there is a new backup.\n\n\nWhich PHP Versions are Available?\n\u00b6\n\n\nCurrently, the box has PHP \n5.6\n, PHP \n7.0\n and PHP \n7.1\n, with PHP \n7.0\n running by default. Versions \n5.6\n and \n7.0\n are each implemented using their own Docker container and the latter is installed directly into Ubunutu in our box. All modules installed are configured for both versions of PHP.\n\n\nHow do I Switch PHP Versions?\n\u00b6\n\n\nThe PHP version in use by the site is set in the \nproject.json\n file in the \nservices\n section and the \nprocessvm\n property. This will set both the web version and the command line version. \n\n\nTo change both web and command line versions to PHP \n7.1\n, SSH into the running Vagrant box from your project directory and then run the \nbox php7.1\n command:\n\n\ncd /your/project/directory\nvagrant ssh\nbox php7.1\n\n\n\n\n\nTo change to \n7.0\n or \n5.6\n, use the same command but replace \n7.1\n with \n7.0\n or \n5.6\n from while SSHed into the box, e.g.:\n\n\nbox php7.0\n\n\n\n\n\nor\n\n\nbox php5.6\n\n\n\n\n\nHow do I Install PhpMyAdmin?\n\u00b6\n\n\nWe decided not to include phpMyAdmin in the core box image because it installs files for Apache that we don't need so we decided to make it optional. \n\n\nTo install phpMyAdmin look for the instructions \nhere\n.\n\n\nHow do I Get a URL to Provide Access to My Box's Site From the Internet?\n\u00b6\n\n\nThe WPLib Box image has \nlocaltunnel.me\n pre-installed in the box. Simply run these commands from your host's command line:\n\n\nvagrant ssh\nlt --port 80\n\n\n\n\n\nThis will provide you with a URL to share the local site until you exit the command by either terminating the program or shutting down the machine.\n\n\nYou can also use \nVagrant Share\n.\n\n\nHow do I debug with Visual Studio Code?\n\u00b6\n\n\nThe configuration file for Visual Studio Code is already included in the respository. Ensure that you have installed the \nPHP Debug\n extension for Visual Studio Code.\n\n\nHow do I access Adminer?\n\u00b6\n\n\nAdminer\n is a web front end to administer the MySQL server. End users can access Adminer at http://adminer.{your-domain}. If you have not changed the box domain name, that would be \nhttp://adminer.wplib.box\n.\n\n\nThe credentials are:\n\n\n\n\nHost: 172.17.0.1\n\n\nUsername: wordpress\n\n\nPassword: wordpress\n\n\ndatabase: wordpress\n\n\n\n\nHow do I access MailHog?\n\u00b6\n\n\nMailHog\n is an email testing tool for development purposes. In WPLib Box, all outgoing emails are captured and available for inspection via the MailHog interface: \nhttp://mailhog.wplib.box\n. If you have changed the box domain, you can use http://mailhog.{your-domain}.\n\n\nHow do I fix the Vagrant 1.8.6 Bug?\n\u00b6\n\n\nVagrant \n1.8.6\n appears to have an issue with auto-configuring its network. Until this is fixed by Vagrant there is a workaround which requires you to SSH into the box after \nvagrant up\n. It is not difficult \u2014 the instructions appear longer than the task itself \u2014 just follow these steps:\n\n\n\n\nOnce your box is running \n(after a \nvagrant up\n)\n run \nvagrant ssh\n.\n\n\nOnce \n\"inside\"\n WPLib Box type \nsudo nano /etc/network/interfaces\n to load the network config into the Nano editor.\n\n\n\n\nLook for the second \n(2nd)\n occurence of \nauth eth0\n and change it to \nauth eth1\n.\n\n\n\n\n\n\nAlso change the \neth0\n in the next line \n(\niface eth0 inet static\n)\n to be \neth1\n. The result should be \niface eth1 inet static\n.\n\n\n\n\nDelete both lines that begin with \n#VAGRANT-\n by moving your cursor to those lines and pressing \nCtrl-K\n once for each line.\n\n\n\n\nSave the file by pressing \nCtrl-O\n then pressing \n[Enter]\n.\n\n\n\n\n\n\nExit the editor with \nCtrl-X\n.\n\n\n\n\nExit \n\"inside\"\n WPLib Box \n(the SSH session)\n by typing the \nexit\n command.\n\n\n\n\nIf you somehow mess up while editing you can exit Nano and start over by pressing \nCtrl-X\n then pressing \nN\n \n(for \"No\")\n when it asks you if you want to \n\"Save the buffer?\"\n.\n\n\nIn addition you need to make a simple change to \nVagrantfile\n using whatever editor you normally use to edit code. Find the following line in \nVagrantfile\n around line \n264\n:\n\n\nconfig.vm.network 'private_network', ip: IO.read('IP').strip\n\n\n\n\n\nAnd add \n, auto_config: false\n to the end, like so:\n\n\nconfig.vm.network 'private_network', ip: IO.read('IP').strip, auto_config: false\n\n\n\n\n\nThen run \nvagrant reload\n.  This should fix it.  \n\n\nAlso you should not need to revert that after upgrading to a new version of Vagrant \nunless\n you need to \nchange the box's IP address\n.\n\n\nHow do I switch from Nginx to Apache (or vice versa)?\n\u00b6\n\n\nBy default, WPLib Box uses Nginx as its webserver. However, Apache is available and can be switched out with Nginx.\nThe box CLI has a command, \nset-web-server\n to accomplish this.\n\n\nFor example, to switch from Nginx to Apache:\n\n\n\n\nLog in to the box using \nvagrant ssh\n on your host machine.\n\n\nEnter the following command: \nbox apache\n to make Apache the running webserver.\n\n\nConversely, you can \nbox nginx\n to switch from Apache to Nginx.\n\n\n\n\nHow do I switch from MySQL to MariaDB (or vice versa)?\n\u00b6\n\n\nThe box runs MySQL as the default database, however MariaDB is available. To configure the box to use\nMariaDB instead, use the \nbox\n command \n(which will dump the contents of\nthe current database and import into the new database)\n:\n\n\n\n\nLog in to the box using \nvagrant ssh\n on your host machine.\n\n\nEnter the following command: \nbox mariadb\n to use MariaDB.\n\n\nConversely, you can \nbox mysql\n to switch from MariaDB to MySQL.\n\n\n\n\nHow do I see the logs for Docker container Foo?\n\u00b6\n\n\nThe logs for a Docker container can be viewed using the command \ndocker logs foo\n, where \nfoo\n is the name of the\ncontainer whose logs you wish to view.\n\n\nTo get a list of containers you can run the following command:\n\n\ndocker container ls\n\n\n\n\n\nTo see just the names run this command:\n\n\ndocker container ls --format '{{.Names}}'\n\n\n\n\n\nAt the time of this writing the container names in WPLib Box were \n(though not all run all the time):\n\n\n\n\nmailhog\n\n\nmariadb\n\n\nmysql\n\n\nmemcached\n\n\nredis\n\n\nphp5_fpm\n\n\nphp7_fpm\n\n\napache\n\n\nnginx\n\n\nproxy\n\n\n\n\nIn the case of the webserver containers, these logs contain both the access and error log entries.\n\n\nIf you get 404 Not Found on Vagrant Up\n\u00b6\n\n\nIf you get a 404 error from \nvagrant up\n chances are you are on a \n1.x\n version of Vagrant and need to upgrade to a \n2.x\n version.  The \n1.x\n version does not recognize the new Vagrant Cloud and still looks to \natlas.hashicorp.com\n for our Vagrant image, which is obviously no longer there \n(not sure why Hashicorp does not support redirects here, but maybe Vagrant \n1.x\n deoes not follow them?)\n \n\n\nUpgrading Vagrant to \n2.x\n then running \nvagrant plugin repair\n should resolve this issue. \n\n\nHere is what this error looks like on the command line:\n\n\n$ vagrant up\nBringing machine 'default' up with 'virtualbox' provider...\n==> default: Box 'wplib/wplib' could not be found. Attempting to find and install...\n    default: Box Provider: virtualbox\n    default: Box Version: 0.16.0\nThe box 'wplib/wplib' could not be found or\ncould not be accessed in the remote catalog. If this is a private\nbox on HashiCorp's Atlas, please verify you're logged in via\n`vagrant login`. Also, please double-check the name. The expanded\nURL and error message are shown below:\n\nURL: [\"https://atlas.hashicorp.com/wplib/wplib\"]\nError: The requested URL returned error: 404 Not Found\n\n\n\n\n\nDevelopment Approach\n\u00b6\n\n\n(These principles apply to our process prior to when we reach version 1.0.)\n\n\nFrequent Releases\n\u00b6\n\n\nOur development approach is to create frequent \n0.x\n releases as we work towards version \n1.0\n. Currently we plan a new release approximately once every three (3) weeks, although the distance between some releases may take longer as our client obligations override our ability to stay on deadline.\n\n\nThe Smallest Next Thing\n\u00b6\n\n\nFor each of these releases we ask ourselves what is the \nsmallest thing\n we can do that will have a meaningful positive impact on either our existing users or new prospective users. And then we \nschedule it as a milestone\n and start working.  \n\n\nFlexible Priorities\n\u00b6\n\n\nCurrently it is hard for us to look past the next milestone in specifics, as we are very aware of and interested in feedback from users; we'd rather be able to react to feedback when possible than put it off until after a really long time later.\n\n\nMove Fast, Resolve Issues Quickly\n\u00b6\n\n\nAlso, given WPLIb Box is \npre-1.0\n and we are moving fast, we may break things and/or implement a new feature where we have not thought through all the use-cases, but we'll move quickly to resolve any issues our fast moving creates and hopefully offer workarounds \nvia Slack\n or GitHub issues in the mean time. For example, we recently implemented Nginx as a Docker container but did not provide user access to update the Nginx config files \n(but we plan to correct that the next release.)\n  \n\n\nUntil Version 1.0\n\u00b6\n\n\nHowever, as we get closer and closer to \n1.0\n we'll be breaking things less and less and we'll be implemented fewer new features that are not fully baked upon release.  It's basically our agile process of working towards a \n1.0\n release.\n\n\nBusiness\n\u00b6\n\n\nWhat is our Business Model?\n\u00b6\n\n\nWe are a consulting company that is transitioning to a product company that offers products and services\nfor improving Developer Experience for PHP developers who have chosen to use WordPress as a platform. \n\n\nIf you have idea ahout how we could help your development organization with workflow please \ncontact\nus\n with your ideas and we'll see if we can help.",
+            "title": "FAQ"
+        },
+        {
+            "location": "/faq/#faq-about-wplib-box",
+            "text": "",
+            "title": "FAQ about WPLib Box"
+        },
+        {
+            "location": "/faq/#how-do-i-run-wp-cli",
+            "text": "Enter WPLib Box using  vagrant ssh  and type  wp  at the command line to see WP CLI's help.",
+            "title": "How do I Run WP-CLI?"
+        },
+        {
+            "location": "/faq/#how-do-i-deploy-my-site-from-wplib-box",
+            "text": "Deployment to a production or staging server is extremely simple. Just:   Copy the entire contents of the  www/  directory to the website root of the server where you are hosting your site.  Using a SQL client tool such as  Sequel Pro  or  Navicat  export aka  \"dump\"  your database to a  .sql  file.  Import your  .sql  file into your web host's  MySQL  or  MariaDB  server which may be referred to as  \"executing\"  your SQL file.  Modify  www/wp-config-local.php  on your web host to use your web host's database credentials and any other configuration options that differ on your production or staging server.  In future deployments be sure not to overwrite your web host specific  www/wp-config-local.php  file.   And except for the following NOTE, that is it.  NOTE:  You will need to run whatever process you normally run to change the URLs from your local URLs to your production or staging URLs. \nThere are many solutions to this although not one ideal solution thus explaining how to do this is out of the scope of this FAQ. But  let us google it for you .",
+            "title": "How do I Deploy My Site from WPLib Box?"
+        },
+        {
+            "location": "/faq/#how-do-i-use-wplib-box-on-new-projects",
+            "text": "To use WPLib Box on new projects just copy the  Vagrantfile  and the  scripts/  directory from this repository to your new project and  change \nthe domain name  to the local domain name for your project.  The only  \u201dconstraint\u201d (that we are currently aware of)  is you will need to have \nyour website root in a  www/  directory that is a sibling to  Vagrantfile  and to  scripts/  but otherwise it should all just work using  vagrant up .  NOTE: : You do not have to organize the WordPress directory structures like we have with  /www/content  and  /www/wp ; you can easily use the \nstandard directory layout used by WordPress core e.g.  www/wp-content/  and  www/ , respectively.",
+            "title": "How do I Use WPLib Box on New Projects?"
+        },
+        {
+            "location": "/faq/#how-do-i-use-wplib-box-on-pre-existing-projects",
+            "text": "To use for an existing project, you follow the same instructions as for new projects; copy the  Vagrantfile  and the  scripts/  directory from \nthis repository to your new project,  change the domain name  to the local domain name for your project and move your website root into a  www/  \ndirectory that is a sibling to  Vagrantfile  and to  scripts/  and then  vagrant up .  If you cannot put your code into a  www/  subdirectory for some reason you can put the  Vagrantfile  in your web root and change the line that \nstarts with  config.vm.synced_folder  to be:   config.vm.synced_folder \".\", \"/var/www\"  If you cannot create a  scripts/  directory in the same directory as your  Vagrantfile  you can name that directory something else \u2014 such as  wplib-scripts/  \u2014 and then search for  scripts/  in your  Vagrantfile  and replace it with whatever you named your directory, e.g. \nwith  wplib-scripts/  as in our example.",
+            "title": "How do I Use WPLib Box on Pre-Existing Projects?"
+        },
+        {
+            "location": "/faq/#how-do-i-configure-composer-to-work-with-wplib-box",
+            "text": "Configure  composer.json  however you like; WPLib Box is agnostic with respect to Composer.   Yes, we do include a  composer.json  with our WPLib Box repository but only so that WPLib Box will just work,  out-of-the-box   (yeah, sorry for the pun!)",
+            "title": "How do I Configure Composer to Work with WPLib Box?"
+        },
+        {
+            "location": "/faq/#how-do-i-import-a-mysql-database",
+            "text": "When the box is created, a default WordPress database is installed. If you need to import a different dataset or restore a backup of the data, you can simply  vagrant ssh  into the guest and perform a MySQL import.  To do this, first copy your MySQL database dump to a  /sql  sub directory in your project directory  (your  Vagrantfile  is in your project directory.)   Assuming you called your database dump  my-db.sql  then run the following commands in your host computer's command line/terminal window when in your project directory:  cd /your/project/directory\nvagrant ssh\nbox import-db my-db.sql  Be sure to  backup your database   BEFORE  you run the  import-db  command.",
+            "title": "How do I Import a MySQL Database?"
+        },
+        {
+            "location": "/faq/#how-do-i-backup-the-mysql-database-in-the-box",
+            "text": "If you have a live database inside of WPLib Box you may want to backup the database to the  /sql/  directory in your project root.  You can do that like so:  cd /your/project/directory\nvagrant ssh\nbox backup-db  The above commands will backup your database to  /your/project/directory/sql/current.sql .  If there already was a  current.sql  it will be renmed to  previous1.sql  and  1  will be incremented each time there is a new backup.",
+            "title": "How do I backup the MySQL database in the box?"
+        },
+        {
+            "location": "/faq/#which-php-versions-are-available",
+            "text": "Currently, the box has PHP  5.6 , PHP  7.0  and PHP  7.1 , with PHP  7.0  running by default. Versions  5.6  and  7.0  are each implemented using their own Docker container and the latter is installed directly into Ubunutu in our box. All modules installed are configured for both versions of PHP.",
+            "title": "Which PHP Versions are Available?"
+        },
+        {
+            "location": "/faq/#how-do-i-switch-php-versions",
+            "text": "The PHP version in use by the site is set in the  project.json  file in the  services  section and the  processvm  property. This will set both the web version and the command line version.   To change both web and command line versions to PHP  7.1 , SSH into the running Vagrant box from your project directory and then run the  box php7.1  command:  cd /your/project/directory\nvagrant ssh\nbox php7.1  To change to  7.0  or  5.6 , use the same command but replace  7.1  with  7.0  or  5.6  from while SSHed into the box, e.g.:  box php7.0  or  box php5.6",
+            "title": "How do I Switch PHP Versions?"
+        },
+        {
+            "location": "/faq/#how-do-i-install-phpmyadmin",
+            "text": "We decided not to include phpMyAdmin in the core box image because it installs files for Apache that we don't need so we decided to make it optional.   To install phpMyAdmin look for the instructions  here .",
+            "title": "How do I Install PhpMyAdmin?"
+        },
+        {
+            "location": "/faq/#how-do-i-get-a-url-to-provide-access-to-my-boxs-site-from-the-internet",
+            "text": "The WPLib Box image has  localtunnel.me  pre-installed in the box. Simply run these commands from your host's command line:  vagrant ssh\nlt --port 80  This will provide you with a URL to share the local site until you exit the command by either terminating the program or shutting down the machine.  You can also use  Vagrant Share .",
+            "title": "How do I Get a URL to Provide Access to My Box's Site From the Internet?"
+        },
+        {
+            "location": "/faq/#how-do-i-debug-with-visual-studio-code",
+            "text": "The configuration file for Visual Studio Code is already included in the respository. Ensure that you have installed the  PHP Debug  extension for Visual Studio Code.",
+            "title": "How do I debug with Visual Studio Code?"
+        },
+        {
+            "location": "/faq/#how-do-i-access-adminer",
+            "text": "Adminer  is a web front end to administer the MySQL server. End users can access Adminer at http://adminer.{your-domain}. If you have not changed the box domain name, that would be  http://adminer.wplib.box .  The credentials are:   Host: 172.17.0.1  Username: wordpress  Password: wordpress  database: wordpress",
+            "title": "How do I access Adminer?"
+        },
+        {
+            "location": "/faq/#how-do-i-access-mailhog",
+            "text": "MailHog  is an email testing tool for development purposes. In WPLib Box, all outgoing emails are captured and available for inspection via the MailHog interface:  http://mailhog.wplib.box . If you have changed the box domain, you can use http://mailhog.{your-domain}.",
+            "title": "How do I access MailHog?"
+        },
+        {
+            "location": "/faq/#how-do-i-fix-the-vagrant-186-bug",
+            "text": "Vagrant  1.8.6  appears to have an issue with auto-configuring its network. Until this is fixed by Vagrant there is a workaround which requires you to SSH into the box after  vagrant up . It is not difficult \u2014 the instructions appear longer than the task itself \u2014 just follow these steps:   Once your box is running  (after a  vagrant up )  run  vagrant ssh .  Once  \"inside\"  WPLib Box type  sudo nano /etc/network/interfaces  to load the network config into the Nano editor.   Look for the second  (2nd)  occurence of  auth eth0  and change it to  auth eth1 .    Also change the  eth0  in the next line  ( iface eth0 inet static )  to be  eth1 . The result should be  iface eth1 inet static .   Delete both lines that begin with  #VAGRANT-  by moving your cursor to those lines and pressing  Ctrl-K  once for each line.   Save the file by pressing  Ctrl-O  then pressing  [Enter] .    Exit the editor with  Ctrl-X .   Exit  \"inside\"  WPLib Box  (the SSH session)  by typing the  exit  command.   If you somehow mess up while editing you can exit Nano and start over by pressing  Ctrl-X  then pressing  N   (for \"No\")  when it asks you if you want to  \"Save the buffer?\" .  In addition you need to make a simple change to  Vagrantfile  using whatever editor you normally use to edit code. Find the following line in  Vagrantfile  around line  264 :  config.vm.network 'private_network', ip: IO.read('IP').strip  And add  , auto_config: false  to the end, like so:  config.vm.network 'private_network', ip: IO.read('IP').strip, auto_config: false  Then run  vagrant reload .  This should fix it.    Also you should not need to revert that after upgrading to a new version of Vagrant  unless  you need to  change the box's IP address .",
+            "title": "How do I fix the Vagrant 1.8.6 Bug?"
+        },
+        {
+            "location": "/faq/#how-do-i-switch-from-nginx-to-apache-or-vice-versa",
+            "text": "By default, WPLib Box uses Nginx as its webserver. However, Apache is available and can be switched out with Nginx.\nThe box CLI has a command,  set-web-server  to accomplish this.  For example, to switch from Nginx to Apache:   Log in to the box using  vagrant ssh  on your host machine.  Enter the following command:  box apache  to make Apache the running webserver.  Conversely, you can  box nginx  to switch from Apache to Nginx.",
+            "title": "How do I switch from Nginx to Apache (or vice versa)?"
+        },
+        {
+            "location": "/faq/#how-do-i-switch-from-mysql-to-mariadb-or-vice-versa",
+            "text": "The box runs MySQL as the default database, however MariaDB is available. To configure the box to use\nMariaDB instead, use the  box  command  (which will dump the contents of\nthe current database and import into the new database) :   Log in to the box using  vagrant ssh  on your host machine.  Enter the following command:  box mariadb  to use MariaDB.  Conversely, you can  box mysql  to switch from MariaDB to MySQL.",
+            "title": "How do I switch from MySQL to MariaDB (or vice versa)?"
+        },
+        {
+            "location": "/faq/#how-do-i-see-the-logs-for-docker-container-foo",
+            "text": "The logs for a Docker container can be viewed using the command  docker logs foo , where  foo  is the name of the\ncontainer whose logs you wish to view.  To get a list of containers you can run the following command:  docker container ls  To see just the names run this command:  docker container ls --format '{{.Names}}'  At the time of this writing the container names in WPLib Box were  (though not all run all the time):   mailhog  mariadb  mysql  memcached  redis  php5_fpm  php7_fpm  apache  nginx  proxy   In the case of the webserver containers, these logs contain both the access and error log entries.",
+            "title": "How do I see the logs for Docker container Foo?"
+        },
+        {
+            "location": "/faq/#if-you-get-404-not-found-on-vagrant-up",
+            "text": "If you get a 404 error from  vagrant up  chances are you are on a  1.x  version of Vagrant and need to upgrade to a  2.x  version.  The  1.x  version does not recognize the new Vagrant Cloud and still looks to  atlas.hashicorp.com  for our Vagrant image, which is obviously no longer there  (not sure why Hashicorp does not support redirects here, but maybe Vagrant  1.x  deoes not follow them?)    Upgrading Vagrant to  2.x  then running  vagrant plugin repair  should resolve this issue.   Here is what this error looks like on the command line:  $ vagrant up\nBringing machine 'default' up with 'virtualbox' provider...\n==> default: Box 'wplib/wplib' could not be found. Attempting to find and install...\n    default: Box Provider: virtualbox\n    default: Box Version: 0.16.0\nThe box 'wplib/wplib' could not be found or\ncould not be accessed in the remote catalog. If this is a private\nbox on HashiCorp's Atlas, please verify you're logged in via\n`vagrant login`. Also, please double-check the name. The expanded\nURL and error message are shown below:\n\nURL: [\"https://atlas.hashicorp.com/wplib/wplib\"]\nError: The requested URL returned error: 404 Not Found",
+            "title": "If you get 404 Not Found on Vagrant Up"
+        },
+        {
+            "location": "/faq/#development-approach",
+            "text": "(These principles apply to our process prior to when we reach version 1.0.)",
+            "title": "Development Approach"
+        },
+        {
+            "location": "/faq/#frequent-releases",
+            "text": "Our development approach is to create frequent  0.x  releases as we work towards version  1.0 . Currently we plan a new release approximately once every three (3) weeks, although the distance between some releases may take longer as our client obligations override our ability to stay on deadline.",
+            "title": "Frequent Releases"
+        },
+        {
+            "location": "/faq/#the-smallest-next-thing",
+            "text": "For each of these releases we ask ourselves what is the  smallest thing  we can do that will have a meaningful positive impact on either our existing users or new prospective users. And then we  schedule it as a milestone  and start working.",
+            "title": "The Smallest Next Thing"
+        },
+        {
+            "location": "/faq/#flexible-priorities",
+            "text": "Currently it is hard for us to look past the next milestone in specifics, as we are very aware of and interested in feedback from users; we'd rather be able to react to feedback when possible than put it off until after a really long time later.",
+            "title": "Flexible Priorities"
+        },
+        {
+            "location": "/faq/#move-fast-resolve-issues-quickly",
+            "text": "Also, given WPLIb Box is  pre-1.0  and we are moving fast, we may break things and/or implement a new feature where we have not thought through all the use-cases, but we'll move quickly to resolve any issues our fast moving creates and hopefully offer workarounds  via Slack  or GitHub issues in the mean time. For example, we recently implemented Nginx as a Docker container but did not provide user access to update the Nginx config files  (but we plan to correct that the next release.)",
+            "title": "Move Fast, Resolve Issues Quickly"
+        },
+        {
+            "location": "/faq/#until-version-10",
+            "text": "However, as we get closer and closer to  1.0  we'll be breaking things less and less and we'll be implemented fewer new features that are not fully baked upon release.  It's basically our agile process of working towards a  1.0  release.",
+            "title": "Until Version 1.0"
+        },
+        {
+            "location": "/faq/#business",
+            "text": "",
+            "title": "Business"
+        },
+        {
+            "location": "/faq/#what-is-our-business-model",
+            "text": "We are a consulting company that is transitioning to a product company that offers products and services\nfor improving Developer Experience for PHP developers who have chosen to use WordPress as a platform.   If you have idea ahout how we could help your development organization with workflow please  contact\nus  with your ideas and we'll see if we can help.",
+            "title": "What is our Business Model?"
+        },
+        {
+            "location": "/glossary/",
+            "text": "Glossary of Terms related to WPLib Box\n\u00b6\n\n\nWhen working with a new tool you can often be overwhelmed by new jargon. \nWhile WPLib Box is unfortunately no different our vision is to empower\nyou to understand everything you need to know to use WPLib Box effectively, \nsuch as this glossary.  \n\n\nImportant Terms\n\u00b6\n\n\nThe following are terms are some of the ones we use in our documentation, although they are certainly not all. \n\n\n\n\nNote\n\n\nWe are defining these terms as they related to WPLib Box. Thus our definitions may differ somewhat \nfrom more the general definitions such as those you might find on Wikipedia.   \n\n\n\n\nHost Machine\n\u00b6\n\n\nThe \nHost machine\n is your physical computer that typically runs Windows, Mac or Linux, and that \n\"hosts\"\n WPLib Box \n similar to how your computer hosts a Microsoft Word document or an Apple Keynote presentation.\n\n\nVirtual Machine\n\u00b6\n\n\nA \nVirtual Machine\n is a full Linux operating system that runs \n\"virtually\"\n within your Windows, \n Mac or Linux \nhost computer\n.  \n\n\nOr more clearly, a bit-for-bit image of what could have been a physical computer's file system to enable \n \nemulation\n of that \n\"computer\"\n using \nVirtualBox\n running \nwithin\n your \n\"Host\"\n computer.  \n\n\nVirtualBox\n\u00b6\n\n\nVirtualBox\n is open source software \u2014 recently acquired by \n \nOracle\n \u2014 that is required by WPLib Box to enable the Linux virtual \n machine to run in your host Windows, Mac or Linux computer.   \n\n\nGuest\n\u00b6\n\n\nThe WPLib Box \nGuest\n is the Linux-based \nvirtual machine\n running within \n your \nhost machine\n.\n\n\n(Software)\n Stack\n\u00b6\n\n\nThe WPLib Box \n(Software) Stack\n is the collection of software used by WPLib Box to perform its job for you. \n\n\nTo host WordPress in WPLib Box your local development stack consists of a web server like Nginx or Apache, \n a database server like MySQL or MariaDB, a version of PHP such as 5.6 or 7.2 and possibly a cache server \n like Memcached or Redis.\n\n\nTo learn more about \nWPLib Box Stacks\n, click the link.\n\n\nFor a more general purpose definition of \n\"\nSoftware Stack\n\"\n \n click the link to see what Wikipedia has to say. \n\n\nProvisioning\n\u00b6\n\n\nProvisioning\n is the process of installing and configuring the \nsoftware stack\n \n on WPLib Box prior to your first use of WPLib Box. \n\n\nProvisioning includes tasks like importing an initial WordPress database from \n/sql/provision.sql\n and adding \n permissions to the same database. \n\n\nComponents\n\u00b6\n\n\nComponents\n in the context of WPLib Box are packages of software that collectively comprise \n your WPlib Box's \nsoftware stack\n. \n\n\nA \ncomponent\n can be a \ncontainer\n, a script, source code, or various other types of files. \n To learn more details about \nWPLib Box Components\n, click the preceding link.\n\n\nContainers\n\u00b6\n\n\nContainers\n in the context of WPLib Box are used to package each \nservice and executable\n\n\ncomponent\n in its own sandbox to effectively eliminate the most common conflicts that occur \nbetween services and executables, and to be more flexible in terms of which services and executables can \nbe incorporate into a project's \nsoftware stack\n. \n\n\nWPLib Box strives to use \nindividual\n \nDocker containers\n for all \nservice and executable components it needs. This \narchitecture\n decision is in large part \nwhy WPLib Box is more powerful and more flexible than any other local development solution for WordPress today.\n\n\nThis architecture also empowers WPLib Box to more quickly support newer versions of services and executables, \noften enabling you \u2014 the WPLib Box user \u2014 to upgrade to a new version in the case we have not yet\nupdated our official containers.      \n\n\nBox Image\n\u00b6\n\n\nA \nBox Image\n is a digital file containing the binary bits of WPLib Box's \nvirtual machine\n. \n\n\n\n\nNote\nThe box image format used by WPLib Box has been defined by \nHashicorp\n's \n\nVagrant\n. \n\n\n\n\n\n\nWPLib Box's box image has been pre-\nprovisioned\n with the \nWPLib Box software stack\n \n beyond what the default Linux distribution provides which is why in-part WPLib Box is so easy to get started \n \n(when compared to other solutions like \nVVV\n.)\n \n\n\nYou can see \nthe history of \n(most)\n WPLib Box images\n at \n  Hashicorp's \nVagrantCloud\n repository of Vagrant images available for download.\n\n\n\n\nNote\n\n\nWe say \n\"most\"\n WPLib Box images because \nwhen Hashicorp moved\n\n  from its old \n\"Atlas\"\n repository\n to\n  the current VagrantCloud they neglected to transfer over some of our historical releases and thus \n  they have been lost to the mists of time.   \n\n\n\n\nWPLib Box's \ncurrent\n box image is based on \nUbunutu\n, but we will soon be replacing it \n with a more streamlined Linux distribution.  \n\n\nVagrant\n\u00b6\n\n\nVagrant\n is software currently required by WPLib Box that reads a configuration \n file named \nVagrantfile\n in your WordPress project's directory and it automates the creation \n and configuration of a \nvirtual machine\n that is run using \nVirtualBox\n.\n\n\nVagrant is software written in \nthe Ruby programming language\n and it reads information \n from a \nVagrantfile\n found in your project's directory on your \nhost computer\n and \n it uses that information to download and configure WPLib Box.\n\n\n\n\nNote\n\n\nWe plan to eliminate the need to use Vagrant in the very near future. At that point WPLib Box will only be \ndependent on \nVirtualBox\n.\n\n\n\n\nVagrantfile\n\u00b6\n\n\nA \nVagrantfile\n is a specialized \nRuby language\n script that is run by \nVagrant\n \n to automate the setup of WPLib Box. \n\n\nAlthough a Ruby script, \nVagrantfile\n is \ndeclarative\n in nature \u2014 \n more like a \nJSON\n file \u2014 as it was designed to allow you to \n\"declare\"\n the details needed by Vagrant to \n automate the creation and configuration of your \nvirtual mahine\n using \nVirtualBox\n.\n\n\nThe \n\"declarations\"\n in the \nVagrantfile\n  tell Vagrant what it needs to know to:\n\n\n\n\n(Initially)\n download the specified version of WPLib Box's \nbox image\n \"_ into Vagrant's \n    \nlocal box image cache\n on your \nhost computer\n, \n\n\nSet the IP address for the WPLib Box virtual machine,\n\n\nAdd the host name used to reference WPLib Box  \u2014 e.g. \nwplib.box\n or  \nexample.local\n \u2014 to your \n    host computer's \nhosts\n file\n,  \n\n\nMount\n your project directory on your host computer inside of \n    WPLib Box so PHP and Nginx/Apache can access them,\n\n\nSpecify the username to be used for \nvagrant ssh\n; currently \nboxuser\n in WPLib Box's case and configure\n    \nSSH agent forwarding\n, \n\n\nAnd finally, specify the \n(lightweight, in the case of WPLib Box)\n scripts to run on \nvagrant up\n, both\n    for initial install and subsequent uses.\n\n\n\n\nHosts file\n\u00b6\n\n\nYour \nhosts\n file\n is a plain text file found \non your \nhost computer\n that contains one of more IP addresses mapped to domain names. \n\n\nThe purpose of your \nhosts\n file is to allow you to override the entries found at your DNS server. \nIn the case of WPLib Box with \n.local\n domain names, your DNS server has no knowledge of your local \ndevelopment. This WPLib Box needs to add entries to your \nhosts\n file to allow you to use domain names \nfor local development \ninstead of\n hard-to-remember ports and/or IP addresses; \ne.g. \nhttp:/localhost:8888\n or \nhttp:/10.10.10.136\n.  \n\n\nTypically you at least have \nlocalhost\n defined in your \n\nhosts\n file:\n\n\n127.0.0.1 localhost\n\n\n\n\n\nAfter WPLib Box is installed and configured\n1\n, your \nhosts\n file will look something like this \n(likely \nwith a different IP address and \nVagrant\n hash.)\n  The following enables     \n\n\n127.0.0.1 localhost\n\n10.10.10.136  wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-d9b3-$\n10.10.10.136  docs.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-$\n10.10.10.136  www.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-d$\n10.10.10.136  adminer.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce3$\n10.10.10.136  mailhog.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce3$\n\n\n\n\n\nA bit of \nhosts\n file history\nHosts files predate the Internet's Domain Name System (DNS) and were how early Internet users \nmapped hostnames to IP addresses. This meant every user had to know the IP address of every \ncomputer they wanted to visit on the internet, or at least the sysadmin for the computer needed \nto know the IP address. Clearly that quickly became overwhelming for everyone on the Internet \nand was why the DNS system was introduced.\n\n\n\n\nLocal Box Image Cache\n\u00b6\n\n\nThe term \nLocal Box Image Cache\n is a WPLib Box coined-term to name the \npristine\n \n \nbox image\n that \nVagrant\n downloads to a local cache on your \n \nhost computer\n to enable quick cloning for additional projects. \n\n\nvagrant up\n will clone a copy of this cached image into the \nproject box image\n \n the first time it in run for a given \nVagrantfile\n, but running \nvagrant destroy\n \n followed by a \nvagrant up\n will clone the cached box image too. \n\n\nYour local box image cache \nis located at\n:\n\n\n\n\nMacOS and Linux: \n~/.vagrant.d/boxes\n\n\nWindows: \nC:\\Users\\{username}\\.vagrant.d\\boxes\n\n\n\n\nProject Box Image\n\u00b6\n\n\nThe term \nProject Box Image\n is another WPLib Box coined-term to name the project-specific \ncopy of the pristine copy \nlocal box image cache\n that \nVagrant\n \nmakes for each project in the following project-specific subdirectory: \n\n\nMac or Linux:\n\n\n{project}/.vagrant\n\n\n\n\n\nWindows:\n\n\n{project}\\.vagrant\n\n\n\n\n\nThe upshot is if you \nvagrant ssh\n into a running Vagrant Box and make configuration \nchanges those changes will be in the project box image, but not in the pristine copy of \nbox image nor in other projects that share the same named Box Image. \n\n\nBeyond the project box image \nVirtualBox\n will import these images into its own directory for \neach project: \n\n\nMac or Linux:\n\n\n~/VirtualBox VMs\n\n\n\n\n\nWindows:\n\n\nC:\\Users\\{username}\\VirtualBox VMs\n\n\n\n\n\nWhy we plan to stop using \nVagrant\nThis extremely inefficent use of storage is but one of the many reasons we are planning to replace Vagrant with our own solution in the very near future. \nSite Builder\n\u00b6\n\n\nHere at the WPLib Box team we define a \n\"Site Builder\"\n as someone who installs WordPress, plugins, and themes \n\u2014 who might tweak the HTML, CSS, JS or PHP from time to time \u2014 but for the most part is not and \ndoes not consider themselves a \n\"programmer.\"\n \n\n\nWe \nlove\n professional Site Builders and think they provide an invaluable service to their clients so we \nare just as excited to hear from site builders how we can make WPLib Box better to help them their do their \njobs as we are to hear from front-end or even backend WordPress developers.  \n\n\nFront-end Developer\n\u00b6\n\n\nHere at the WPLib Box team we define a \n\"Front-end Developer\"\n as someone who minimally has HTML and CSS \nskills \u2014 especially for responsive design \u2014 and who may or may not have Javascript programming \nskills and/or front-end build system skills combined with a CSS preprocessor like SASS or LESS. In our experience\nfront-end development and theme development go hand-in-hand, although front-end developers can be found building \nplugins as well. \n\n\nAnd we \nlove\n professional front-end developers as without them WordPress sites would never be as compelling \nnor as functional as so many WordPress sites and themes have become. So we are very interested to hear from \nfront-end developers how we can make WPLib Box better to help them their do their jobs.   \n\n\nBackend Developer\n\u00b6\n\n\nHere at the WPLib Box team we define a \n\"Backend Developer\"\n as someone who focuses on the PHP, MySQL and possibly\nREST API aspects of a WordPress site. In our experience backend development and plugin development go hand-in-hand\n but that doesn't mean backend developers can't have significant sway over theme code as many back end developers\n do.\n\n\nAnd finally we \nlove\n professional backend developers because frankly we are backend developers too! Without us, \nWordPress sites would never have the deep level of functionality that requires server-side coding and database \nexpertise. So we are also very interested to hear from backend developers whose workflow may differ from our own\nso that we can make WPLib Box better for you.   \n\n\nSuggestions for Improvement\n\u00b6\n\n\nIf you have any terms to add or suggestions for improvement to our existing descriptions we \nwelcome\n your \nsuggestions.  So please help out your fellow developers and \nfork this repo\n, \nmake your fixes and then \nsubmit your pull request\n.\n\n\n\n\n\n\n\n\n\n\nUnless you have changed your host name in the \nHOSTNAME\n file, which you will almost certainly have done.\u00a0\n\u21a9",
+            "title": "Glossary"
+        },
+        {
+            "location": "/glossary/#glossary-of-terms-related-to-wplib-box",
+            "text": "When working with a new tool you can often be overwhelmed by new jargon. \nWhile WPLib Box is unfortunately no different our vision is to empower\nyou to understand everything you need to know to use WPLib Box effectively, \nsuch as this glossary.",
+            "title": "Glossary of Terms related to WPLib Box"
+        },
+        {
+            "location": "/glossary/#important-terms",
+            "text": "The following are terms are some of the ones we use in our documentation, although they are certainly not all.    Note  We are defining these terms as they related to WPLib Box. Thus our definitions may differ somewhat \nfrom more the general definitions such as those you might find on Wikipedia.",
+            "title": "Important Terms"
+        },
+        {
+            "location": "/glossary/#host-machine",
+            "text": "The  Host machine  is your physical computer that typically runs Windows, Mac or Linux, and that  \"hosts\"  WPLib Box \n similar to how your computer hosts a Microsoft Word document or an Apple Keynote presentation.",
+            "title": "Host Machine"
+        },
+        {
+            "location": "/glossary/#virtual-machine",
+            "text": "A  Virtual Machine  is a full Linux operating system that runs  \"virtually\"  within your Windows, \n Mac or Linux  host computer .    Or more clearly, a bit-for-bit image of what could have been a physical computer's file system to enable \n  emulation  of that  \"computer\"  using  VirtualBox  running  within  your  \"Host\"  computer.",
+            "title": "Virtual Machine"
+        },
+        {
+            "location": "/glossary/#virtualbox",
+            "text": "VirtualBox  is open source software \u2014 recently acquired by \n  Oracle  \u2014 that is required by WPLib Box to enable the Linux virtual \n machine to run in your host Windows, Mac or Linux computer.",
+            "title": "VirtualBox"
+        },
+        {
+            "location": "/glossary/#guest",
+            "text": "The WPLib Box  Guest  is the Linux-based  virtual machine  running within \n your  host machine .",
+            "title": "Guest"
+        },
+        {
+            "location": "/glossary/#software-stack",
+            "text": "The WPLib Box  (Software) Stack  is the collection of software used by WPLib Box to perform its job for you.   To host WordPress in WPLib Box your local development stack consists of a web server like Nginx or Apache, \n a database server like MySQL or MariaDB, a version of PHP such as 5.6 or 7.2 and possibly a cache server \n like Memcached or Redis.  To learn more about  WPLib Box Stacks , click the link.  For a more general purpose definition of  \" Software Stack \"  \n click the link to see what Wikipedia has to say.",
+            "title": "(Software) Stack"
+        },
+        {
+            "location": "/glossary/#provisioning",
+            "text": "Provisioning  is the process of installing and configuring the  software stack  \n on WPLib Box prior to your first use of WPLib Box.   Provisioning includes tasks like importing an initial WordPress database from  /sql/provision.sql  and adding \n permissions to the same database.",
+            "title": "Provisioning"
+        },
+        {
+            "location": "/glossary/#components",
+            "text": "Components  in the context of WPLib Box are packages of software that collectively comprise \n your WPlib Box's  software stack .   A  component  can be a  container , a script, source code, or various other types of files. \n To learn more details about  WPLib Box Components , click the preceding link.",
+            "title": "Components"
+        },
+        {
+            "location": "/glossary/#containers",
+            "text": "Containers  in the context of WPLib Box are used to package each  service and executable  component  in its own sandbox to effectively eliminate the most common conflicts that occur \nbetween services and executables, and to be more flexible in terms of which services and executables can \nbe incorporate into a project's  software stack .   WPLib Box strives to use  individual   Docker containers  for all \nservice and executable components it needs. This  architecture  decision is in large part \nwhy WPLib Box is more powerful and more flexible than any other local development solution for WordPress today.  This architecture also empowers WPLib Box to more quickly support newer versions of services and executables, \noften enabling you \u2014 the WPLib Box user \u2014 to upgrade to a new version in the case we have not yet\nupdated our official containers.",
+            "title": "Containers"
+        },
+        {
+            "location": "/glossary/#box-image",
+            "text": "A  Box Image  is a digital file containing the binary bits of WPLib Box's  virtual machine .    Note The box image format used by WPLib Box has been defined by  Hashicorp 's  Vagrant .     WPLib Box's box image has been pre- provisioned  with the  WPLib Box software stack  \n beyond what the default Linux distribution provides which is why in-part WPLib Box is so easy to get started \n  (when compared to other solutions like  VVV .)    You can see  the history of  (most)  WPLib Box images  at \n  Hashicorp's  VagrantCloud  repository of Vagrant images available for download.   Note  We say  \"most\"  WPLib Box images because  when Hashicorp moved \n  from its old  \"Atlas\"  repository  to\n  the current VagrantCloud they neglected to transfer over some of our historical releases and thus \n  they have been lost to the mists of time.      WPLib Box's  current  box image is based on  Ubunutu , but we will soon be replacing it \n with a more streamlined Linux distribution.",
+            "title": "Box Image"
+        },
+        {
+            "location": "/glossary/#vagrant",
+            "text": "Vagrant  is software currently required by WPLib Box that reads a configuration \n file named  Vagrantfile  in your WordPress project's directory and it automates the creation \n and configuration of a  virtual machine  that is run using  VirtualBox .  Vagrant is software written in  the Ruby programming language  and it reads information \n from a  Vagrantfile  found in your project's directory on your  host computer  and \n it uses that information to download and configure WPLib Box.   Note  We plan to eliminate the need to use Vagrant in the very near future. At that point WPLib Box will only be \ndependent on  VirtualBox .",
+            "title": "Vagrant"
+        },
+        {
+            "location": "/glossary/#vagrantfile",
+            "text": "A  Vagrantfile  is a specialized  Ruby language  script that is run by  Vagrant  \n to automate the setup of WPLib Box.   Although a Ruby script,  Vagrantfile  is  declarative  in nature \u2014 \n more like a  JSON  file \u2014 as it was designed to allow you to  \"declare\"  the details needed by Vagrant to \n automate the creation and configuration of your  virtual mahine  using  VirtualBox .  The  \"declarations\"  in the  Vagrantfile   tell Vagrant what it needs to know to:   (Initially)  download the specified version of WPLib Box's  box image  \"_ into Vagrant's \n     local box image cache  on your  host computer ,   Set the IP address for the WPLib Box virtual machine,  Add the host name used to reference WPLib Box  \u2014 e.g.  wplib.box  or   example.local  \u2014 to your \n    host computer's  hosts  file ,    Mount  your project directory on your host computer inside of \n    WPLib Box so PHP and Nginx/Apache can access them,  Specify the username to be used for  vagrant ssh ; currently  boxuser  in WPLib Box's case and configure\n     SSH agent forwarding ,   And finally, specify the  (lightweight, in the case of WPLib Box)  scripts to run on  vagrant up , both\n    for initial install and subsequent uses.",
+            "title": "Vagrantfile"
+        },
+        {
+            "location": "/glossary/#hosts-file",
+            "text": "Your  hosts  file  is a plain text file found \non your  host computer  that contains one of more IP addresses mapped to domain names.   The purpose of your  hosts  file is to allow you to override the entries found at your DNS server. \nIn the case of WPLib Box with  .local  domain names, your DNS server has no knowledge of your local \ndevelopment. This WPLib Box needs to add entries to your  hosts  file to allow you to use domain names \nfor local development  instead of  hard-to-remember ports and/or IP addresses; \ne.g.  http:/localhost:8888  or  http:/10.10.10.136 .    Typically you at least have  localhost  defined in your  hosts  file:  127.0.0.1 localhost  After WPLib Box is installed and configured 1 , your  hosts  file will look something like this  (likely \nwith a different IP address and  Vagrant  hash.)   The following enables       127.0.0.1 localhost\n\n10.10.10.136  wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-d9b3-$\n10.10.10.136  docs.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-$\n10.10.10.136  www.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce32d-d$\n10.10.10.136  adminer.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce3$\n10.10.10.136  mailhog.wplib.box  # VAGRANT: c1906b61bcd8c3211d7426a8a3310413 (default) / 4fdce3$  A bit of  hosts  file history Hosts files predate the Internet's Domain Name System (DNS) and were how early Internet users \nmapped hostnames to IP addresses. This meant every user had to know the IP address of every \ncomputer they wanted to visit on the internet, or at least the sysadmin for the computer needed \nto know the IP address. Clearly that quickly became overwhelming for everyone on the Internet \nand was why the DNS system was introduced.",
+            "title": "Hosts file"
+        },
+        {
+            "location": "/glossary/#local-box-image-cache",
+            "text": "The term  Local Box Image Cache  is a WPLib Box coined-term to name the  pristine  \n  box image  that  Vagrant  downloads to a local cache on your \n  host computer  to enable quick cloning for additional projects.   vagrant up  will clone a copy of this cached image into the  project box image  \n the first time it in run for a given  Vagrantfile , but running  vagrant destroy  \n followed by a  vagrant up  will clone the cached box image too.   Your local box image cache  is located at :   MacOS and Linux:  ~/.vagrant.d/boxes  Windows:  C:\\Users\\{username}\\.vagrant.d\\boxes",
+            "title": "Local Box Image Cache"
+        },
+        {
+            "location": "/glossary/#project-box-image",
+            "text": "The term  Project Box Image  is another WPLib Box coined-term to name the project-specific \ncopy of the pristine copy  local box image cache  that  Vagrant  \nmakes for each project in the following project-specific subdirectory:   Mac or Linux:  {project}/.vagrant  Windows:  {project}\\.vagrant  The upshot is if you  vagrant ssh  into a running Vagrant Box and make configuration \nchanges those changes will be in the project box image, but not in the pristine copy of \nbox image nor in other projects that share the same named Box Image.   Beyond the project box image  VirtualBox  will import these images into its own directory for \neach project:   Mac or Linux:  ~/VirtualBox VMs  Windows:  C:\\Users\\{username}\\VirtualBox VMs  Why we plan to stop using  Vagrant This extremely inefficent use of storage is but one of the many reasons we are planning to replace Vagrant with our own solution in the very near future.",
+            "title": "Project Box Image"
+        },
+        {
+            "location": "/glossary/#site-builder",
+            "text": "Here at the WPLib Box team we define a  \"Site Builder\"  as someone who installs WordPress, plugins, and themes \n\u2014 who might tweak the HTML, CSS, JS or PHP from time to time \u2014 but for the most part is not and \ndoes not consider themselves a  \"programmer.\"    We  love  professional Site Builders and think they provide an invaluable service to their clients so we \nare just as excited to hear from site builders how we can make WPLib Box better to help them their do their \njobs as we are to hear from front-end or even backend WordPress developers.",
+            "title": "Site Builder"
+        },
+        {
+            "location": "/glossary/#front-end-developer",
+            "text": "Here at the WPLib Box team we define a  \"Front-end Developer\"  as someone who minimally has HTML and CSS \nskills \u2014 especially for responsive design \u2014 and who may or may not have Javascript programming \nskills and/or front-end build system skills combined with a CSS preprocessor like SASS or LESS. In our experience\nfront-end development and theme development go hand-in-hand, although front-end developers can be found building \nplugins as well.   And we  love  professional front-end developers as without them WordPress sites would never be as compelling \nnor as functional as so many WordPress sites and themes have become. So we are very interested to hear from \nfront-end developers how we can make WPLib Box better to help them their do their jobs.",
+            "title": "Front-end Developer"
+        },
+        {
+            "location": "/glossary/#backend-developer",
+            "text": "Here at the WPLib Box team we define a  \"Backend Developer\"  as someone who focuses on the PHP, MySQL and possibly\nREST API aspects of a WordPress site. In our experience backend development and plugin development go hand-in-hand\n but that doesn't mean backend developers can't have significant sway over theme code as many back end developers\n do.  And finally we  love  professional backend developers because frankly we are backend developers too! Without us, \nWordPress sites would never have the deep level of functionality that requires server-side coding and database \nexpertise. So we are also very interested to hear from backend developers whose workflow may differ from our own\nso that we can make WPLib Box better for you.",
+            "title": "Backend Developer"
+        },
+        {
+            "location": "/glossary/#suggestions-for-improvement",
+            "text": "If you have any terms to add or suggestions for improvement to our existing descriptions we  welcome  your \nsuggestions.  So please help out your fellow developers and  fork this repo , \nmake your fixes and then  submit your pull request .      Unless you have changed your host name in the  HOSTNAME  file, which you will almost certainly have done.\u00a0 \u21a9",
+            "title": "Suggestions for Improvement"
+        },
+        {
+            "location": "/troubleshooting/",
+            "text": "Troubleshooting WPLib Box\n\u00b6\n\n\nPlease \nReport the Issue\n on GitHub\n\u00b6\n\n\nEven if you do find a solution, please report the issue...\nEven if you do find a solution please \nreport the issue\n \nso we can either fix it or document it to make using WPLib Box easier for everyone.   \nIf your browser times out\n\u00b6\n\n\nThis in our \nmost common\n issue\nIf you have WPLib Box \ninstalled more than once\n for the same local domain\nname it will unfortunately not load. And as long as we are still \nusing Vagrant this will continue to be a problem. Fortunately, we will be \noff Vagrant soon enough.\n\nIf your browser times-out trying to load \nwplib.box\n check \n\nyour hosts file\n \nto see if you have more than one IP address entry mapped to the \nwplib.box\n domain \nand its various subdomains.\nTrouble with VirtualBox\n\u00b6\n\n\nIf you have problems installing or running VirtualBox\nFirst, try Googling the error messages you get when trying to install. VirtualBox is \nindependent of WPLib Box and thus you will often find solutions online. \nProblems with Vagrant\n\u00b6\n\n\nIf Vagrant is giving you trouble\nTry running \nvagrant up --debug\n to see if it can reveal any issues with your system that you are able to correct.  You may want to redirect to a debug log so you can read the output in your text editor:\nvagrant up --debug > vagrant.log 2>&1\n\n\n\n\nIf you can't find the solution to your problem using the \n--debug\n switch \nplease provide your \nvagrant.log\n via Slack or GitHub or email at \n\nteam@wplib.org\n when requesting help.\nNothing Here Solved Your Problem\n\u00b6\n\n\nIf you did not find your answer in any of the items listed\nIf you do not find a solution, \njoin our Slack\n to get help\nfrom our team in the \n#box\n channel.\nDon't be shy, \nwe really do \nwant to hear from you\n  as it will help us make your experience with \nWPLib Box and everyone else's much better.\n \nIf your problem is Vagrant-related \u2014 as most WPLib Box problems \nunfortunately often are \u2014 please provide your \nvagrant.log\n \nas \ndescribed above in \nvagrant up\n is failing\n. \n\n(We will be so happy once we have eliminated the need for Vagrant. Soon!)",
+            "title": "Troubleshooting"
+        },
+        {
+            "location": "/troubleshooting/#troubleshooting-wplib-box",
+            "text": "",
+            "title": "Troubleshooting WPLib Box"
+        },
+        {
+            "location": "/troubleshooting/#please-report-the-issue-on-github",
+            "text": "Even if you do find a solution, please report the issue... Even if you do find a solution please  report the issue  \nso we can either fix it or document it to make using WPLib Box easier for everyone.",
+            "title": "Please Report the Issue on GitHub"
+        },
+        {
+            "location": "/troubleshooting/#if-your-browser-times-out",
+            "text": "This in our  most common  issue If you have WPLib Box  installed more than once  for the same local domain\nname it will unfortunately not load. And as long as we are still \nusing Vagrant this will continue to be a problem. Fortunately, we will be \noff Vagrant soon enough. \nIf your browser times-out trying to load  wplib.box  check  your hosts file  \nto see if you have more than one IP address entry mapped to the  wplib.box  domain \nand its various subdomains.",
+            "title": "If your browser times out"
+        },
+        {
+            "location": "/troubleshooting/#trouble-with-virtualbox",
+            "text": "If you have problems installing or running VirtualBox First, try Googling the error messages you get when trying to install. VirtualBox is \nindependent of WPLib Box and thus you will often find solutions online.",
+            "title": "Trouble with VirtualBox"
+        },
+        {
+            "location": "/troubleshooting/#problems-with-vagrant",
+            "text": "If Vagrant is giving you trouble Try running  vagrant up --debug  to see if it can reveal any issues with your system that you are able to correct.  You may want to redirect to a debug log so you can read the output in your text editor: vagrant up --debug > vagrant.log 2>&1  If you can't find the solution to your problem using the  --debug  switch \nplease provide your  vagrant.log  via Slack or GitHub or email at  team@wplib.org  when requesting help.",
+            "title": "Problems with Vagrant"
+        },
+        {
+            "location": "/troubleshooting/#nothing-here-solved-your-problem",
+            "text": "If you did not find your answer in any of the items listed If you do not find a solution,  join our Slack  to get help\nfrom our team in the  #box  channel. Don't be shy,  we really do \nwant to hear from you   as it will help us make your experience with \nWPLib Box and everyone else's much better.  \nIf your problem is Vagrant-related \u2014 as most WPLib Box problems \nunfortunately often are \u2014 please provide your  vagrant.log   as \ndescribed above in  vagrant up  is failing .  (We will be so happy once we have eliminated the need for Vagrant. Soon!)",
+            "title": "Nothing Here Solved Your Problem"
+        },
+        {
+            "location": "/roadmap/",
+            "text": "The WPLib Box Roadmap\n\u00b6\n\n\nAt this point our \n\"Roadmap\"\n is more of a \nwork-in-progress\n vision document as the project only has  \none sponsor\n and thus no dedicated staff so we really cannot commit to any timelines \n(yet).\n \n\n\n(But if you want to sponsor the project to help us reach a dedicated staff level, please \ncontact us...\n)\n\n\nYou might be interested in:\n\u00b6\n\n\nBefore you read about our planned milestones you might be interested in the following background:\n+ \nAudience\n - Who is WPLib Box for?\n+ \nApproach\n - What is our development approach \n(\nprior to version 1.0\n)\n?\n+ \nFeatures\n - What are the Features of WPLib Box?\n\n\nMilestones Planned for 1.0\n\u00b6\n\n\nThe following are roughly in order of our plans to address:\n\n\n\n\nNew Installable Types\n\n\nBox Command Line Interface (CLI) Tool\n\n\nDeployment to Feature, Staging and Production Hosts\n\n\nOne Box for Many Projects\n\n\nBox Automated Testing\n\n\nBox RESTful API\n\n\nBox Admin UI\n\n\nFuture Installable Containers\n\n\nEliminate use of Vagrant and VirtualBox\n\n\n\n\nNew Installable Types\n\u00b6\n\n\n\"\nInstallables\n\"\n represent the WPLib Box's extension mechanism we use to quickly create new plugin-and-play functionality for WPLib Box, and to empower 3rd party developers to do the same. Currently Installables must be Docker Containers that add functionality to WPLib Box, and \noffer one of the following classes of functionality\n: \nwebserver\n, \ndbserver\n, \nkvstore\n and/or \nprocessvm\n.  \n\n\nFor our roadmap we plan to offer:\n\n\n\n\n\n\nNew classes of functionality for containers as we recognize additional use-cases and requirements and \n\n\n\n\n\n\nNew types of installables not implemented as  containers. These could potentially be, but not limited to the following:\n\n\na. WordPress plugins, especially those supporting SaaS solutions\n\n\nb. WordPress themes, potentially with bundled plugins\n\n\nc. Site blueprints containing plugins, themes and other files\n\n\nd. Additional commands for the Box CLI\n\n\ne. Command lines tools\n\n\ne. IDE and editor support\n\n\nf. Anything else that developers find they need to have the ultimate WordPress development environment.\n\n\n\n\n\n\nBox Command Line Interface (CLI) Tool\n\u00b6\n\n\nCurrently WPLib Box has a \nsimple \nbox\n command line tool\n that is accessible when running an SSH shell inside the box, accessed via \nvagrant ssh\n. However we have yet to document that tool because we have plans for a completely redeveloped CLI tool. Our planned CLI tool will run both inside WPLib Box via SSH and also run the same commands from a Mac host terminal. In addition we plan to create an equivalent command line tool for Windows.\n\n\nDeployment to Feature, Staging and Production Hosts\n\u00b6\n\n\nA local development server is all well and grand but if you cannot deploy to your staging and/or production environments it leaves much to be desired.\n\n\nOur goal is to \nenable the deployment process to be trivial\n for WPLib Box users.\n\n\nInitially we plan to \njust provide code deployment\n where you would \npush\n code from local development to staging to production and \npull\n database and files from production to staging to local development.\n\n\nLater however we intend to address pushing changes from the database in local development up to staging and production, but we will not achieve that in the short term.\n\n\nIn addition, we envision supporting many different hosts as you need per project, e.g. staging, production and as many feature branch servers as you will ever need. \n\n\nAnd finally we intend to support hosts so that you can different hosting providers; e.g. you could deploy staging to a cheap shared Cpanel server and deploy production to an expensive Pagely account.\n\n\nWe are currently working on these:\n\u00b6\n\n\n\n\nPantheon\n and \nWPEngine\n\n\n\n\nWe will probably tackle these next:\n\u00b6\n\n\n\n\nDigital Ocean\n, \nLinode\n, \nGoogle Compute Engine\n, \nAmazon Web Services\n, \nCPanel Server\n, \nVultr\n, \nKyup\n\n\n\n\nWe will address these when and if clients need them or vendors support us financially:\n\u00b6\n\n\nWe could also add deployment support these if support is contributed by one of our users or by the vendors themselves.\n- \nCloudways\n\n- \nPagely\n, \nKinsta\n, \nPressable\n, \nPresslabs\n, \nWebSynthesis\n, \nFlywheel\n, \nPressed\n\n- \nSiteGround\n, \nLiquid Web\n, \nDreamHost\n, \nMedia Temple\n, \nGoDaddy\n, \nLightning Base\n\n- \nWordPress VIP\n, \nMicrosoft Azure\n \n\n\nOne Box for Many Projects\n\u00b6\n\n\nMulti-project is our \n\"holy grail\"\n, and that which we cannot reach version 1.0 without. \n\n\nCurrently WPLib Box is a single project box. But our plan is to move to multi-project where each WordPress installation is a project, which can be a WordPress single-site or multisite install.\n\n\nOur initial reason for creating WPLib Box is the fact that VVV was very heavy with more than just a few site and so we have a lot of engineering to complete to ensure that WPLib Box continues to feel as light as it does while still being able to support a large number of site in current and prior development.\n\n\nBox Automated Testing\n\u00b6\n\n\nAs developers we know that test-centric development is a best practice, even if we don't always do it. And there are tools like \nPHPUnit\n, \nBehat\n and \nCodeception\n,  that leave little excuse for not using automated testing in your projects\n\n\nBut as far as we know there are not standard testing frameworks for solutions like WPLib Box because there are so few people actually building solutions like WPLib Box.  So we intend to figure this out and probably build our own tools in order that we can deliver new releases which are fully tested in advance.\n\n\nBox RESTful API\n\u00b6\n\n\nWe envision WPLib Box as containing a set of services that allow very simply configuration and administration of the most common use-cases. For example, adding a project to the box with its own hostname and WordPress installation should be trivially easy, not require the user possess any system administration skills, and it should both \n\"Just work\"\n and \n\"Never break.\"\n  \n\n\nClearly if we provided just a CLI and an end-user admin UI we would enable such configuration and administration but we believe we should go one step better and implement a RESTful API. This API will enable code running on a host computer to call into a box to perform any and all configuration and administration tasks This will empower users and 3rd party developers to create tools for WPLib Box that we'd never envision or simply that we have yet to implement.\n\n\nMatter of fact, we intend to implement our HOST CLI functionality by having it call our RESTful API which will in turn delegate to the same CLI running inside of WPLib Box. When run outside the box the CLI will call the API and when run inside the box the CLI will actually execute the task.  We also intend to develop our admin user interface using this API.  Or as so many other tech companies like to say, we plan to \n\"eat our own dog food.\"\n\n\nBox Admin UI\n\u00b6\n\n\nAfter we have the majority of the \nbox\n CLI tool and the majority of the RESTful API completed we intend to develop an admin user interface for the box using GitHub's \nElectron\n platform for the Mac and Windows desktop app, and \nReact\n for the Single Page App functionality.  \n\n\nThis Admin UI will mirror the functionality provided by the Box CLI and the RESTful API with the addition of any functionality required that is specific to the Mac and Windows host.\n\n\nFuture Installable Containers\n\u00b6\n\n\nThe following are installable containers we have discussed and/or considered. Depending on user interest, we might implement these ourselves at some point, or adopt installables created by our users or the solution's vendor.\n\n\n\n\nOpenLiteSpeed\n Web Server\n\n\nPercona Server\n for MySQL\n\n\nGearman\n\n\nElasticSearch\n\n\nZeroMQ\n\n\nRabbitMQ\n\n\nPHPUnit\n\n\nBehat\n\n\nCodeception\n\n\n\n\nIf you don't see what you need on this list, please \nnominate a potential future installable\n. And if you are interested in developing it, please be sure to mention then, and also please \njoin our Slack\n so we can reach out to you to discuss directly.\n\n\nWe do not use the term single-site vs. multisite because we do not want to confuse with WordPress Multisite functionality; our current single project box can support WordPress Multisite just fine.  \n\n\nEliminate use of Vagrant and VirtualBox\n\u00b6\n\n\nOur final version 1.0 goal is to move beyond Vagrant and VirtualBox and run within our own self-contained Linux environment that can run as seamlessly as running any desktop application might be.  This is the last step we will tackle before we are ready to release version 1.0.\n\n\nThe Open Source WPLib Box; Always Free\n\u00b6\n\n\nLastly, our goal for for WordPress developers to \nlove\n WPLib Box and _willingly choose it over any other local development solution and for that we know that we will need to ensure our open-source WPLib Box software is always free to individual developers.\n\n\nAnd while we do plan to build a revenue-generating business out of WPLib Box, we pledge to only charge for those things where we have direct hard costs and/or where the benefits-of-use accrue to the non-developers; the project managers, the business people and/or the executive team, not the things that only benefit individual developers. One such example might be tools for secure team development on WPLib Box. Frankly we are building it not quite sure what the business model will be but confident if we build a tool that all WordPress developers love we will find a way to fund our operations.",
+            "title": "Roadmap"
+        },
+        {
+            "location": "/roadmap/#the-wplib-box-roadmap",
+            "text": "At this point our  \"Roadmap\"  is more of a  work-in-progress  vision document as the project only has   one sponsor  and thus no dedicated staff so we really cannot commit to any timelines  (yet).    (But if you want to sponsor the project to help us reach a dedicated staff level, please  contact us... )",
+            "title": "The WPLib Box Roadmap"
+        },
+        {
+            "location": "/roadmap/#you-might-be-interested-in",
+            "text": "Before you read about our planned milestones you might be interested in the following background:\n+  Audience  - Who is WPLib Box for?\n+  Approach  - What is our development approach  ( prior to version 1.0 ) ?\n+  Features  - What are the Features of WPLib Box?",
+            "title": "You might be interested in:"
+        },
+        {
+            "location": "/roadmap/#milestones-planned-for-10",
+            "text": "The following are roughly in order of our plans to address:   New Installable Types  Box Command Line Interface (CLI) Tool  Deployment to Feature, Staging and Production Hosts  One Box for Many Projects  Box Automated Testing  Box RESTful API  Box Admin UI  Future Installable Containers  Eliminate use of Vagrant and VirtualBox",
+            "title": "Milestones Planned for 1.0"
+        },
+        {
+            "location": "/roadmap/#new-installable-types",
+            "text": "\" Installables \"  represent the WPLib Box's extension mechanism we use to quickly create new plugin-and-play functionality for WPLib Box, and to empower 3rd party developers to do the same. Currently Installables must be Docker Containers that add functionality to WPLib Box, and  offer one of the following classes of functionality :  webserver ,  dbserver ,  kvstore  and/or  processvm .    For our roadmap we plan to offer:    New classes of functionality for containers as we recognize additional use-cases and requirements and     New types of installables not implemented as  containers. These could potentially be, but not limited to the following:  a. WordPress plugins, especially those supporting SaaS solutions  b. WordPress themes, potentially with bundled plugins  c. Site blueprints containing plugins, themes and other files  d. Additional commands for the Box CLI  e. Command lines tools  e. IDE and editor support  f. Anything else that developers find they need to have the ultimate WordPress development environment.",
+            "title": "New Installable Types"
+        },
+        {
+            "location": "/roadmap/#box-command-line-interface-cli-tool",
+            "text": "Currently WPLib Box has a  simple  box  command line tool  that is accessible when running an SSH shell inside the box, accessed via  vagrant ssh . However we have yet to document that tool because we have plans for a completely redeveloped CLI tool. Our planned CLI tool will run both inside WPLib Box via SSH and also run the same commands from a Mac host terminal. In addition we plan to create an equivalent command line tool for Windows.",
+            "title": "Box Command Line Interface (CLI) Tool"
+        },
+        {
+            "location": "/roadmap/#deployment-to-feature-staging-and-production-hosts",
+            "text": "A local development server is all well and grand but if you cannot deploy to your staging and/or production environments it leaves much to be desired.  Our goal is to  enable the deployment process to be trivial  for WPLib Box users.  Initially we plan to  just provide code deployment  where you would  push  code from local development to staging to production and  pull  database and files from production to staging to local development.  Later however we intend to address pushing changes from the database in local development up to staging and production, but we will not achieve that in the short term.  In addition, we envision supporting many different hosts as you need per project, e.g. staging, production and as many feature branch servers as you will ever need.   And finally we intend to support hosts so that you can different hosting providers; e.g. you could deploy staging to a cheap shared Cpanel server and deploy production to an expensive Pagely account.",
+            "title": "Deployment to Feature, Staging and Production Hosts"
+        },
+        {
+            "location": "/roadmap/#we-are-currently-working-on-these",
+            "text": "Pantheon  and  WPEngine",
+            "title": "We are currently working on these:"
+        },
+        {
+            "location": "/roadmap/#we-will-probably-tackle-these-next",
+            "text": "Digital Ocean ,  Linode ,  Google Compute Engine ,  Amazon Web Services ,  CPanel Server ,  Vultr ,  Kyup",
+            "title": "We will probably tackle these next:"
+        },
+        {
+            "location": "/roadmap/#we-will-address-these-when-and-if-clients-need-them-or-vendors-support-us-financially",
+            "text": "We could also add deployment support these if support is contributed by one of our users or by the vendors themselves.\n-  Cloudways \n-  Pagely ,  Kinsta ,  Pressable ,  Presslabs ,  WebSynthesis ,  Flywheel ,  Pressed \n-  SiteGround ,  Liquid Web ,  DreamHost ,  Media Temple ,  GoDaddy ,  Lightning Base \n-  WordPress VIP ,  Microsoft Azure",
+            "title": "We will address these when and if clients need them or vendors support us financially:"
+        },
+        {
+            "location": "/roadmap/#one-box-for-many-projects",
+            "text": "Multi-project is our  \"holy grail\" , and that which we cannot reach version 1.0 without.   Currently WPLib Box is a single project box. But our plan is to move to multi-project where each WordPress installation is a project, which can be a WordPress single-site or multisite install.  Our initial reason for creating WPLib Box is the fact that VVV was very heavy with more than just a few site and so we have a lot of engineering to complete to ensure that WPLib Box continues to feel as light as it does while still being able to support a large number of site in current and prior development.",
+            "title": "One Box for Many Projects"
+        },
+        {
+            "location": "/roadmap/#box-automated-testing",
+            "text": "As developers we know that test-centric development is a best practice, even if we don't always do it. And there are tools like  PHPUnit ,  Behat  and  Codeception ,  that leave little excuse for not using automated testing in your projects  But as far as we know there are not standard testing frameworks for solutions like WPLib Box because there are so few people actually building solutions like WPLib Box.  So we intend to figure this out and probably build our own tools in order that we can deliver new releases which are fully tested in advance.",
+            "title": "Box Automated Testing"
+        },
+        {
+            "location": "/roadmap/#box-restful-api",
+            "text": "We envision WPLib Box as containing a set of services that allow very simply configuration and administration of the most common use-cases. For example, adding a project to the box with its own hostname and WordPress installation should be trivially easy, not require the user possess any system administration skills, and it should both  \"Just work\"  and  \"Never break.\"     Clearly if we provided just a CLI and an end-user admin UI we would enable such configuration and administration but we believe we should go one step better and implement a RESTful API. This API will enable code running on a host computer to call into a box to perform any and all configuration and administration tasks This will empower users and 3rd party developers to create tools for WPLib Box that we'd never envision or simply that we have yet to implement.  Matter of fact, we intend to implement our HOST CLI functionality by having it call our RESTful API which will in turn delegate to the same CLI running inside of WPLib Box. When run outside the box the CLI will call the API and when run inside the box the CLI will actually execute the task.  We also intend to develop our admin user interface using this API.  Or as so many other tech companies like to say, we plan to  \"eat our own dog food.\"",
+            "title": "Box RESTful API"
+        },
+        {
+            "location": "/roadmap/#box-admin-ui",
+            "text": "After we have the majority of the  box  CLI tool and the majority of the RESTful API completed we intend to develop an admin user interface for the box using GitHub's  Electron  platform for the Mac and Windows desktop app, and  React  for the Single Page App functionality.    This Admin UI will mirror the functionality provided by the Box CLI and the RESTful API with the addition of any functionality required that is specific to the Mac and Windows host.",
+            "title": "Box Admin UI"
+        },
+        {
+            "location": "/roadmap/#future-installable-containers",
+            "text": "The following are installable containers we have discussed and/or considered. Depending on user interest, we might implement these ourselves at some point, or adopt installables created by our users or the solution's vendor.   OpenLiteSpeed  Web Server  Percona Server  for MySQL  Gearman  ElasticSearch  ZeroMQ  RabbitMQ  PHPUnit  Behat  Codeception   If you don't see what you need on this list, please  nominate a potential future installable . And if you are interested in developing it, please be sure to mention then, and also please  join our Slack  so we can reach out to you to discuss directly.  We do not use the term single-site vs. multisite because we do not want to confuse with WordPress Multisite functionality; our current single project box can support WordPress Multisite just fine.",
+            "title": "Future Installable Containers"
+        },
+        {
+            "location": "/roadmap/#eliminate-use-of-vagrant-and-virtualbox",
+            "text": "Our final version 1.0 goal is to move beyond Vagrant and VirtualBox and run within our own self-contained Linux environment that can run as seamlessly as running any desktop application might be.  This is the last step we will tackle before we are ready to release version 1.0.",
+            "title": "Eliminate use of Vagrant and VirtualBox"
+        },
+        {
+            "location": "/roadmap/#the-open-source-wplib-box-always-free",
+            "text": "Lastly, our goal for for WordPress developers to  love  WPLib Box and _willingly choose it over any other local development solution and for that we know that we will need to ensure our open-source WPLib Box software is always free to individual developers.  And while we do plan to build a revenue-generating business out of WPLib Box, we pledge to only charge for those things where we have direct hard costs and/or where the benefits-of-use accrue to the non-developers; the project managers, the business people and/or the executive team, not the things that only benefit individual developers. One such example might be tools for secure team development on WPLib Box. Frankly we are building it not quite sure what the business model will be but confident if we build a tool that all WordPress developers love we will find a way to fund our operations.",
+            "title": "The Open Source WPLib Box; Always Free"
+        },
+        {
+            "location": "/philosophy/",
+            "text": "Philosophy Governing WPLib Box\n\u00b6\n\n\nThe following philosophies are those the WPLib Box team uses to govern our strategic vision and tactical decision \nregarding everything we do related to WPLib Box.  \n\n\nMake development easier\n\u00b6\n\n\nOur #1 job is to \nmake WordPress development easier\n. Full stop.\n\n\nEverything we decide and everything we do contributes to this goal.  Both for the site, theme and/or plugin \nbuilding newbie as well as the most advanced WordPress developer on the planet.\n\n\nIt should just work\n\u00b6\n\n\nFirst and foremost, WPLib Box should be like dial tone on a telephone land line and that is it \n\nshould always just work\n.  \n\n\nIf at all possible WPLib Box should never leave you stuck with a broken local development environment simply \nbecause you may do not have the Linux expertise or the time to fix a problem, especially when you are in the \n11th hour of an intense project that needs to be done tomorrow morning! \n\n\nThe box \nshould never fail\n on you in those, or any circumstances.   \n\n\n\n\nYes \n\"never failing\"\n is idealistic\n\n\nYes, we admit, \n\"never failing\"\n is idealistic.\n \n\nHowever, we can and do \nstrive to achive as close to 100% of that goal\n as we possibly can. It was for \nthis reason we decided to eliminate the need for Vagrant \n(which we should get to in the very near future.)\n \n\nSo \nour primary goal\n is: \nYou should always be able to depend on WPLib Box.\n\n\nBut because software is complex and we cannot \nguarantee\n that the software we depend on \nwill not leave you stuck, we are more than happy to \nsupport you\n for free whenever you need, \nespecially on Slack.\n   \n\n\n\n\nProvide instruction in error messages\n\u00b6\n\n\nIf WPLib Box generates an error message, the message \nshould include the instructions\n that \nyou\n would need \nto resolve the issue.  \n\n\nThis is an ideal, but the only acceptable exception to this ideal is if that it is simply not possible.\n\n\nFunctionality \nshould be in the box\n\u00b6\n\n\nIf functionality that can benefit users \ncan\n be installed and run in the box, it \nshould\n be installed and \nrun in the box \n(instead of needing to be installed and run on the \nhost computer\n.)\n\n\nThis means that you should not need to install Grunt/Gulp/WebPack, Composer, WP CLI, PHPUnit, etc. on your host \n computer when you have WPLib Box to do it for you. Everything you want or need for WordPress development should be\n  pre-packaged and available  to run from within the box.    \n\n\nWhy? So you never need to try to install and then have to debug the install of a new developer tool again. \nThus, \nif can run in the box, it should run in the box.\n\n\n\n\nWe are not here yet\n\n\nWhile this is one of the things we badly want to see happen, we have not gotten all the the standard functionality\nWordPress developers will want to use running in the box.\n \nFor example, we do have Composer and WP CLI, but not PHPUnit or anything requiring NodeJS/NPM. Why? Because unlike \nservers delivered as binaries, all of these tools are delivered as scripts that require a PHP or Javascript \nruntime. And while we \ncould\n package the runtime with their script into a container we want to implement a better \narchitecture that allow us to pair scripts with a container that provides the necessary runtime.\n\nStill, we know that \nshipping is a feature\n \nso if you have an urgent need for any of these tools or other tools that are not currently implement please reach\nout to us on Slack \n\n\n\n\nFunctionality should be containerized\n\u00b6\n\n\nIf we or any users add functionality to WPLib Box it \nshould\n be added via container, never installed directly \nin the \nvirtual machine\n unless otherwise impossible.\n\n\nAll service running in the box, and all executables to be run in the box should be packages in a container. We will \nnever just install software directly into Linux \u2014 except Docker itself and a few other infrastructure bits \u2014 \nand we'd advise you not to do so either.\n\n\nThis means at times software will not behave as expected because the software was written within expecting to be \nrun in a container. If you run into any of these cases we ask that you \ncontact us for support\n so we \ncan either find a solution for you or a workaround. \n\n\nProactively notify about issues\n\u00b6\n\n\nIf WPLib Box can in any way proactively recognize that a user would be having an error then it should notify the \nuser of that error in advance, in an non-obtrusive and easily dismissable manner.\n\n\n\n\nWe are not there yet\n\n\nWhile this is one of the things we badly want to see happen, we have not gotten to the point where we \ncan users of issues in advance the way we envision. But good things come to those wait \n(just a bit longer.)\n  \n\n\n\n\nEmpower best-practices\n\u00b6\n\n\nToo many people avoid best practices in WordPress because following them can take too much time to setup and learn. \n\n\nSo a key goal for WPLib Box is to \nmake following best practices easier than not\n. \n\n\nBe it 1.) using test, stage and production servers, 2.) implementing automated testing, \n3.) version-controlling your source, or 4.) developing structured object-oriented code \nWPLib Box should make implementation of those best practices and more trivial,\n\nand it should make learning how to use them easy. \n\nSo much so that you'll wonder how you ever managed to \n\ncowboy code\n in your past.\n\n\n\n\nWe are not here yet\n\n\nWhile this is one of the things we badly want to see happen, we have not gotten to the point where we \ncan empower best practices in the way we envision. But good things come to those wait \n(just a bit longer.)\n  \n\n\n\n\nThese are not all\n\u00b6\n\n\nThis page is not yet complete, so expect more points related to our philosophy in the future.",
+            "title": "Philosophy"
+        },
+        {
+            "location": "/philosophy/#philosophy-governing-wplib-box",
+            "text": "The following philosophies are those the WPLib Box team uses to govern our strategic vision and tactical decision \nregarding everything we do related to WPLib Box.",
+            "title": "Philosophy Governing WPLib Box"
+        },
+        {
+            "location": "/philosophy/#make-development-easier",
+            "text": "Our #1 job is to  make WordPress development easier . Full stop.  Everything we decide and everything we do contributes to this goal.  Both for the site, theme and/or plugin \nbuilding newbie as well as the most advanced WordPress developer on the planet.",
+            "title": "Make development easier"
+        },
+        {
+            "location": "/philosophy/#it-should-just-work",
+            "text": "First and foremost, WPLib Box should be like dial tone on a telephone land line and that is it  should always just work .    If at all possible WPLib Box should never leave you stuck with a broken local development environment simply \nbecause you may do not have the Linux expertise or the time to fix a problem, especially when you are in the \n11th hour of an intense project that needs to be done tomorrow morning!   The box  should never fail  on you in those, or any circumstances.      Yes  \"never failing\"  is idealistic  Yes, we admit,  \"never failing\"  is idealistic.   However, we can and do  strive to achive as close to 100% of that goal  as we possibly can. It was for \nthis reason we decided to eliminate the need for Vagrant  (which we should get to in the very near future.)   So  our primary goal  is:  You should always be able to depend on WPLib Box.  But because software is complex and we cannot  guarantee  that the software we depend on \nwill not leave you stuck, we are more than happy to  support you  for free whenever you need, \nespecially on Slack.",
+            "title": "It should just work"
+        },
+        {
+            "location": "/philosophy/#provide-instruction-in-error-messages",
+            "text": "If WPLib Box generates an error message, the message  should include the instructions  that  you  would need \nto resolve the issue.    This is an ideal, but the only acceptable exception to this ideal is if that it is simply not possible.",
+            "title": "Provide instruction in error messages"
+        },
+        {
+            "location": "/philosophy/#functionality-should-be-in-the-box",
+            "text": "If functionality that can benefit users  can  be installed and run in the box, it  should  be installed and \nrun in the box  (instead of needing to be installed and run on the  host computer .)  This means that you should not need to install Grunt/Gulp/WebPack, Composer, WP CLI, PHPUnit, etc. on your host \n computer when you have WPLib Box to do it for you. Everything you want or need for WordPress development should be\n  pre-packaged and available  to run from within the box.      Why? So you never need to try to install and then have to debug the install of a new developer tool again. \nThus,  if can run in the box, it should run in the box.   We are not here yet  While this is one of the things we badly want to see happen, we have not gotten all the the standard functionality\nWordPress developers will want to use running in the box.  \nFor example, we do have Composer and WP CLI, but not PHPUnit or anything requiring NodeJS/NPM. Why? Because unlike \nservers delivered as binaries, all of these tools are delivered as scripts that require a PHP or Javascript \nruntime. And while we  could  package the runtime with their script into a container we want to implement a better \narchitecture that allow us to pair scripts with a container that provides the necessary runtime. \nStill, we know that  shipping is a feature  \nso if you have an urgent need for any of these tools or other tools that are not currently implement please reach\nout to us on Slack",
+            "title": "Functionality should be in the box"
+        },
+        {
+            "location": "/philosophy/#functionality-should-be-containerized",
+            "text": "If we or any users add functionality to WPLib Box it  should  be added via container, never installed directly \nin the  virtual machine  unless otherwise impossible.  All service running in the box, and all executables to be run in the box should be packages in a container. We will \nnever just install software directly into Linux \u2014 except Docker itself and a few other infrastructure bits \u2014 \nand we'd advise you not to do so either.  This means at times software will not behave as expected because the software was written within expecting to be \nrun in a container. If you run into any of these cases we ask that you  contact us for support  so we \ncan either find a solution for you or a workaround.",
+            "title": "Functionality should be containerized"
+        },
+        {
+            "location": "/philosophy/#proactively-notify-about-issues",
+            "text": "If WPLib Box can in any way proactively recognize that a user would be having an error then it should notify the \nuser of that error in advance, in an non-obtrusive and easily dismissable manner.   We are not there yet  While this is one of the things we badly want to see happen, we have not gotten to the point where we \ncan users of issues in advance the way we envision. But good things come to those wait  (just a bit longer.)",
+            "title": "Proactively notify about issues"
+        },
+        {
+            "location": "/philosophy/#empower-best-practices",
+            "text": "Too many people avoid best practices in WordPress because following them can take too much time to setup and learn.   So a key goal for WPLib Box is to  make following best practices easier than not .   Be it 1.) using test, stage and production servers, 2.) implementing automated testing, \n3.) version-controlling your source, or 4.) developing structured object-oriented code \nWPLib Box should make implementation of those best practices and more trivial, \nand it should make learning how to use them easy.  \nSo much so that you'll wonder how you ever managed to  cowboy code  in your past.   We are not here yet  While this is one of the things we badly want to see happen, we have not gotten to the point where we \ncan empower best practices in the way we envision. But good things come to those wait  (just a bit longer.)",
+            "title": "Empower best-practices"
+        },
+        {
+            "location": "/philosophy/#these-are-not-all",
+            "text": "This page is not yet complete, so expect more points related to our philosophy in the future.",
+            "title": "These are not all"
+        },
+        {
+            "location": "/team/",
+            "text": "The WPLib Box Team\n\u00b6",
+            "title": "Team"
+        },
+        {
+            "location": "/team/#the-wplib-box-team",
+            "text": "",
+            "title": "The WPLib Box Team"
+        },
+        {
+            "location": "/support/",
+            "text": "Support Options for WPLib Box\n\u00b6\n\n\nOur goal is for WPlib Box to be your \npreferred choice\n for local WordPress development thus \n\n\nwe actively want to support you\n. So please, do not be shy or worry you might be bothering us. Learning \nabout your experience with WPLib Box  will allow us to make WPLib Box \nthat much better for you, and for everyone else. \n\n\nSlack for Urgent Help\n\u00b6\n\n\nPlease \njoin our Slack\n to get help direct \nfrom our team in our \n#box\n channel.  \n\n\nAlso Slack for Non-urgent Help\n\u00b6\n\n\nAnd even if your needs are not urgent, \nwe really do want to talk to you\n \nso we can learn how WPLib Box can better meet your needs.  \n\n\nDocumenting Issues on GitHub\n\u00b6\n\n\nAfter contacting us on Slack \nit is really helpful if you can submit a \n\nGitHub issue\n for any bugs or feature requests \nto ensure we can track them until they are addressed.      \n\n\nTwitter to Ask Simple Questions\n\u00b6\n\n\nIf you have a simple question or a feature request, please \ndo not hesistate to\ntweet us\n at \n@wplib\n. You might also want \nto cc our project lead \n@mikeschinkel\n too.\n\n\nOne-on-One GoToMeeting Help\n\u00b6\n\n\nWe are currently offering \nfree one-on-one help sessions\n via our GoToMeeting account. If you would \nlike to take advantage of this opportunity \u2014 \nwhich probably won't last forever\n \u2014\njust \njoin our Slack\n and then direct message the WPLib Box \nproject lead \n@mikeschinkel\n to schedule a session.",
+            "title": "Support"
+        },
+        {
+            "location": "/support/#support-options-for-wplib-box",
+            "text": "Our goal is for WPlib Box to be your  preferred choice  for local WordPress development thus   we actively want to support you . So please, do not be shy or worry you might be bothering us. Learning \nabout your experience with WPLib Box  will allow us to make WPLib Box \nthat much better for you, and for everyone else.",
+            "title": "Support Options for WPLib Box"
+        },
+        {
+            "location": "/support/#slack-for-urgent-help",
+            "text": "Please  join our Slack  to get help direct \nfrom our team in our  #box  channel.",
+            "title": "Slack for Urgent Help"
+        },
+        {
+            "location": "/support/#also-slack-for-non-urgent-help",
+            "text": "And even if your needs are not urgent,  we really do want to talk to you  \nso we can learn how WPLib Box can better meet your needs.",
+            "title": "Also Slack for Non-urgent Help"
+        },
+        {
+            "location": "/support/#documenting-issues-on-github",
+            "text": "After contacting us on Slack  it is really helpful if you can submit a  GitHub issue  for any bugs or feature requests \nto ensure we can track them until they are addressed.",
+            "title": "Documenting Issues on GitHub"
+        },
+        {
+            "location": "/support/#twitter-to-ask-simple-questions",
+            "text": "If you have a simple question or a feature request, please  do not hesistate to\ntweet us  at  @wplib . You might also want \nto cc our project lead  @mikeschinkel  too.",
+            "title": "Twitter to Ask Simple Questions"
+        },
+        {
+            "location": "/support/#one-on-one-gotomeeting-help",
+            "text": "We are currently offering  free one-on-one help sessions  via our GoToMeeting account. If you would \nlike to take advantage of this opportunity \u2014  which probably won't last forever  \u2014\njust  join our Slack  and then direct message the WPLib Box \nproject lead  @mikeschinkel  to schedule a session.",
+            "title": "One-on-One GoToMeeting Help"
+        },
+        {
+            "location": "/about/",
+            "text": "About WPLib Box\n\u00b6\n\n\nWhat is WPLib Box?\n\u00b6\n\n\nIn development since 2015, we have designed WPLib Box to be:\n\n\n\n\nThe Ultimate Local Development Platform for WordPress Professionals\n \n\n\n\n\nWPLib Box leverages both \nDocker containers and a VirtualBox virtual machine\n\n to provide a best-of-breed solution that is both easy-to-use for typical WordPress use-cases but also \n flexible enough to support practically any \nsoftware stack\n required without \n requiring \n(almost?)\n Linux system administration skills.\n\n\nWhy choose WPLib Box?\n\u00b6\n\n\n\"\nIt should just work\n\"\n\u00b6\n\n\n\"It should just work\"\n has been one of our mantras from the very first day when our project lead was on a client\nproject hosted on WordPress VIP and it took him 4 days to get the now dead and hopefully forgotten VIP QuickStart \n\ninstalled and running. \n\n\n\"\nMake WordPress Easy, Make Whatever Easily Possible\n\"\n\u00b6\n\n\nEven though WPlib Box is designed first and formost to make local development for WordPress easy, we have \n\narchitected\n WPLib Box to make any \nsoftware stack\n you \nneed to use possible.\n\n\nHow, you ask? \nStacks\n and \nComponents\n. Practically everything that runs in \nWPLib Box is part of one or more stacks, and stack is a collection of components where most components are \n\n(Docker)\n \ncontainers\n, though certainly not all. \n\n\nRead about WPLib's \narchitecture\n to understand more.  \n\n\nPre-provisioned\n\u00b6\n\n\nMost Vagrant boxes for WordPress start with a base Linux and then build the box \n\"from ground up\"\n \non the \ndeveloper's computer\n, installing Nginx or Apache, PHP, MySQL, etc. This time-consuming process often takes a half hour \nor more and frequently breaks. Examples of this approach are \nVVV\n, \n\nVCCW\n,  and \nTrellis\n. \n\n\nHowever we \npre-provision\n WPLib Box \u2014 installing Nginx and Apache, many versions of PHP, MySQL and MariaDB, etc.\n \nbefore you ever download it\n \u2014 so you can \nvagrant up\n or \nvagrant reload --provision\n in \naround 30 seconds \n(after you first download WPLib Box, which usually takes about 5 minutes, but YMMV.)\n \n\n\nThis pre-provisioning we do almost eliminates the chance of our boot-up process breaking, unlike the aforementioned \nand similar solutions.\n\n\nEasy XDebug\n\u00b6\n\n\nWhen running WPLib Box and editing with either \nPhpStorm\n or \n\nVS Code\n \n(or another IDE/editor that supports XDebug)\n you \ntypically need to \njust click the \n\"Listen\"\n button\n for debugging, and then reload your page in your browser. With \nWPLib Box debugging typically \n\"just works.\"\n\n\nCompare that with other solutions that require you to configure PHP to work with XDebug. We can promise you, getting it \nto work can be \nan awful lot like this\n \n\n\nA \n\"\nProduct\n,\"\n not just a Project\n\u00b6\n\n\nThe WPLib Team does not view our \nVagrantfile\n and related provisioning scripts as our \ndeliverable\n, ours are \njust \nexamples\n of how you can use our \nBox Image\n.\n\n\nInstead \nwe treat our Box Image as our product\n, and we strive to make it bulletproof and feature-rich with \na goal that you will be able to get the exact \nweb server stack\n you need with only \nconfiguration \u2014 which anyone can easily do \u2014 instead of with provisioning; which requires lots of \ntime and at least \njunior Linux sysadmin skills\n.\n\n\nProducts vs. Just Projects?\nProjects\n are often temporary teams whose main focus is to deliver \non time, under budget, and within\n\nscope\n. And when these things are achieve, the project is considered a success. In the context of \na local development solution that often means a limited feature set that meets a contrained use-case, \nand they done when they meet the needs of their developers.\n                 \n\n\nProducts\n, on the other hand have a longer intended lifetime than a projects. They often have a clear \nvision for what they intend to be and a consistent team design to achieve those goals. Success for products \nis not measured in meeting milestores but instead \non having very happy users\n that use the product consistently \nover time.  \nA \n\"\nPlatform\n,\"\n not just a Product\n\u00b6\n\n\nWhen we decided to expand our vision for WPLib Box we decided that what we wanted was to create a \n\"Platform\"\n upon\nwhich other developers with devops experience could build, and not just a product whose flavors are only vanillia \nand chocolate. \n\n\nPlatforms vs. Just Products?\nA simple way to think about \n\"Platforms\" vs. \"Products\"\n is by analogy. \n\n\nWe all know that WordPress is a successful but would never have achieved the level of success \nwithout the hooks\n \nrequired to enable themes and plugins. Certainly far fewer people would have modified WordPress core to meet their \nneeds than the number who have chosen to install themes and plugins developed by others. \n\n\nSo, by analogy, a \n\"Platform\"\n is like WordPress \nwith\n hooks compared to just a \n\n\"Product\"\n which is like WordPress without. Thus \nWPLib Box is like WordPress with hooks\n and can easily be \n\nextended by 3rd party components\n.\nAs \ndescribed above\n WPLib Box wants to make any \n\nsoftware stack\n you need possible. But not only do we want to make it possible, \n\nwe want to make it \neasily\n possible\n, and that often means providing a simple-to-extend \n\narchitecture\n combined with the community leadership and infrastructure needed to support \n3rd party \ncomponents\n. And while we do not have the simple-to-extend \narchitecture finalized nor the infrastructure required in-place, those are two of our highest priorities \nto pursue.\n\n\nA \nSincere Desire\n to meet your needs\n\u00b6\n\n\nSince our main goal is for WPLib Box to be the first choice of every WordPress Professional we sincerely \nwant to ensure that WPLib Box meets your \nspecific\n workflow needs. Most alternatives to WPLib Box have a vision \nfor their solution and if it aligns with your needs, great! If not, too bad; those other solutions will not deviate \nfrom the vision, no matter what their users would prefer.\n\n\nBut while we too have a vision, out vision includes meeting the needs of \nall\n WordPress professionals, \nso \nachieving our vision mean meeting your needs\n too.  \n\n\nFull Featured, \nBut Not Bloated\n\u00b6\n\n\nDevelopers often fear that WPLib is, or will be \n\"bloated\n\" when we tell them we plan to meet the needs of \n\nall\n  WordPress professionals, but that could not be further from the truth. \n\n\nOur specific \narchitecture\n \u2014 a minimal \nvirtual machine\n \nwith all functionality implemented as optional \ncontainers\n \u2014 ensures WPLib Box \nwill be full-featured, \nbut never bloated.\n  \n\n\nHistory of WPLib Box\n\u00b6\n\n\nWPLib Box was envisioned simply after our project lead reached a breaking point of frustration with the then available \nalternatives. \n\n\nThe Impetus\n\u00b6\n\n\nOur project lead had tried to use \nVVV\n on and off for months \u2014 all \nwhile his then-partner was effuse over VVV \u2014 yet he continued to fall back to using a local install of PHP, \nApache and MySQL because of \nhow long VVV took to provision\n and \nhow often it broke\n leaving him with unplanned time \nrequired to research and solve the issue before he could actually get back to work and start developing again.\n\n\nBut it was not until our project lead experienced \n\"\nVIP QuickStart\n\" <sic>\n \nthat he decided to actually do something about it. He was on a client project hosted on WordPress VIP and it literally \n\ntook him four (4) days\n to get the now dead and hopefully forgotten VIP QuickStart installed and running. \n\n\nAlso, one of our project lead's motivations was to be able to provide a local development experience \n\n\"that just worked\"\n for newbie WordPress developer who attended the WordPress Developer Meetup \nhe was running at the time. He had tried VVV but typically \nspent most of the two (2) hour sessions\n just getting it \nVVV to work on workshop attendee's computers. Clearly this was not viable!\n\n\nThen our project lead researched alternatives and found \nScotchBox\n which billed itself as a \ndead-simple LAMP stack for local development.  And it was dead simple; and it was pre-provisioned \n(\nlike WPLib Box is now\n).\n\nIt was perfect! I could use it for both developing client projects and and for workshops at the WordPress Developer Meetup!\n\n\nExcept. \nScotchBox lacked/lacks XDebug\n. Which made it not perfect for a WordPress Developer Meetup workshops because \n\ngetting XDebug working can be a major PITA\n.  Worse, \neven though\n \n\nmany people\n \n\nwere clamoring\n \n\nfor it\n, \nthe developer of ScotchBox \nsaid no\n to adding\nXDebug as a standard feature.  \n\n\nSo this third roadblack was the last straw. We decided the only way to get \nthe power and control\n that we needed, and \nfrankly that \nall developers need\n, was to architect and build it ourselves!  \n\n\nThe First Generation\n\u00b6\n\n\nThe goals for the first generation of WPLib Box \n(Nov 2015 through Feb 2017)\n was \nto create a stable LEMP box that \nmade using XDebug easy\n and was as easy to implement as possible and that ideally \n\"just worked.\"\n  We built it in \niterations by focusing on \n\"the next simplest thing we can add\"\n which allowed us to deliver on our vision fairly \nquickly. \n\n\nThe final release of this generation was \n0.11.2\n.\n\n\nThe Second Generation\n\u00b6\n\n\nThe goal for the 2nd generation was to make WPLib Box \nfar more flexible\n by replacing the internal services \nwith \nDocker containers\n thus allowing easy mix-and-match of services.  \n\n\nUnfortunately, that was easier said than done.  As such versions \n0.12.0\n, \n0.12.1\n, \n0.13.0\n, \n0.14.0\n, and \n0.15.0\n \nwere effectively unusable and our offerings during 2017 were abysmal. It was not until we brought on a new team member \n\u2014 an incredibly skilled Linux sysadmin \u2014 that we were able to get out of these doldrums \n\n\nFollowing that bleak period we released a usable \n0.16.0\n in May 2018 quickly followed by \n0.16.1\n, \n0.16.2\n and very\nrecently in early July 2018 we released \n0.17.0\n which is \u2014 by far \u2014 our most usable and workable release \never.  \n\n\nWhat's more we plan a simple bug fix \n0.17.1\n \nand\n a specialty release to support the \n\nWordPress Meta Environment\n, hopefully before the first of August 2018.   \n\n\nThe Third Generation\n\u00b6\n\n\nWhich brings us to our \n(near)\n future plans; our third generation. At a high level our 3rd generation \nWPLib Box will: \n\n\n\n\nFree itself from the shackles of Vagrant,  \n\n\nHave an installer each for Mac and for Windows, and \n\n\nSupport multiple projects\n1\n in a single install of WPLib Box.\n\n\n\n\nBeyond that you should checkout out our \nroadmap\n where we go into a lot more details.\n\n\n\n\n\n\n\n\n\n\nWe chose to call future WPLib Box \n\"Multi-project\"\n instead of \n\"Multisite\"\n to avoid confusion with \n\nWordPress Multisite\n. Thus each WordPress install is a \n\"project,\"\n \nand WPLib Box can support both WordPress Single-site and WordPress Multisite installations.\u00a0\n\u21a9",
+            "title": "About"
+        },
+        {
+            "location": "/about/#about-wplib-box",
+            "text": "",
+            "title": "About WPLib Box"
+        },
+        {
+            "location": "/about/#what-is-wplib-box",
+            "text": "In development since 2015, we have designed WPLib Box to be:   The Ultimate Local Development Platform for WordPress Professionals     WPLib Box leverages both  Docker containers and a VirtualBox virtual machine \n to provide a best-of-breed solution that is both easy-to-use for typical WordPress use-cases but also \n flexible enough to support practically any  software stack  required without \n requiring  (almost?)  Linux system administration skills.",
+            "title": "What is WPLib Box?"
+        },
+        {
+            "location": "/about/#why-choose-wplib-box",
+            "text": "",
+            "title": "Why choose WPLib Box?"
+        },
+        {
+            "location": "/about/#it-should-just-work",
+            "text": "\"It should just work\"  has been one of our mantras from the very first day when our project lead was on a client\nproject hosted on WordPress VIP and it took him 4 days to get the now dead and hopefully forgotten VIP QuickStart  \ninstalled and running.",
+            "title": "\"It should just work\""
+        },
+        {
+            "location": "/about/#make-wordpress-easy-make-whatever-easily-possible",
+            "text": "Even though WPlib Box is designed first and formost to make local development for WordPress easy, we have  architected  WPLib Box to make any  software stack  you \nneed to use possible.  How, you ask?  Stacks  and  Components . Practically everything that runs in \nWPLib Box is part of one or more stacks, and stack is a collection of components where most components are  (Docker)   containers , though certainly not all.   Read about WPLib's  architecture  to understand more.",
+            "title": "\"Make WordPress Easy, Make Whatever Easily Possible\""
+        },
+        {
+            "location": "/about/#pre-provisioned",
+            "text": "Most Vagrant boxes for WordPress start with a base Linux and then build the box  \"from ground up\"   on the \ndeveloper's computer , installing Nginx or Apache, PHP, MySQL, etc. This time-consuming process often takes a half hour \nor more and frequently breaks. Examples of this approach are  VVV ,  VCCW ,  and  Trellis .   However we  pre-provision  WPLib Box \u2014 installing Nginx and Apache, many versions of PHP, MySQL and MariaDB, etc.\n  before you ever download it  \u2014 so you can  vagrant up  or  vagrant reload --provision  in \naround 30 seconds  (after you first download WPLib Box, which usually takes about 5 minutes, but YMMV.)    This pre-provisioning we do almost eliminates the chance of our boot-up process breaking, unlike the aforementioned \nand similar solutions.",
+            "title": "Pre-provisioned"
+        },
+        {
+            "location": "/about/#easy-xdebug",
+            "text": "When running WPLib Box and editing with either  PhpStorm  or  VS Code   (or another IDE/editor that supports XDebug)  you \ntypically need to  just click the  \"Listen\"  button  for debugging, and then reload your page in your browser. With \nWPLib Box debugging typically  \"just works.\"  Compare that with other solutions that require you to configure PHP to work with XDebug. We can promise you, getting it \nto work can be  an awful lot like this",
+            "title": "Easy XDebug"
+        },
+        {
+            "location": "/about/#a-product-not-just-a-project",
+            "text": "The WPLib Team does not view our  Vagrantfile  and related provisioning scripts as our  deliverable , ours are \njust  examples  of how you can use our  Box Image .  Instead  we treat our Box Image as our product , and we strive to make it bulletproof and feature-rich with \na goal that you will be able to get the exact  web server stack  you need with only \nconfiguration \u2014 which anyone can easily do \u2014 instead of with provisioning; which requires lots of \ntime and at least  junior Linux sysadmin skills .  Products vs. Just Projects? Projects  are often temporary teams whose main focus is to deliver  on time, under budget, and within \nscope . And when these things are achieve, the project is considered a success. In the context of \na local development solution that often means a limited feature set that meets a contrained use-case, \nand they done when they meet the needs of their developers.                    Products , on the other hand have a longer intended lifetime than a projects. They often have a clear \nvision for what they intend to be and a consistent team design to achieve those goals. Success for products \nis not measured in meeting milestores but instead  on having very happy users  that use the product consistently \nover time.",
+            "title": "A \"Product,\" not just a Project"
+        },
+        {
+            "location": "/about/#a-platform-not-just-a-product",
+            "text": "When we decided to expand our vision for WPLib Box we decided that what we wanted was to create a  \"Platform\"  upon\nwhich other developers with devops experience could build, and not just a product whose flavors are only vanillia \nand chocolate.   Platforms vs. Just Products? A simple way to think about  \"Platforms\" vs. \"Products\"  is by analogy.  \nWe all know that WordPress is a successful but would never have achieved the level of success  without the hooks  \nrequired to enable themes and plugins. Certainly far fewer people would have modified WordPress core to meet their \nneeds than the number who have chosen to install themes and plugins developed by others.  \nSo, by analogy, a  \"Platform\"  is like WordPress  with  hooks compared to just a  \"Product\"  which is like WordPress without. Thus  WPLib Box is like WordPress with hooks  and can easily be  extended by 3rd party components . As  described above  WPLib Box wants to make any  software stack  you need possible. But not only do we want to make it possible,  we want to make it  easily  possible , and that often means providing a simple-to-extend  architecture  combined with the community leadership and infrastructure needed to support \n3rd party  components . And while we do not have the simple-to-extend \narchitecture finalized nor the infrastructure required in-place, those are two of our highest priorities \nto pursue.",
+            "title": "A \"Platform,\" not just a Product"
+        },
+        {
+            "location": "/about/#a-sincere-desire-to-meet-your-needs",
+            "text": "Since our main goal is for WPLib Box to be the first choice of every WordPress Professional we sincerely \nwant to ensure that WPLib Box meets your  specific  workflow needs. Most alternatives to WPLib Box have a vision \nfor their solution and if it aligns with your needs, great! If not, too bad; those other solutions will not deviate \nfrom the vision, no matter what their users would prefer.  But while we too have a vision, out vision includes meeting the needs of  all  WordPress professionals,  so \nachieving our vision mean meeting your needs  too.",
+            "title": "A Sincere Desire to meet your needs"
+        },
+        {
+            "location": "/about/#full-featured-but-not-bloated",
+            "text": "Developers often fear that WPLib is, or will be  \"bloated \" when we tell them we plan to meet the needs of  all   WordPress professionals, but that could not be further from the truth.   Our specific  architecture  \u2014 a minimal  virtual machine  \nwith all functionality implemented as optional  containers  \u2014 ensures WPLib Box \nwill be full-featured,  but never bloated.",
+            "title": "Full Featured, But Not Bloated"
+        },
+        {
+            "location": "/about/#history-of-wplib-box",
+            "text": "WPLib Box was envisioned simply after our project lead reached a breaking point of frustration with the then available \nalternatives.",
+            "title": "History of WPLib Box"
+        },
+        {
+            "location": "/about/#the-impetus",
+            "text": "Our project lead had tried to use  VVV  on and off for months \u2014 all \nwhile his then-partner was effuse over VVV \u2014 yet he continued to fall back to using a local install of PHP, \nApache and MySQL because of  how long VVV took to provision  and  how often it broke  leaving him with unplanned time \nrequired to research and solve the issue before he could actually get back to work and start developing again.  But it was not until our project lead experienced  \" VIP QuickStart \" <sic>  \nthat he decided to actually do something about it. He was on a client project hosted on WordPress VIP and it literally  took him four (4) days  to get the now dead and hopefully forgotten VIP QuickStart installed and running.   Also, one of our project lead's motivations was to be able to provide a local development experience  \"that just worked\"  for newbie WordPress developer who attended the WordPress Developer Meetup \nhe was running at the time. He had tried VVV but typically  spent most of the two (2) hour sessions  just getting it \nVVV to work on workshop attendee's computers. Clearly this was not viable!  Then our project lead researched alternatives and found  ScotchBox  which billed itself as a \ndead-simple LAMP stack for local development.  And it was dead simple; and it was pre-provisioned  ( like WPLib Box is now ). \nIt was perfect! I could use it for both developing client projects and and for workshops at the WordPress Developer Meetup!  Except.  ScotchBox lacked/lacks XDebug . Which made it not perfect for a WordPress Developer Meetup workshops because  getting XDebug working can be a major PITA .  Worse,  even though   many people   were clamoring   for it , \nthe developer of ScotchBox  said no  to adding\nXDebug as a standard feature.    So this third roadblack was the last straw. We decided the only way to get  the power and control  that we needed, and \nfrankly that  all developers need , was to architect and build it ourselves!",
+            "title": "The Impetus"
+        },
+        {
+            "location": "/about/#the-first-generation",
+            "text": "The goals for the first generation of WPLib Box  (Nov 2015 through Feb 2017)  was  to create a stable LEMP box that \nmade using XDebug easy  and was as easy to implement as possible and that ideally  \"just worked.\"   We built it in \niterations by focusing on  \"the next simplest thing we can add\"  which allowed us to deliver on our vision fairly \nquickly.   The final release of this generation was  0.11.2 .",
+            "title": "The First Generation"
+        },
+        {
+            "location": "/about/#the-second-generation",
+            "text": "The goal for the 2nd generation was to make WPLib Box  far more flexible  by replacing the internal services  with \nDocker containers  thus allowing easy mix-and-match of services.    Unfortunately, that was easier said than done.  As such versions  0.12.0 ,  0.12.1 ,  0.13.0 ,  0.14.0 , and  0.15.0  \nwere effectively unusable and our offerings during 2017 were abysmal. It was not until we brought on a new team member \n\u2014 an incredibly skilled Linux sysadmin \u2014 that we were able to get out of these doldrums   Following that bleak period we released a usable  0.16.0  in May 2018 quickly followed by  0.16.1 ,  0.16.2  and very\nrecently in early July 2018 we released  0.17.0  which is \u2014 by far \u2014 our most usable and workable release \never.    What's more we plan a simple bug fix  0.17.1   and  a specialty release to support the  WordPress Meta Environment , hopefully before the first of August 2018.",
+            "title": "The Second Generation"
+        },
+        {
+            "location": "/about/#the-third-generation",
+            "text": "Which brings us to our  (near)  future plans; our third generation. At a high level our 3rd generation \nWPLib Box will:    Free itself from the shackles of Vagrant,    Have an installer each for Mac and for Windows, and   Support multiple projects 1  in a single install of WPLib Box.   Beyond that you should checkout out our  roadmap  where we go into a lot more details.      We chose to call future WPLib Box  \"Multi-project\"  instead of  \"Multisite\"  to avoid confusion with  WordPress Multisite . Thus each WordPress install is a  \"project,\"  \nand WPLib Box can support both WordPress Single-site and WordPress Multisite installations.\u00a0 \u21a9",
+            "title": "The Third Generation"
+        },
+        {
+            "location": "/quick-start/",
+            "text": "WPLib Box Quick Start\n\u00b6\n\n\n\n\n\n\nDownload\n the latest WPLib Box.\n\n\n\n\n\n\nDownload and install \nVirtualBox\n and \n   then \nVagrant\n \n   \n(in the near future WPLib Box will not require Vagrant.)\n\n\n\n\n\n\nUnzip\n WPLib Box into a new project directory,\ne.g. \n~/Sites/example.local\n or \n\nC:\\Sites\\example.local\n\n\n\n\n\n\nOpen\n a \nterminal/command prompt\n\n   \n(in the near future WPLib Box won't require you to use the command line.)\n\n\n\n\n\n\nChange\n to your project directory, i.e. \n\n\nMacOS or Linux\n     \n\n\ncd ~/Sites/example.local\n\n\n\n\n\nWindows\n     \n\n\ncd C:\\Sites\\example.local\n\n\n\n\n\n\n\n\n\nType\n the following command:\n\n\nvagrant up\n\n\n\n\n\n\n\n\n\nEnter the password\n for your Mac, Windows or Linux \nhost computer\n\n\n(or skip this step and \nmanually add entries\n for \nwplib.box\n to \n/etc/hosts\n)\n\n\n\n\n\n\nVisit\n \nhttp://wplib.box\n in your browser. \n\n\n\n\n\n\nJoin our Slack\n to ask any questions you may have!\n\n\n\n\n\n\nThat's it, you are \nnow experiencing WPLib Box. :-)",
+            "title": "Getting Started"
+        },
+        {
+            "location": "/quick-start/#wplib-box-quick-start",
+            "text": "Download  the latest WPLib Box.    Download and install  VirtualBox  and \n   then  Vagrant  \n    (in the near future WPLib Box will not require Vagrant.)    Unzip  WPLib Box into a new project directory, e.g.  ~/Sites/example.local  or  C:\\Sites\\example.local    Open  a  terminal/command prompt \n    (in the near future WPLib Box won't require you to use the command line.)    Change  to your project directory, i.e.   MacOS or Linux        cd ~/Sites/example.local  Windows        cd C:\\Sites\\example.local    Type  the following command:  vagrant up    Enter the password  for your Mac, Windows or Linux  host computer  (or skip this step and  manually add entries  for  wplib.box  to  /etc/hosts )    Visit   http://wplib.box  in your browser.     Join our Slack  to ask any questions you may have!    That's it, you are  now experiencing WPLib Box. :-)",
+            "title": "WPLib Box Quick Start"
+        },
+        {
+            "location": "/docs/",
+            "text": "Using WPLib Box\n\u00b6",
+            "title": "Overview"
+        },
+        {
+            "location": "/docs/#using-wplib-box",
+            "text": "",
+            "title": "Using WPLib Box"
+        },
+        {
+            "location": "/docs/setup/",
+            "text": "Initial Setup for WPLib Box\n\u00b6\n\n\nThese seem to be the \nmost common needs\n for new users when setting up WPLib Box:\n\n\n\n\nOrganizing your Project Directories\n\n\nConfiguring WPLib Box's Domain Name\n\n\n\n\nIf you don't find what your use-case here be sure to check the \nUsing\n page.\n\n\nConfiguration Options\n\u00b6\n\n\nWPLib Box can be configured by \nusing terminal commands\n and by \nmodifying config files\n.  \n\n\nAs of version \n0.17.0\n these are your configuration options \n(many more configuration \noptions will be available in the future):\n \n\n\n\n\nThe \nbox\n command\n\n\nproject.json",
+            "title": "Overview"
+        },
+        {
+            "location": "/docs/setup/#initial-setup-for-wplib-box",
+            "text": "These seem to be the  most common needs  for new users when setting up WPLib Box:   Organizing your Project Directories  Configuring WPLib Box's Domain Name   If you don't find what your use-case here be sure to check the  Using  page.",
+            "title": "Initial Setup for WPLib Box"
+        },
+        {
+            "location": "/docs/setup/#configuration-options",
+            "text": "WPLib Box can be configured by  using terminal commands  and by  modifying config files .    As of version  0.17.0  these are your configuration options  (many more configuration \noptions will be available in the future):     The  box  command  project.json",
+            "title": "Configuration Options"
+        },
+        {
+            "location": "/docs/setup/directories/",
+            "text": "Organizing your Project Directories\n\u00b6",
+            "title": "Directories"
+        },
+        {
+            "location": "/docs/setup/directories/#organizing-your-project-directories",
+            "text": "",
+            "title": "Organizing your Project Directories"
+        },
+        {
+            "location": "/docs/setup/hostname/",
+            "text": "Configuring WPLib Box's Domain Name\n\u00b6\n\n\nBy default WPLib Box configures itself to load using the domain name \nwplib.box\n, \nassuming you allow it to update your \nhosts\n file\n. But \nthis is probably not the domain you want to use to work on your client's website.   \n\n\nChoosing a top-level domain for local use.\n\u00b6\n\n\nIn \n\"early days\"\n we local developers always used \n.dev\n for our local domains; e.g. \nexample.dev\n. \nBut \nthanks to Google\n that \nis not really a good option anymore, especially if you ever plan to use Chrome.  \n\n\nSo let's say your client's website is \nexample.com\n; we recommend you pick \nexample.local\n \n(because \nwe like it!)\n, or \nexample.test\n since \n.test\n \nis the shortest available name where the rug is not likely to be pulled out from under us in the future.  \n\n\nChanging the Domain Name\n\u00b6\n\n\nAssuming you stored your project in a subdirectory  named \nexample.local\n of a \nSites\n directory \nthen to change WPLib Box's domain name is as simple as updating \nHOSTNAME\n in that project\ndirectory, and then running \nvagrant reload\n:\n\n\nMacOS or Linux\n\n\ncd ~/Sites/example.local\necho example.local > HOSTNAME\nvagrant reload\n\n\n\n\n\nWindows\n\n\ncd C:\\Sites\\example.local\necho example.local > HOSTNAME\nvagrant reload\n\n\n\n\n\nYou can, of course, also load \nHOSTNAME\n into your IDE or text editor and change it that way too.",
+            "title": "Hostname"
+        },
+        {
+            "location": "/docs/setup/hostname/#configuring-wplib-boxs-domain-name",
+            "text": "By default WPLib Box configures itself to load using the domain name  wplib.box , \nassuming you allow it to update your  hosts  file . But \nthis is probably not the domain you want to use to work on your client's website.",
+            "title": "Configuring WPLib Box's Domain Name"
+        },
+        {
+            "location": "/docs/setup/hostname/#choosing-a-top-level-domain-for-local-use",
+            "text": "In  \"early days\"  we local developers always used  .dev  for our local domains; e.g.  example.dev . \nBut  thanks to Google  that \nis not really a good option anymore, especially if you ever plan to use Chrome.    So let's say your client's website is  example.com ; we recommend you pick  example.local   (because \nwe like it!) , or  example.test  since  .test  \nis the shortest available name where the rug is not likely to be pulled out from under us in the future.",
+            "title": "Choosing a top-level domain for local use."
+        },
+        {
+            "location": "/docs/setup/hostname/#changing-the-domain-name",
+            "text": "Assuming you stored your project in a subdirectory  named  example.local  of a  Sites  directory \nthen to change WPLib Box's domain name is as simple as updating  HOSTNAME  in that project\ndirectory, and then running  vagrant reload :  MacOS or Linux  cd ~/Sites/example.local\necho example.local > HOSTNAME\nvagrant reload  Windows  cd C:\\Sites\\example.local\necho example.local > HOSTNAME\nvagrant reload  You can, of course, also load  HOSTNAME  into your IDE or text editor and change it that way too.",
+            "title": "Changing the Domain Name"
+        },
+        {
+            "location": "/docs/using/",
+            "text": "Using Aspects of WPLib Box\n\u00b6\n\n\nWPLib Box provides the following features that you can configure and/or control:\n\n\nCommon Use-cases\n\u00b6\n\n\nThese are what we have learned seem to be the most common needs for new users of WPLib Box:\n\n\n\n\nChange web server\n \u2014 \nApache, Nginx, etc.\n\n\nChange database server\n \u2014 MySQL, MariaDB, etc.\n\n\nChange PHP version\n  \u2014 \n5.2.4\n through \n7.2\n\n\nCache Servers\n**: \u2014 Several version of Memcached and Redis \n\n\nMkDocs Serve\n**: \u2014 Serving Markdown source with dynamic translation to HTML+CSS.\n\n\n\n\nWPLib Box's Command Line Tool\n\u00b6\n\n\n\n\nBox\n\n\n\n\nOther Command Line Tools\n\u00b6\n\n\n\n\nComposer\n\n\nWP CLI\n\n\nPhar\n\n\nMkDocs Build\n**: \u2014 Generating static HTML+CSS documentation from Markdown source.",
+            "title": "Overview"
+        },
+        {
+            "location": "/docs/using/#using-aspects-of-wplib-box",
+            "text": "WPLib Box provides the following features that you can configure and/or control:",
+            "title": "Using Aspects of WPLib Box"
+        },
+        {
+            "location": "/docs/using/#common-use-cases",
+            "text": "These are what we have learned seem to be the most common needs for new users of WPLib Box:   Change web server  \u2014  Apache, Nginx, etc.  Change database server  \u2014 MySQL, MariaDB, etc.  Change PHP version   \u2014  5.2.4  through  7.2  Cache Servers **: \u2014 Several version of Memcached and Redis   MkDocs Serve **: \u2014 Serving Markdown source with dynamic translation to HTML+CSS.",
+            "title": "Common Use-cases"
+        },
+        {
+            "location": "/docs/using/#wplib-boxs-command-line-tool",
+            "text": "Box",
+            "title": "WPLib Box's Command Line Tool"
+        },
+        {
+            "location": "/docs/using/#other-command-line-tools",
+            "text": "Composer  WP CLI  Phar  MkDocs Build **: \u2014 Generating static HTML+CSS documentation from Markdown source.",
+            "title": "Other Command Line Tools"
+        },
+        {
+            "location": "/docs/using/box-command/",
+            "text": "The \nbox\n command\n\u00b6\n\n\nTo use the \nbox\n command you will need to\n1\n \nvagrant SSH\n into WPLib Box. \n\n\n\n\n\n\n\n\n\n\nWe plan to offer an updated version of the \nbox\n command in the near future that will run on your \nhost computer\n.\u00a0\n\u21a9",
+            "title": "Box"
+        },
+        {
+            "location": "/docs/using/box-command/#the-box-command",
+            "text": "To use the  box  command you will need to 1   vagrant SSH  into WPLib Box.       We plan to offer an updated version of the  box  command in the near future that will run on your  host computer .\u00a0 \u21a9",
+            "title": "The box command"
+        },
+        {
+            "location": "/docs/using/composer/",
+            "text": "Using Composer with WPLib Box\n\u00b6\n\n\nWhile you certainly \ncan\n install Composer on your \nhost computer\n and use it with your \nWPLib Box project, hopefully you won't have to as  we've \nimplemented Composer within of WPLib Box\n.\n\n\n\n\nBug\n\n\nUnfortunately \nComposer is broken in \n0.17.0\n due to our changing \nthe default username for WPLib Box but not changing in the Composer container. \nThis should be \n\nfixed soon in \n0.17.1\n.\n\n\n\n\nUsing Composer\n\u00b6\n\n\nComposer\n is installed in the WPLib Box virtual machine so to use it you first \n\nSSH into WPLib Box\n and then run your Composer command, for example:\n\n\nvagrant ssh\ncomposer install\n\n\n\n\n\nImplementation\n\u00b6\n\n\nOur implementation of Composer follows WPLib Box's \nphilosophy of containerization\n \nand is thus implemented with our \nown Docker container\n.  \n\n\nOur \ncomposer\n command is itself is a Bash script which is designed to invoke the Composer container and that script \ncan be found at \n/opt/box/bin/composer\n after you \nvagrant ssh\n into WPLib Box.  \n\n\nCurrent Limitations\n\u00b6\n\n\n\n\nSome commands may have issues. If you find this to be the case \nplease \ncontact our support\n \nto let us know so we can address sooner than later.",
+            "title": "Composer"
+        },
+        {
+            "location": "/docs/using/composer/#using-composer-with-wplib-box",
+            "text": "While you certainly  can  install Composer on your  host computer  and use it with your \nWPLib Box project, hopefully you won't have to as  we've  implemented Composer within of WPLib Box .   Bug  Unfortunately  Composer is broken in  0.17.0  due to our changing \nthe default username for WPLib Box but not changing in the Composer container.  This should be  fixed soon in  0.17.1 .",
+            "title": "Using Composer with WPLib Box"
+        },
+        {
+            "location": "/docs/using/composer/#using-composer",
+            "text": "Composer  is installed in the WPLib Box virtual machine so to use it you first  SSH into WPLib Box  and then run your Composer command, for example:  vagrant ssh\ncomposer install",
+            "title": "Using Composer"
+        },
+        {
+            "location": "/docs/using/composer/#implementation",
+            "text": "Our implementation of Composer follows WPLib Box's  philosophy of containerization  \nand is thus implemented with our  own Docker container .    Our  composer  command is itself is a Bash script which is designed to invoke the Composer container and that script \ncan be found at  /opt/box/bin/composer  after you  vagrant ssh  into WPLib Box.",
+            "title": "Implementation"
+        },
+        {
+            "location": "/docs/using/composer/#current-limitations",
+            "text": "Some commands may have issues. If you find this to be the case  please  contact our support  \nto let us know so we can address sooner than later.",
+            "title": "Current Limitations"
+        },
+        {
+            "location": "/docs/using/mkdocs/",
+            "text": "Using MkDocs with WPLib Box\n\u00b6\n\n\nWhile you certainly \ncan\n install MkDocs on your \nhost computer\n and use it with your \nWPLib Box project, hopefully you won't have to as  we've \nimplemented MkDocs within of WPLib Box\n.\n\n\nUsing MkDocs\n\u00b6\n\n\nMkDocs\n allows you to both \ndynamically \nserve\n documentation\n from \n\nMarkdown\n files while you are writing your docs \n(just like you can dynamically \nserve PHP files from your web server)\n, and then MkDocs allows you \nto \nbuild\n a static website\n from those \nMarkdown files for hosting your docs on your web server.  \n\n\nDynamically Serving Markdown\n\u00b6\n\n\nWPLib Box automatically serves the Markdown files contained in your project's \n/mkdocs\n directory to \ndocs.wplib.box\n \nin your browser \n(or to whatever \ndocs.\n subdomain is created by \nVagrantfile\n when you add your own domain name in \nthe \nHOSTNAME\n file.)\n  \n\n\nWrite docs in Markdown\n\u00b6\n\n\nMkDocs allows you to write rich documentation in Markdown \u2014 great for documenting \nreusable plugins and themes \u2014 \nthat you can then version control!\n \n\n\nand view using the MkDocs built-in server which WPLib Box automatically configures\n\n\nto serve from your project's '`/mkdocs  \n\n\nin a root or subdirectory of your \nweb server containing the HTML, CSS and images that comprise a static copy of your documentation.\n\n\nreads the \n/mkdocs.yaml\n file which you can learn how to configure \nhere\n.\nIf you use our chosen default \nmaterial\n theme you can also learn to configure \nhere\n\nand \nhere\n. \n\n\nGenerating\n\u00b6\n\n\nso to use it you first \n\nSSH into WPLib Box\n and then run your MkDocs command, for example:\n\n\nvagrant ssh\nMkDocs install\n\n\n\n\n\nImplementation\n\u00b6\n\n\nOur implementation of MkDocs follows WPLib Box's \nphilosophy of containerization\n \nand is thus implemented with our \nown Docker container\n.  \n\n\nOur \nMkDocs\n command is itself is a Bash script which is designed to invoke the MkDocs container and that script \ncan be found at \n/opt/box/bin/mkdocs\n after you \nvagrant ssh\n into WPLib Box.  \n\n\nCurrent Limitations\n\u00b6\n\n\n\n\n\n\nRunning \nmkdocs\n almost always starts \nmkdocs serve\n which is not particularly useful, especially if you are \ntrying to run \nmkdocs --version\n or similar. \nWe plan to fix this very soon\n.\n\n\n\n\n\n\nSome commands may have issues. If you find this to be the case \nplease \ncontact our support\n \nto let us know so we can address sooner than later.",
+            "title": "MkDocs"
+        },
+        {
+            "location": "/docs/using/mkdocs/#using-mkdocs-with-wplib-box",
+            "text": "While you certainly  can  install MkDocs on your  host computer  and use it with your \nWPLib Box project, hopefully you won't have to as  we've  implemented MkDocs within of WPLib Box .",
+            "title": "Using MkDocs with WPLib Box"
+        },
+        {
+            "location": "/docs/using/mkdocs/#using-mkdocs",
+            "text": "MkDocs  allows you to both  dynamically  serve  documentation  from  Markdown  files while you are writing your docs  (just like you can dynamically \nserve PHP files from your web server) , and then MkDocs allows you  to  build  a static website  from those \nMarkdown files for hosting your docs on your web server.",
+            "title": "Using MkDocs"
+        },
+        {
+            "location": "/docs/using/mkdocs/#dynamically-serving-markdown",
+            "text": "WPLib Box automatically serves the Markdown files contained in your project's  /mkdocs  directory to  docs.wplib.box  \nin your browser  (or to whatever  docs.  subdomain is created by  Vagrantfile  when you add your own domain name in \nthe  HOSTNAME  file.)",
+            "title": "Dynamically Serving Markdown"
+        },
+        {
+            "location": "/docs/using/mkdocs/#write-docs-in-markdown",
+            "text": "MkDocs allows you to write rich documentation in Markdown \u2014 great for documenting \nreusable plugins and themes \u2014  that you can then version control!    and view using the MkDocs built-in server which WPLib Box automatically configures  to serve from your project's '`/mkdocs    in a root or subdirectory of your \nweb server containing the HTML, CSS and images that comprise a static copy of your documentation.  reads the  /mkdocs.yaml  file which you can learn how to configure  here .\nIf you use our chosen default  material  theme you can also learn to configure  here \nand  here .",
+            "title": "Write docs in Markdown"
+        },
+        {
+            "location": "/docs/using/mkdocs/#generating",
+            "text": "so to use it you first  SSH into WPLib Box  and then run your MkDocs command, for example:  vagrant ssh\nMkDocs install",
+            "title": "Generating"
+        },
+        {
+            "location": "/docs/using/mkdocs/#implementation",
+            "text": "Our implementation of MkDocs follows WPLib Box's  philosophy of containerization  \nand is thus implemented with our  own Docker container .    Our  MkDocs  command is itself is a Bash script which is designed to invoke the MkDocs container and that script \ncan be found at  /opt/box/bin/mkdocs  after you  vagrant ssh  into WPLib Box.",
+            "title": "Implementation"
+        },
+        {
+            "location": "/docs/using/mkdocs/#current-limitations",
+            "text": "Running  mkdocs  almost always starts  mkdocs serve  which is not particularly useful, especially if you are \ntrying to run  mkdocs --version  or similar.  We plan to fix this very soon .    Some commands may have issues. If you find this to be the case  please  contact our support  \nto let us know so we can address sooner than later.",
+            "title": "Current Limitations"
+        },
+        {
+            "location": "/docs/using/processvm/",
+            "text": "Changing your WPLib Box's PHP version\n\u00b6",
+            "title": "PHP"
+        },
+        {
+            "location": "/docs/using/processvm/#changing-your-wplib-boxs-php-version",
+            "text": "",
+            "title": "Changing your WPLib Box's PHP version"
+        },
+        {
+            "location": "/docs/using/servers/",
+            "text": "Configuring WPLib Box's Various Servers\n\u00b6\n\n\nWeb Servers\n\u00b6\n\n\nDatabase Servers\n\u00b6\n\n\nCache Servers\n\u00b6\n\n\nDoc Server\n\u00b6\n\n\nFor more about our only documenation server visit the \nMkDocs\n page.",
+            "title": "Servers"
+        },
+        {
+            "location": "/docs/using/servers/#configuring-wplib-boxs-various-servers",
+            "text": "",
+            "title": "Configuring WPLib Box's Various Servers"
+        },
+        {
+            "location": "/docs/using/servers/#web-servers",
+            "text": "",
+            "title": "Web Servers"
+        },
+        {
+            "location": "/docs/using/servers/#database-servers",
+            "text": "",
+            "title": "Database Servers"
+        },
+        {
+            "location": "/docs/using/servers/#cache-servers",
+            "text": "",
+            "title": "Cache Servers"
+        },
+        {
+            "location": "/docs/using/servers/#doc-server",
+            "text": "For more about our only documenation server visit the  MkDocs  page.",
+            "title": "Doc Server"
+        },
+        {
+            "location": "/docs/using/wp-cli/",
+            "text": "Using WP CLI with WPLib Box\n\u00b6\n\n\nWhile you certainly \ncan\n install WP CLI on your \nhost computer\n and use it with your \nWPLib Box project, hopefully you won't have to as  we've \nimplemented WP CLI within of WPLib Box\n.\n\n\n\n\nBug\n\n\nUnfortunately \nWP CLI is broken in \n0.17.0\n due to our changing the \nproject path in the VM but not changing in the WP CLI container. \nThis should be \n\nfixed soon in \n0.17.1\n.\n\n\n\n\nUsing WP-CLI\n\u00b6\n\n\nWP-CLI\n is installed in the WPLib Box virtual machine so to use it you first \n\nSSH into WPLib Box\n and then run your WP CLI command, for example:\n\n\nvagrant ssh\nwp plugin list\n\n\n\n\n\nImplementation\n\u00b6\n\n\nOur implementation of WP CLI follows WPLib Box's \nphilosophy of containerization\n \nand is thus implemented with our \nown Docker container\n.  \n\n\nOur \nwp\n command is itself is a Bash script which is designed to invoke the WP CLI container and that script \ncan be found at \n/opt/box/bin/wp\n after you \nvagrant ssh\n into WPLib Box.  \n\n\nCurrent Limitations\n\u00b6\n\n\n\n\n\n\nThe \nwp package\n subcommand is currently not supported.\n \u2014 This is due to the fact our WP CLI is packaged in \na Docker container and currently our container does not support a method to add packages to the inside of a container.\nWe do \nhave plans to correct this\n, however.       \n\n\n\n\n\n\nOther commands may also have issues. If you find this to be the case \nplease \ncontact our support\n \nto let us know so we can address sooner than later.",
+            "title": "WP CLI"
+        },
+        {
+            "location": "/docs/using/wp-cli/#using-wp-cli-with-wplib-box",
+            "text": "While you certainly  can  install WP CLI on your  host computer  and use it with your \nWPLib Box project, hopefully you won't have to as  we've  implemented WP CLI within of WPLib Box .   Bug  Unfortunately  WP CLI is broken in  0.17.0  due to our changing the \nproject path in the VM but not changing in the WP CLI container.  This should be  fixed soon in  0.17.1 .",
+            "title": "Using WP CLI with WPLib Box"
+        },
+        {
+            "location": "/docs/using/wp-cli/#using-wp-cli",
+            "text": "WP-CLI  is installed in the WPLib Box virtual machine so to use it you first  SSH into WPLib Box  and then run your WP CLI command, for example:  vagrant ssh\nwp plugin list",
+            "title": "Using WP-CLI"
+        },
+        {
+            "location": "/docs/using/wp-cli/#implementation",
+            "text": "Our implementation of WP CLI follows WPLib Box's  philosophy of containerization  \nand is thus implemented with our  own Docker container .    Our  wp  command is itself is a Bash script which is designed to invoke the WP CLI container and that script \ncan be found at  /opt/box/bin/wp  after you  vagrant ssh  into WPLib Box.",
+            "title": "Implementation"
+        },
+        {
+            "location": "/docs/using/wp-cli/#current-limitations",
+            "text": "The  wp package  subcommand is currently not supported.  \u2014 This is due to the fact our WP CLI is packaged in \na Docker container and currently our container does not support a method to add packages to the inside of a container.\nWe do  have plans to correct this , however.           Other commands may also have issues. If you find this to be the case  please  contact our support  \nto let us know so we can address sooner than later.",
+            "title": "Current Limitations"
+        },
+        {
+            "location": "/docs/tutorials/host-entries/",
+            "text": "",
+            "title": "Host Entries"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/",
+            "text": "SSH - \nSecure Shell\n\u00b6\n\n\nSSH\n stands for \n\"\nSecure Shell\n\"\n and is the standard means of managing a Linux-based \ncomputer that is not your \nhost computer\n.  Typically this means a \nremote\n computer, but as WPLib \nBox runs inside of your host computer then calling it a \n\"remote\"\n computer would be a misnomer, but the principle is the same. \n\n\nSaid another way, SSHing into a computer is a way to gain access to running commands at a command line for that computer \n\n\n\n\nSSH in Modern Culture\n\n\nSecure Shell is all the rage for hacker movies and TV shows like \nMr. Robot\n.  \n\n\n\n\nSSHing into WPLib Box\n\u00b6\n\n\nDepends on your host computer's operating system you access SSH slightly differently:\n\n\n\n\nOn Windows \nopen your command prompt\n, \n\n\nOn MacOS \nopen terminal\n, \n\n\nOr if Linux is your host computer, you know how to do this.\n\n\n\n\nOnce you have access to a terminal prompt type the following commands:\n\n\nMacOS or Linux\n\u00b6\n\n\ncd /path/to/your/project\nvagrant up\nvagrant ssh\n\n\n\n\n\nWindows\n\u00b6\n\n\ncd c:\\path\\to\\your\\project\nvagrant up\nvagrant ssh\n\n\n\n\n\nCommands Explained\n\u00b6\n\n\nIn case you are new to terminal: \n\n\n\n\ncd\n changes what you host computer thinks is your \ncurrent\n directory to that of your \n WordPress project's directory, \n\n\nThe \nvagrant up\n command makes sure your WPLib Box virtual machine is running for your project, and \n\n\nThe \nvagrant ssh\n command requests to enter your project's WPLib Box with a command prompt available.  \n\n\n\n\nOn Success:\n\u00b6\n\n\nIf you are successful, your screen should look like this:",
+            "title": "Secure Shell"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#ssh-secure-shell",
+            "text": "SSH  stands for  \" Secure Shell \"  and is the standard means of managing a Linux-based \ncomputer that is not your  host computer .  Typically this means a  remote  computer, but as WPLib \nBox runs inside of your host computer then calling it a  \"remote\"  computer would be a misnomer, but the principle is the same.   Said another way, SSHing into a computer is a way to gain access to running commands at a command line for that computer    SSH in Modern Culture  Secure Shell is all the rage for hacker movies and TV shows like  Mr. Robot .",
+            "title": "SSH - Secure Shell"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#sshing-into-wplib-box",
+            "text": "Depends on your host computer's operating system you access SSH slightly differently:   On Windows  open your command prompt ,   On MacOS  open terminal ,   Or if Linux is your host computer, you know how to do this.   Once you have access to a terminal prompt type the following commands:",
+            "title": "SSHing into WPLib Box"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#macos-or-linux",
+            "text": "cd /path/to/your/project\nvagrant up\nvagrant ssh",
+            "title": "MacOS or Linux"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#windows",
+            "text": "cd c:\\path\\to\\your\\project\nvagrant up\nvagrant ssh",
+            "title": "Windows"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#commands-explained",
+            "text": "In case you are new to terminal:    cd  changes what you host computer thinks is your  current  directory to that of your \n WordPress project's directory,   The  vagrant up  command makes sure your WPLib Box virtual machine is running for your project, and   The  vagrant ssh  command requests to enter your project's WPLib Box with a command prompt available.",
+            "title": "Commands Explained"
+        },
+        {
+            "location": "/docs/tutorials/secure-shell/#on-success",
+            "text": "If you are successful, your screen should look like this:",
+            "title": "On Success:"
+        },
+        {
+            "location": "/docs/tutorials/terminal/",
+            "text": "Opening a Terminal/Command Line Prompt\n\u00b6\n\n\nTo use WPlib Box you'll need to use the terminal a.k.a. command line. \n\n\nThis is really not as scary as it sounds. We have made everything you need to do relatively simple.\n\n\nTo open terminal/command line prompt:\n\n\n\n\nOn MacOS \nclick here\n to open a terminal, \n\n\nOn Windows \nclick here\n to open your command prompt, \n\n\nOr if Linux is your host computer, you know how to do this.",
+            "title": "Terminal"
+        },
+        {
+            "location": "/docs/tutorials/terminal/#opening-a-terminalcommand-line-prompt",
+            "text": "To use WPlib Box you'll need to use the terminal a.k.a. command line.   This is really not as scary as it sounds. We have made everything you need to do relatively simple.  To open terminal/command line prompt:   On MacOS  click here  to open a terminal,   On Windows  click here  to open your command prompt,   Or if Linux is your host computer, you know how to do this.",
+            "title": "Opening a Terminal/Command Line Prompt"
+        },
+        {
+            "location": "/docs/architecture/",
+            "text": "Overview of WPLib Box Architecture\n\u00b6",
+            "title": "Overview"
+        },
+        {
+            "location": "/docs/architecture/#overview-of-wplib-box-architecture",
+            "text": "",
+            "title": "Overview of WPLib Box Architecture"
+        },
+        {
+            "location": "/docs/architecture/components/",
+            "text": "Components in WPLib Box\n\u00b6\n\n\nWPLib Box defines a concept called a \n\"Component\"\n \n\n\n\n\nNote\n\n\nThe following describes our 1.0 vision for WPLib Box.\n\nThough not everything described below is implemented we plan to be feature-complete before 2019. \n\n\n\n\nCategories\n\u00b6\n\n\nIn general Components will fall into one or more of these categories:\n\n\n\n\nService Containers\n: Service apllications running in Docker containers; \ni.e. web servers, \n   database servers, process VMs (e.g. a PHP version), etc.\n\n\nExecutable Containers\n: Compiled binaries running inside of a Docker container; \ni.e. Command-line versions of PHP, Python \n   and Ruby as well tools like Git and SVN, etc.\n  \n\n\nScripts\n: Executable scripts that run by invoking an executable container; \ni.e. Composer, PHPUnit, WP-CLI, PHP-CodeSniffer, etc.\n\n\nSource\n: Source code files; \ni.e. WordPress core, plugins, themes and PHP libraries as well as collections of those files we will call Blueprints.\n\n\nData\n: Data files; \ni.e. MySQL dumps, XML files, JSON files, etc.\n\n\nMedia\n: Media files; \ni.e. Image files, video files, PDF files, etc.\n\n\n\n\nRequirements\n\u00b6\n\n\nEach component has a \n\"Named Type\"\n and each component must \nimplement\n the \n\"Interface\"\n defined by its named type.\n\n\nNamed Types\n\u00b6\n\n\nInterfaces\n\u00b6\n\n\nWPLib Box Installables\n\u00b6\n\n\nInstallables are a method to add additional functionality to WPLib Box. These packages can include anything, and any user can create a package.\n\n\nCurrent Installable Types\n\u00b6\n\n\nAll of the following Installable Types are implemented via a Docker Container and supplied \n- \ncontainer/webserver\n - An \nHTTP Web Server\n that runs on Linux that provides sufficient features to serve WordPress websites, such as Nginx.\n- \ncontainer/dbserver\n - A \nMySQL-compatible Database Server\n that runs on Linux that can serve databases for WordPress websites\n- \ncontainer/kvstore\n - A \nKey-Value Store\n typically used for persistent object caches in WordPress, such as Redis or Memcached\n- \ncontainer/processvm\n  - A \nPHP-style language engine\n used to execute WordPress source code.\n\n\nCurrently Supported Installables\n\u00b6\n\n\nWPLib Box can currently compose an operating \n\"stack\"\n from the following Installables \n(the first one listed in each category is the \ndefault installable\n)\n when you first install WPLib Box:\n\n\n\n\n\n\n\n\nCategory\n\n\nDefault Installable\n\n\nAlso Available\n\n\n\"Installable Type\"\n\n\nNotes\n\n\n\n\n\n\n\n\n\n\nWeb Server\n\n\nNginx\n\n\nApache\n and \nCaddy\n\n\ncontainer/webserver\n\n\n\n\n\n\n\n\nDB Server\n\n\nMySql\n\n\nMariaDB\n\n\ncontainer/dbserver\n\n\n\n\n\n\n\n\nKV Store\n\n\nRedis\n\n\nmemcached\n\n\ncontainer/kvstore\n\n\n\n\n\n\n\n\nProcess VM\n\n\nPHP 7.0\n\n\nPHP 7.1\n and \nPHP 5.6\n\n\ncontainer/processvm\n\n\nPHP 7.0 and 5.6 are \n(currently)\n implemented in Docker containers but PHP 7.1 has been installed directly to Linux while we wait for an official Docker PHP 7.1 container.\n\n\n\n\n\n\n\n\nDisclaimer:\n \nCurrently all except Caddy and \ncontainer/webserver\n are not actually implemented as installables, but instead installed directly. However it is our intention to convert them all to installables in the near future.\n\n\nHow Installables Work\n\u00b6\n\n\nInstallables are listed in the \nproject.json\n file\n for each project that uses WPLib Box. In this JSON file is a list of services that will get automatically configured and made to run whenever \nvagrant up\n is run. Vagrant delegates to \nbox startup\n which it runs inside in the Linux box \n(specifically this script does not run in the Windows or macOS host computer, it runs via SSH tunnelling in WPLib Box.)\n\n\nIf WPLib Box does not find that the installable has been previously installed in the current WPLib Box it reaches out to the Internet and downloads and installs the installable, and then ensures that it is running for the current project. This approach allows \neasy stack sharing during development among team members on multi-developer project\n, and it makes it \neasy for individual developers to pick of a prior project\n without having the spend time recreating the previously used development environment.\n\n\nNote that we expect the exact details of how installables work will to evolve significantly before we reach version 1.0 so we'll wait until things settle down before document them in detail. \n\n\nAnatomy of a Docker Container Installable.\n\u00b6\n\n\n\n\ninstallable.json\n - A file at the root level of the repository that defines the installable package.\n\n\ncommands\n directory - This subdirectory contains commands that can be executed by the guest CLI.\n\n\nREADME.md\n (optional) - This should detail how to install the package and the CLI commands made available.\n\n\n\n\ninstallable.json\n Contents\n\u00b6\n\n\nThis file is simply a collection of JSON objects that define the package.\n\n\nJSON Object Properties\n\u00b6\n\n\n\n\n\n\n\n\nProperty Name\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nname\n\n\nThis is the name of the installable. This should be in human readable form, \ne.g. \nMy Super Cool Installable\n.\n\n\n\n\n\n\nversion\n\n\nThe installable version. This should following Semantic Version rules, \ne.g. \n0.1.0\n.\n\n\n\n\n\n\ntype\n\n\nEach package has both a major and minor type. The major type defines the role the installable plays in the box, \n( e.g. \nwebserver\n )\n. The minor type is the implementation of the installable, \n( e.g. \ncontainer\n for a Docker container )\n. Currently, only Docker container minor type is supported.\n\n\n\n\n\n\ndownload\n\n\nThis is the source repository of the installable, \n( e.g. \nwplib/my-super-cool-installable\n )\n. Currently, only GitHub repositories are supported.\n\n\n\n\n\n\ncontainername\n\n\nThis is the name to use for the Docker container. It \nMUST\n be unique, \n( e.g. \nmysupercoolcontainer\n )\n.\n\n\n\n\n\n\nwebsite\n\n\nThis is the URL for the installable. This could be either the GitHub repository, or a link to a site or page dedicated to information about the installable package.\n\n\n\n\n\n\ncontains\n\n\nThis a JSON object with the following property/value pairs: \ntype\n, \nversion\n, and \nwebsite\n. If you were to create a installable for ElasticSearch, this object might be as follows:\n \n\ncontains:{ \n   \"type\": \"service/linux\", \n   \"version\": \"5.4.0\", \n   \"website\": \"https://github.com/elastic/elasticsearch\" \n}\n\n\n\n\n\n\n\nContainer Hosting\n\u00b6\n\n\nThe Docker containers used by our installables are hosted at the \nWPLib account on Docker Hub\n.",
+            "title": "Components"
+        },
+        {
+            "location": "/docs/architecture/components/#components-in-wplib-box",
+            "text": "WPLib Box defines a concept called a  \"Component\"     Note  The following describes our 1.0 vision for WPLib Box. \nThough not everything described below is implemented we plan to be feature-complete before 2019.",
+            "title": "Components in WPLib Box"
+        },
+        {
+            "location": "/docs/architecture/components/#categories",
+            "text": "In general Components will fall into one or more of these categories:   Service Containers : Service apllications running in Docker containers;  i.e. web servers, \n   database servers, process VMs (e.g. a PHP version), etc.  Executable Containers : Compiled binaries running inside of a Docker container;  i.e. Command-line versions of PHP, Python \n   and Ruby as well tools like Git and SVN, etc.     Scripts : Executable scripts that run by invoking an executable container;  i.e. Composer, PHPUnit, WP-CLI, PHP-CodeSniffer, etc.  Source : Source code files;  i.e. WordPress core, plugins, themes and PHP libraries as well as collections of those files we will call Blueprints.  Data : Data files;  i.e. MySQL dumps, XML files, JSON files, etc.  Media : Media files;  i.e. Image files, video files, PDF files, etc.",
+            "title": "Categories"
+        },
+        {
+            "location": "/docs/architecture/components/#requirements",
+            "text": "Each component has a  \"Named Type\"  and each component must  implement  the  \"Interface\"  defined by its named type.",
+            "title": "Requirements"
+        },
+        {
+            "location": "/docs/architecture/components/#named-types",
+            "text": "",
+            "title": "Named Types"
+        },
+        {
+            "location": "/docs/architecture/components/#interfaces",
+            "text": "",
+            "title": "Interfaces"
+        },
+        {
+            "location": "/docs/architecture/components/#wplib-box-installables",
+            "text": "Installables are a method to add additional functionality to WPLib Box. These packages can include anything, and any user can create a package.",
+            "title": "WPLib Box Installables"
+        },
+        {
+            "location": "/docs/architecture/components/#current-installable-types",
+            "text": "All of the following Installable Types are implemented via a Docker Container and supplied \n-  container/webserver  - An  HTTP Web Server  that runs on Linux that provides sufficient features to serve WordPress websites, such as Nginx.\n-  container/dbserver  - A  MySQL-compatible Database Server  that runs on Linux that can serve databases for WordPress websites\n-  container/kvstore  - A  Key-Value Store  typically used for persistent object caches in WordPress, such as Redis or Memcached\n-  container/processvm   - A  PHP-style language engine  used to execute WordPress source code.",
+            "title": "Current Installable Types"
+        },
+        {
+            "location": "/docs/architecture/components/#currently-supported-installables",
+            "text": "WPLib Box can currently compose an operating  \"stack\"  from the following Installables  (the first one listed in each category is the  default installable )  when you first install WPLib Box:     Category  Default Installable  Also Available  \"Installable Type\"  Notes      Web Server  Nginx  Apache  and  Caddy  container/webserver     DB Server  MySql  MariaDB  container/dbserver     KV Store  Redis  memcached  container/kvstore     Process VM  PHP 7.0  PHP 7.1  and  PHP 5.6  container/processvm  PHP 7.0 and 5.6 are  (currently)  implemented in Docker containers but PHP 7.1 has been installed directly to Linux while we wait for an official Docker PHP 7.1 container.     Disclaimer:   Currently all except Caddy and  container/webserver  are not actually implemented as installables, but instead installed directly. However it is our intention to convert them all to installables in the near future.",
+            "title": "Currently Supported Installables"
+        },
+        {
+            "location": "/docs/architecture/components/#how-installables-work",
+            "text": "Installables are listed in the  project.json  file  for each project that uses WPLib Box. In this JSON file is a list of services that will get automatically configured and made to run whenever  vagrant up  is run. Vagrant delegates to  box startup  which it runs inside in the Linux box  (specifically this script does not run in the Windows or macOS host computer, it runs via SSH tunnelling in WPLib Box.)  If WPLib Box does not find that the installable has been previously installed in the current WPLib Box it reaches out to the Internet and downloads and installs the installable, and then ensures that it is running for the current project. This approach allows  easy stack sharing during development among team members on multi-developer project , and it makes it  easy for individual developers to pick of a prior project  without having the spend time recreating the previously used development environment.  Note that we expect the exact details of how installables work will to evolve significantly before we reach version 1.0 so we'll wait until things settle down before document them in detail.",
+            "title": "How Installables Work"
+        },
+        {
+            "location": "/docs/architecture/components/#anatomy-of-a-docker-container-installable",
+            "text": "installable.json  - A file at the root level of the repository that defines the installable package.  commands  directory - This subdirectory contains commands that can be executed by the guest CLI.  README.md  (optional) - This should detail how to install the package and the CLI commands made available.",
+            "title": "Anatomy of a Docker Container Installable."
+        },
+        {
+            "location": "/docs/architecture/components/#installablejson-contents",
+            "text": "This file is simply a collection of JSON objects that define the package.",
+            "title": "installable.json Contents"
+        },
+        {
+            "location": "/docs/architecture/components/#json-object-properties",
+            "text": "Property Name  Description      name  This is the name of the installable. This should be in human readable form,  e.g.  My Super Cool Installable .    version  The installable version. This should following Semantic Version rules,  e.g.  0.1.0 .    type  Each package has both a major and minor type. The major type defines the role the installable plays in the box,  ( e.g.  webserver  ) . The minor type is the implementation of the installable,  ( e.g.  container  for a Docker container ) . Currently, only Docker container minor type is supported.    download  This is the source repository of the installable,  ( e.g.  wplib/my-super-cool-installable  ) . Currently, only GitHub repositories are supported.    containername  This is the name to use for the Docker container. It  MUST  be unique,  ( e.g.  mysupercoolcontainer  ) .    website  This is the URL for the installable. This could be either the GitHub repository, or a link to a site or page dedicated to information about the installable package.    contains  This a JSON object with the following property/value pairs:  type ,  version , and  website . If you were to create a installable for ElasticSearch, this object might be as follows:   contains:{ \n   \"type\": \"service/linux\", \n   \"version\": \"5.4.0\", \n   \"website\": \"https://github.com/elastic/elasticsearch\" \n}",
+            "title": "JSON Object Properties"
+        },
+        {
+            "location": "/docs/architecture/components/#container-hosting",
+            "text": "The Docker containers used by our installables are hosted at the  WPLib account on Docker Hub .",
+            "title": "Container Hosting"
+        },
+        {
+            "location": "/docs/architecture/stacks/",
+            "text": "",
+            "title": "Stacks"
+        },
+        {
+            "location": "/docs/architecture/project.json/",
+            "text": "project.json\n\u00b6\n\n\nThe current version of WPLib Box is configured using a project-specific \nproject.json\n file which you can find in the \nroot of your project directory.  The default value for \nproject.json\n for version \n0.17.0\n is:\n\n\n{\n    \"stack\" : {\n        \"wordpress/dbserver\":    \"wplib/mysql:5.5.60\",\n        \"wordpress/webserver\":   \"wplib/nginx:1.14.0\",\n        \"wordpress/processvm\":   \"wplib/php:7.1.18\",\n        \"wordpress/cacheserver\": \"wplib/redis:4.0.9\",\n        \"mkdocs/webserver\":  \"wplib/mkdocs:0.15.3\",\n        \"box/mailsender\":        \"wplib/mailhog:1.0.0\",\n        \"box/webproxy\":      \"wplib/proxy:1.14.0\",\n        \"box/sqladmin\":      \"wplib/adminer:4.6.2\"\n    }\n}",
+            "title": "project.json"
+        },
+        {
+            "location": "/docs/architecture/project.json/#projectjson",
+            "text": "The current version of WPLib Box is configured using a project-specific  project.json  file which you can find in the \nroot of your project directory.  The default value for  project.json  for version  0.17.0  is:  {\n    \"stack\" : {\n        \"wordpress/dbserver\":    \"wplib/mysql:5.5.60\",\n        \"wordpress/webserver\":   \"wplib/nginx:1.14.0\",\n        \"wordpress/processvm\":   \"wplib/php:7.1.18\",\n        \"wordpress/cacheserver\": \"wplib/redis:4.0.9\",\n        \"mkdocs/webserver\":  \"wplib/mkdocs:0.15.3\",\n        \"box/mailsender\":        \"wplib/mailhog:1.0.0\",\n        \"box/webproxy\":      \"wplib/proxy:1.14.0\",\n        \"box/sqladmin\":      \"wplib/adminer:4.6.2\"\n    }\n}",
+            "title": "project.json"
+        },
+        {
+            "location": "/github/",
+            "text": "Github Repos for WPLib Box\n\u00b6\n\n\nThe following are the GitHub repositories that collectively contribute to the software platform that is WPLib Box at the time\n1\n of this writing. \n\n\nPrimary Repositories\n\u00b6\n\n\nwplib/wplib-box\n\u00b6\n\n\nThis is the main repository for WPLib Box from which \nthe releases\n \nare \ngenerated\n and \nthe issues and feature requests\n \nare tracked.\n\n\nwplib/box-support\n\u00b6\n\n\nContains the \nWPLib Box Support plugin\n that provides, among other things, \npassword-free login\n2\n to the WordPress admin. \n\n\nwplib/box-welcome\n\u00b6\n\n\nContains the \nWPLib Box Welcome theme\n which is an entry point for \nnew users of WPLib Box. \n\n\nIn future versions it will be replaced by a desktop admin console for configuring the box.\n\n\nwplib/box-scripts\n\u00b6\n\n\nContains the Bash-based command line tool for managing WPLib Box after running \nvagrant ssh\n to enter into the \nLinux-based of WPLib Box. \n\n\nIn future versions this will be replaced with a \nGo-based command line utility\n.\n\n\nwplib/box-docs\n\u00b6\n\n\nContains the Markdown source for this MkDocs-generated set of documentation.\n\n\nwplib/box-installer\n\u00b6\n\n\nIn the near future \u2014 once we convert WPlib Box to a fully multi-project box \u2014 this repository will contain \n\n.exe\n and \n.pkg\n installers for Windows and Mac, respectively.  \n\n\nwplib/box-cli\n\u00b6\n\n\nIn the near future this repository will contain Go source code for the future command line utility for \nmanaging WPLib Box.  \n\n\nwplib/box-api\n\u00b6\n\n\nIn the near future this repository will contain Go source code for the REST API that will allow WPLib Box \nto be fully automated using RESTful API calls.  \n\n\nwplib/box-admin\n\u00b6\n\n\nIn the near future this repository will contain the source code for an Electron-based desktop app that will allow \nnon-technical end-users to manage and configure WPLib Box.  \n\n\nwplib/website\n\u00b6\n\n\nContains this source code for our primary website \nwplib.org\n, but not for \nwplib.org/box/\n \nwhich is contained in the \nwplib/box-docs\n repository.  \n\n\nwplib/logos\n\u00b6\n\n\nThe offical logos for WPLib Box.\n\n\nDocker Containers Repos\n\u00b6\n\n\nBox-global Components\n\u00b6\n\n\nService Containers\n\u00b6\n\n\nwplib/proxy-docker\n\u00b6\n\n\nwplib/maihog-docker\n\u00b6\n\n\nwplib/adminer-docker\n\u00b6\n\n\nProject-specific Components\n\u00b6\n\n\nService Containers\n\u00b6\n\n\nwplib/php-docker\n\u00b6\n\n\nwplib/nginx-docker\n\u00b6\n\n\nwplib/apache-docker\n\u00b6\n\n\nwplib/mysql-docker\n\u00b6\n\n\nwplib/mariadb-docker\n\u00b6\n\n\nwplib/redis-docker\n\u00b6\n\n\nwplib/memcached-docker\n\u00b6\n\n\nwplib/mkdocs-docker\n\u00b6\n\n\nExecutable Containers\n\u00b6\n\n\nwplib/php-docker\n\u00b6\n\n\nwplib/composer-docker\n\u00b6\n\n\nwplib/wp-cli-docker\n\u00b6\n\n\nwplib/wordpress-docker\n\u00b6\n\n\nPotential Containers\n\u00b6\n\n\nwplib/caddy-docker\n\u00b6\n\n\nwplib/dns-docker\n\u00b6\n\n\nDeprecated Repositories\n\u00b6\n\n\nwplib/php-fpm-docker\n\u00b6\n\n\nwplib/apache2-docker\n\u00b6\n\n\nwplib/caddy-package\n\u00b6\n\n\nwplib/box-cli2\n\u00b6\n\n\nwplib/ERROR-CODES\n\u00b6\n\n\n\n\n\n\n\n\n\n\nLast updated 2018-07-07.\u00a0\n\u21a9\n\n\n\n\n\n\nPassword-free login \nonly works\n when running locally within WPLib Box, unless otherwise configured by hooks.\u00a0\n\u21a9",
+            "title": "Overview"
+        },
+        {
+            "location": "/github/#github-repos-for-wplib-box",
+            "text": "The following are the GitHub repositories that collectively contribute to the software platform that is WPLib Box at the time 1  of this writing.",
+            "title": "Github Repos for WPLib Box"
+        },
+        {
+            "location": "/github/#primary-repositories",
+            "text": "",
+            "title": "Primary Repositories"
+        },
+        {
+            "location": "/github/#wplibwplib-box",
+            "text": "This is the main repository for WPLib Box from which  the releases  \nare  generated  and  the issues and feature requests  \nare tracked.",
+            "title": "wplib/wplib-box"
+        },
+        {
+            "location": "/github/#wplibbox-support",
+            "text": "Contains the  WPLib Box Support plugin  that provides, among other things, \npassword-free login 2  to the WordPress admin.",
+            "title": "wplib/box-support"
+        },
+        {
+            "location": "/github/#wplibbox-welcome",
+            "text": "Contains the  WPLib Box Welcome theme  which is an entry point for \nnew users of WPLib Box.   In future versions it will be replaced by a desktop admin console for configuring the box.",
+            "title": "wplib/box-welcome"
+        },
+        {
+            "location": "/github/#wplibbox-scripts",
+            "text": "Contains the Bash-based command line tool for managing WPLib Box after running  vagrant ssh  to enter into the \nLinux-based of WPLib Box.   In future versions this will be replaced with a  Go-based command line utility .",
+            "title": "wplib/box-scripts"
+        },
+        {
+            "location": "/github/#wplibbox-docs",
+            "text": "Contains the Markdown source for this MkDocs-generated set of documentation.",
+            "title": "wplib/box-docs"
+        },
+        {
+            "location": "/github/#wplibbox-installer",
+            "text": "In the near future \u2014 once we convert WPlib Box to a fully multi-project box \u2014 this repository will contain  .exe  and  .pkg  installers for Windows and Mac, respectively.",
+            "title": "wplib/box-installer"
+        },
+        {
+            "location": "/github/#wplibbox-cli",
+            "text": "In the near future this repository will contain Go source code for the future command line utility for \nmanaging WPLib Box.",
+            "title": "wplib/box-cli"
+        },
+        {
+            "location": "/github/#wplibbox-api",
+            "text": "In the near future this repository will contain Go source code for the REST API that will allow WPLib Box \nto be fully automated using RESTful API calls.",
+            "title": "wplib/box-api"
+        },
+        {
+            "location": "/github/#wplibbox-admin",
+            "text": "In the near future this repository will contain the source code for an Electron-based desktop app that will allow \nnon-technical end-users to manage and configure WPLib Box.",
+            "title": "wplib/box-admin"
+        },
+        {
+            "location": "/github/#wplibwebsite",
+            "text": "Contains this source code for our primary website  wplib.org , but not for  wplib.org/box/  \nwhich is contained in the  wplib/box-docs  repository.",
+            "title": "wplib/website"
+        },
+        {
+            "location": "/github/#wpliblogos",
+            "text": "The offical logos for WPLib Box.",
+            "title": "wplib/logos"
+        },
+        {
+            "location": "/github/#docker-containers-repos",
+            "text": "",
+            "title": "Docker Containers Repos"
+        },
+        {
+            "location": "/github/#box-global-components",
+            "text": "",
+            "title": "Box-global Components"
+        },
+        {
+            "location": "/github/#service-containers",
+            "text": "",
+            "title": "Service Containers"
+        },
+        {
+            "location": "/github/#wplibproxy-docker",
+            "text": "",
+            "title": "wplib/proxy-docker"
+        },
+        {
+            "location": "/github/#wplibmaihog-docker",
+            "text": "",
+            "title": "wplib/maihog-docker"
+        },
+        {
+            "location": "/github/#wplibadminer-docker",
+            "text": "",
+            "title": "wplib/adminer-docker"
+        },
+        {
+            "location": "/github/#project-specific-components",
+            "text": "",
+            "title": "Project-specific Components"
+        },
+        {
+            "location": "/github/#service-containers_1",
+            "text": "",
+            "title": "Service Containers"
+        },
+        {
+            "location": "/github/#wplibphp-docker",
+            "text": "",
+            "title": "wplib/php-docker"
+        },
+        {
+            "location": "/github/#wplibnginx-docker",
+            "text": "",
+            "title": "wplib/nginx-docker"
+        },
+        {
+            "location": "/github/#wplibapache-docker",
+            "text": "",
+            "title": "wplib/apache-docker"
+        },
+        {
+            "location": "/github/#wplibmysql-docker",
+            "text": "",
+            "title": "wplib/mysql-docker"
+        },
+        {
+            "location": "/github/#wplibmariadb-docker",
+            "text": "",
+            "title": "wplib/mariadb-docker"
+        },
+        {
+            "location": "/github/#wplibredis-docker",
+            "text": "",
+            "title": "wplib/redis-docker"
+        },
+        {
+            "location": "/github/#wplibmemcached-docker",
+            "text": "",
+            "title": "wplib/memcached-docker"
+        },
+        {
+            "location": "/github/#wplibmkdocs-docker",
+            "text": "",
+            "title": "wplib/mkdocs-docker"
+        },
+        {
+            "location": "/github/#executable-containers",
+            "text": "",
+            "title": "Executable Containers"
+        },
+        {
+            "location": "/github/#wplibphp-docker_1",
+            "text": "",
+            "title": "wplib/php-docker"
+        },
+        {
+            "location": "/github/#wplibcomposer-docker",
+            "text": "",
+            "title": "wplib/composer-docker"
+        },
+        {
+            "location": "/github/#wplibwp-cli-docker",
+            "text": "",
+            "title": "wplib/wp-cli-docker"
+        },
+        {
+            "location": "/github/#wplibwordpress-docker",
+            "text": "",
+            "title": "wplib/wordpress-docker"
+        },
+        {
+            "location": "/github/#potential-containers",
+            "text": "",
+            "title": "Potential Containers"
+        },
+        {
+            "location": "/github/#wplibcaddy-docker",
+            "text": "",
+            "title": "wplib/caddy-docker"
+        },
+        {
+            "location": "/github/#wplibdns-docker",
+            "text": "",
+            "title": "wplib/dns-docker"
+        },
+        {
+            "location": "/github/#deprecated-repositories",
+            "text": "",
+            "title": "Deprecated Repositories"
+        },
+        {
+            "location": "/github/#wplibphp-fpm-docker",
+            "text": "",
+            "title": "wplib/php-fpm-docker"
+        },
+        {
+            "location": "/github/#wplibapache2-docker",
+            "text": "",
+            "title": "wplib/apache2-docker"
+        },
+        {
+            "location": "/github/#wplibcaddy-package",
+            "text": "",
+            "title": "wplib/caddy-package"
+        },
+        {
+            "location": "/github/#wplibbox-cli2",
+            "text": "",
+            "title": "wplib/box-cli2"
+        },
+        {
+            "location": "/github/#wpliberror-codes",
+            "text": "Last updated 2018-07-07.\u00a0 \u21a9    Password-free login  only works  when running locally within WPLib Box, unless otherwise configured by hooks.\u00a0 \u21a9",
+            "title": "wplib/ERROR-CODES"
+        },
+        {
+            "location": "/download/",
+            "text": "Click here\n to download WPLib Box.\n\u00b6\n\n\nAfter downloading, visit our \nQuick Start\n to get started using WPLib Box.",
+            "title": "Downloading"
+        },
+        {
+            "location": "/download/#click-here-to-download-wplib-box",
+            "text": "After downloading, visit our  Quick Start  to get started using WPLib Box.",
+            "title": "Click here to download WPLib Box."
+        }
+    ]
+}

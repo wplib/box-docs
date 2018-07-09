@@ -30,8 +30,10 @@ to serve from your project's '`/mkdocs
 web server containing the HTML, CSS and images that comprise a static copy of your documentation.
 
 reads the `/mkdocs.yaml` file which you can learn how to configure [**here**](https://www.mkdocs.org/user-guide/configuration/).
-If you use our chosen default `material` theme you can also learn to configure [**here**](https://squidfunk.github.io/mkdocs-material/customization/)
-and [**here**](https://squidfunk.github.io/mkdocs-material/extensions/admonition/). 
+
+If you use our chosen default `material` theme you can also learn to configure via [**customizations**](https://squidfunk.github.io/mkdocs-material/customization/), 
+[**extensions**](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) and 
+a [**cheatsheet**](https://yakworks.github.io/mkdocs-material-components/cheat-sheet/). 
   
 ### Generating 
 

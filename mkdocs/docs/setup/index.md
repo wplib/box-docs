@@ -1,6 +1,8 @@
 title: Initial Setup
 
-# Initial Setup for WPLib Box
+# NOT FINISHED
+
+## Initial Setup for WPLib Box
 
 
 These seem to be the ==most common needs== for new users when setting up WPLib Box:

@@ -1,6 +1,7 @@
 title: Components
 
-# Components in WPLib Box 
+# NOT FINISHED
+## Components in WPLib Box 
 
 WPLib Box defines a concept called a _"Component"_ 
 

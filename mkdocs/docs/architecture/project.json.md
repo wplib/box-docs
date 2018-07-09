@@ -1,6 +1,7 @@
 title: project.json
 
-# `project.json`
+# NOT FINISHED
+## `project.json`
 
 The current version of WPLib Box is configured using a project-specific `project.json` file which you can find in the 
 root of your project directory.  The default value for `project.json` for version `0.17.0` is:

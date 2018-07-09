@@ -1,6 +1,7 @@
 title: Roadmap
 
-# The WPLib Box Roadmap
+# OLDER CONTENT; NOT YET EDITED
+## The WPLib Box Roadmap
 At this point our _"Roadmap"_ is more of a _**work-in-progress**_ vision document as the project only has  [one sponsor](http://newclarity.net) and thus no dedicated staff so we really cannot commit to any timelines _(yet)._ 
 
 _(But if you want to sponsor the project to help us reach a dedicated staff level, please [_contact us..._](http://slackpass.io/wplib))_

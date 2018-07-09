@@ -1,6 +1,7 @@
 title: Box command
 
-# The `box` command
+# NOT FINISHED
+## The `box` command
 To use the `box` command you will need to[^1] `vagrant SSH` into WPLib Box. 
 
 

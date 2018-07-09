@@ -1,6 +1,7 @@
 title: Glossary
 
-# Glossary of Terms related to WPLib Box
+# NOT COMPLETE
+## Glossary of Terms related to WPLib Box
 
 When working with a new tool you can often be overwhelmed by new jargon. 
 While WPLib Box is unfortunately no different our vision is to empower

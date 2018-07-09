@@ -1,6 +1,7 @@
 title: Philosophy
 
-# Philosophy Governing WPLib Box
+# NOT YET COMPLETE
+## Philosophy Governing WPLib Box
 
 The following philosophies are those the WPLib Box team uses to govern our strategic vision and tactical decision 
 regarding everything we do related to WPLib Box.  

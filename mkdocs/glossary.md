@@ -67,7 +67,7 @@ The following are terms are some of the ones we use in our documentation, althou
  your WPlib Box's [software stack](#software-stack). 
  
  A _component_ can be a [container](#containers), a script, source code, or various other types of files. 
- To learn more details about [_WPLib Box Components_](/architecture/components/), click the preceding link.
+ To learn more details about [_WPLib Box Components_](/docs/architecture/components/), click the preceding link.
 
 ### Containers
 ==Containers== in the context of WPLib Box are used to package each [service and executable](/architecture/components/#categories)

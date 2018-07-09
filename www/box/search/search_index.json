@@ -2,18 +2,18 @@
     "docs": [
         {
             "location": "/",
-            "text": "\u00b6\n\n\nIs WPLib Box for you?\n\u00b6\n\n\n\n\nAre you a WordPress professional? \n\n\nDo you \n(help)\n build WordPress websites for other people?\n\n\nAre you a plug-and-play WordPress \n\"\nSite Builder\n?\"\n\n\nAre you an HTML/CSS and/or Javascript \nFront-end Developer\n? \n\n\nOr are you a PHP/MySQL \nBackend Developer\n?\n\n\n\n\nIf you answered \n\"yes\"\n to any of those questions\n then \nWPLib Box was designed and built for \nyou\n.\n\u00b6\n\n\nIn summary, WPLib Box's goal is to be: \n\n\n\n\n\"Every WordPress professional's \npreferred\n local development solution.\"",
+            "text": "\u00b6\n\n\nIs WPLib Box for you?\n\u00b6\n\n\n\n\nDo you consider yourself a WordPress professional? \n\n\nDo you \n(help)\n build WordPress websites for internal or external clients?\n\n\nAre you a plug-and-play WordPress \n\"\nSite Builder\n?\"\n\n\nAre you an HTML/CSS and/or Javascript \nFront-end Developer\n? \n\n\nAre you a PHP/MySQL \nBackend Developer\n?\n\n\nOr are you any combination of the above?\n\n\n\n\nIf you answered \n\"yes\"\n to any of these questions\n \u00a0\u00a0\u00a0then \nWPLib Box was designed for \nyou\n.\n\u00b6\n\n\nIn summary, WPLib Box's goal is to be: \n\n\n\n\n\"Every WordPress professional's \npreferred\n local development solution.\"",
             "title": "Home"
         },
         {
             "location": "/#is-wplib-box-for-you",
-            "text": "Are you a WordPress professional?   Do you  (help)  build WordPress websites for other people?  Are you a plug-and-play WordPress  \" Site Builder ?\"  Are you an HTML/CSS and/or Javascript  Front-end Developer ?   Or are you a PHP/MySQL  Backend Developer ?",
+            "text": "Do you consider yourself a WordPress professional?   Do you  (help)  build WordPress websites for internal or external clients?  Are you a plug-and-play WordPress  \" Site Builder ?\"  Are you an HTML/CSS and/or Javascript  Front-end Developer ?   Are you a PHP/MySQL  Backend Developer ?  Or are you any combination of the above?",
             "title": "Is WPLib Box for you?"
         },
         {
-            "location": "/#if-you-answered-yes-to-any-of-those-questions-then-wplib-box-was-designed-and-built-for-you",
+            "location": "/#if-you-answered-yes-to-any-of-these-questions-then-wplib-box-was-designed-for-you",
             "text": "In summary, WPLib Box's goal is to be:    \"Every WordPress professional's  preferred  local development solution.\"",
-            "title": "If you answered \"yes\" to any of those questions then WPLib Box was designed and built for you."
+            "title": "If you answered \"yes\" to any of these questions &nbsp;&nbsp;&nbsp;then WPLib Box was designed for you."
         },
         {
             "location": "/faq/",

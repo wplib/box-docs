@@ -227,6 +227,39 @@ each project:
 ??? note "Why we plan to stop using [Vagrant](#vagrant)" 
     This extremely inefficent use of storage is but one of the many reasons we are planning to replace Vagrant with our own solution in the very near future. 
 
+### Site Builder
+Here at the WPLib Box team we define a _"Site Builder"_ as someone who installs WordPress, plugins, and themes 
+&mdash; who might tweak the HTML, CSS, JS or PHP from time to time &mdash; but for the most part is not and 
+does not consider themselves a _"programmer."_ 
+
+We **love** professional Site Builders and think they provide an invaluable service to their clients so we 
+are just as excited to hear from site builders how we can make WPLib Box better to help them their do their 
+jobs as we are to hear from front-end or even backend WordPress developers.  
+
+### Front-end Developer
+Here at the WPLib Box team we define a _"Front-end Developer"_ as someone who minimally has HTML and CSS 
+skills &mdash; especially for responsive design &mdash; and who may or may not have Javascript programming 
+skills and/or front-end build system skills combined with a CSS preprocessor like SASS or LESS. In our experience
+front-end development and theme development go hand-in-hand, although front-end developers can be found building 
+plugins as well. 
+
+And we **love** professional front-end developers as without them WordPress sites would never be as compelling 
+nor as functional as so many WordPress sites and themes have become. So we are very interested to hear from 
+front-end developers how we can make WPLib Box better to help them their do their jobs.   
+
+### Backend Developer
+Here at the WPLib Box team we define a _"Backend Developer"_ as someone who focuses on the PHP, MySQL and possibly
+REST API aspects of a WordPress site. In our experience backend development and plugin development go hand-in-hand
+ but that doesn't mean backend developers can't have significant sway over theme code as many back end developers
+ do.
+ 
+And finally we **love** professional backend developers because frankly we are backend developers too! Without us, 
+WordPress sites would never have the deep level of functionality that requires server-side coding and database 
+expertise. So we are also very interested to hear from backend developers whose workflow may differ from our own
+so that we can make WPLib Box better for you.   
+
+
+
 ## Suggestions for Improvement
 If you have any terms to add or suggestions for improvement to our existing descriptions we **welcome** your 
 suggestions.  So please help out your fellow developers and [**fork this repo**](https://github.com/wplib/box-docs), 

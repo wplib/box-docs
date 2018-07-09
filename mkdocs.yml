@@ -1,9 +1,9 @@
 site_name: 'WPLib Box'
-site_url: 'http://wplib.org/box/'
+site_url: 'http://wplib.org/docs/'
 docs_dir: 'mkdocs'
-site_dir: 'www/box'
+site_dir: 'www/docs'
 repo_name: 'WPLib Box'
-repo_url: 'https://github.com/wplib/wplib-box'
+repo_url: 'https://github.com/wplib/wplib-docs'
 use_directory_urls: true
 theme:
    name: 'material'

@@ -11,7 +11,7 @@ title: Home
 - Are you an HTML/CSS and/or Javascript [Front-end Developer](/glossary/#front-end-developer)? 
 - Or are you a PHP/MySQL [Backend Developer](/glossary/#backend-developer)?
 
-## If you answered _"yes"_ to any of those questions,<br> then ==WPLib Box was designed and built for **you**==.
+## If you answered _"yes"_ to any of those questions<br> then ==WPLib Box was designed and built for **you**==.
 
 In summary, WPLib Box's goal is to be: 
 

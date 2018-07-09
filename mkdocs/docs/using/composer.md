@@ -10,8 +10,8 @@ WPLib Box project, hopefully you won't have to as  we've ==implemented Composer 
     the default username for WPLib Box but not changing in the Composer container. ==This should be 
     [fixed soon in `0.17.1`](https://github.com/wplib/wplib-box/milestone/33)==.
 
-## Using WP-CLI
-[WP-CLI](http://wp-cli.org/) is installed in the WPLib Box virtual machine so to use it you first 
+## Using Composer
+[Composer](http://getcomposer.org/) is installed in the WPLib Box virtual machine so to use it you first 
 [SSH into WPLib Box](/docs/tutorials/secure-shell) and then run your Composer command, for example:
 
     vagrant ssh
@@ -26,6 +26,5 @@ can be found at `/opt/box/bin/composer` after you `vagrant ssh` into WPLib Box.
  
  
 ## Current Limitations
-
 - Some commands may have issues. If you find this to be the case ==please [contact our support](/support/)== 
 to let us know so we can address sooner than later.

@@ -48,12 +48,18 @@ pages:
     - 'Getting Started': 'quick-start/index.md'
   - 'Docs':
     - 'Overview': 'docs/index.md'
-    - 'Configuring':
-        - 'Overview': 'docs/configuring/index.md'
-        - 'project.json': 'docs/configuring/project.json.md'
+    - 'Initial Setup':
+        - 'Overview': 'docs/setup/index.md'
+        - 'Directories': 'docs/setup/directories.md'
+        - 'Hostname': 'docs/setup/hostname.md'
     - 'Using':
         - 'Overview': 'docs/using/index.md'
-        - 'Box command': 'docs/using/box-command.md'
+        - 'Box': 'docs/using/box-command.md'
+        - 'Composer': 'docs/using/composer.md'
+        - 'MkDocs': 'docs/using/mkdocs.md'
+        - 'PHP': 'docs/using/processvm.md'
+        - 'Servers': 'docs/using/servers.md'
+        - 'WP CLI': 'docs/using/wp-cli.md'
     - 'Tutorials':
         - 'Host Entries': 'docs/tutorials/host-entries.md'
         - 'Secure Shell': 'docs/tutorials/secure-shell.md'
@@ -62,6 +68,7 @@ pages:
         - 'Overview': 'docs/architecture/index.md'
         - 'Components': 'docs/architecture/components.md'
         - 'Stacks': 'docs/architecture/stacks.md'
+        - 'project.json': 'docs/architecture/project.json.md'
   - 'GitHub':
     - 'Overview': 'github/index.md'
   - 'Download':

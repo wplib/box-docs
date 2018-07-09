@@ -40,17 +40,20 @@ pages:
   - 'Glossary': 'glossary.md'
   - 'Troubleshooting': 'troubleshooting.md'
   - 'Roadmap': 'roadmap.md'
+  - 'Philosophy': 'philosophy.md'
+  - 'Team': 'team.md'
+  - 'Support': 'support.md'
   - 'About': 'about.md'
   - 'Quick Start':
     - 'Getting Started': 'quick-start/index.md'
   - 'Docs':
     - 'Overview': 'docs/index.md'
     - 'Configuring':
-        - 'Overview': 'docs/configure/index.md'
-        - 'project.json': 'docs/configure/project.json.md'
+        - 'Overview': 'docs/configuring/index.md'
+        - 'project.json': 'docs/configuring/project.json.md'
     - 'Using':
-        - 'Overview': 'docs/use/index.md'
-        - 'Box command': 'docs/use/box-command.md'
+        - 'Overview': 'docs/using/index.md'
+        - 'Box command': 'docs/using/box-command.md'
     - 'Tutorials':
         - 'Host Entries': 'docs/tutorials/host-entries.md'
         - 'Secure Shell': 'docs/tutorials/secure-shell.md'

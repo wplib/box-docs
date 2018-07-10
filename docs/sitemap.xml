@@ -2,152 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://wplib.org/docs/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/faq/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/glossary/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/troubleshooting/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/roadmap/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/philosophy/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/team/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/support/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/about/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/quick-start/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/setup/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/setup/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/setup/directories/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/setup/directories/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/setup/hostname/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/setup/hostname/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/box-command/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/box-command/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/composer/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/composer/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/mkdocs/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/mkdocs/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/processvm/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/processvm/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/project.json/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/servers/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/servers/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/using/wp-cli/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/wp-cli/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/tutorials/host-entries/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/tutorials/host-entries/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/tutorials/secure-shell/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/tutorials/secure-shell/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/tutorials/terminal/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/tutorials/terminal/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/architecture/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/using/architecture/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/architecture/components/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/projects/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/architecture/stacks/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/stacks/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://wplib.org/docs/docs/architecture/project.json/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <loc>http://wplib.org/docs/components/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/github/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://wplib.org/docs/download/</loc>
-     <lastmod>2018-07-09</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

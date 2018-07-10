@@ -92,13 +92,13 @@ and chocolate.
     <br><br>
     So, by analogy, a _"Platform"_ is like WordPress **with** hooks compared to just a 
     _"Product"_ which is like WordPress without. Thus ==WPLib Box is like WordPress with hooks== and can easily be 
-    [extended by 3rd party components](/docs/architecture/components.md).
+    [extended by 3rd party components](/components/).
 
 As [described above](#make-wordpress-easy-make-whatever-easily-possible) WPLib Box wants to make any 
 [software stack](/glossary/#sofware-stack) you need possible. But not only do we want to make it possible, 
 ==we want to make it _**easily**_ possible==, and that often means providing a simple-to-extend 
 [architecture](/docs/architecture) combined with the community leadership and infrastructure needed to support 
-3rd party [components](/docs/architecture/components/). And while we do not have the simple-to-extend 
+3rd party [components](/components/). And while we do not have the simple-to-extend 
 architecture finalized nor the infrastructure required in-place, those are two of our highest priorities 
 to pursue.
 
@@ -119,8 +119,6 @@ Our specific [architecture](/docs/architecture/) &mdash; a minimal [virtual mach
 with all functionality implemented as optional [containers](/glossary#container) &mdash; ensures WPLib Box 
 will be full-featured, _but never bloated._  
 
-
-  
 
 ## History of WPLib Box
 WPLib Box was envisioned simply after our project lead reached a breaking point of frustration with the then available 

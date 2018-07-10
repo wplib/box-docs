@@ -8,10 +8,6 @@ While WPLib Box is unfortunately no different our vision is to empower
 you to understand everything you need to know to use WPLib Box effectively, 
 such as this glossary.  
 
-## Important Terms 
-
-The following are terms are some of the ones we use in our documentation, although they are certainly not all. 
-
 !!! note 
     We are defining these terms as they related to WPLib Box. Thus our definitions may differ somewhat 
     from more the general definitions such as those you might find on Wikipedia.   
@@ -41,19 +37,6 @@ The following are terms are some of the ones we use in our documentation, althou
  The WPLib Box ==Guest== is the Linux-based [virtual machine](#virtual-machine) running within 
  your [host machine](#host-machine).
 
-### _(Software)_ Stack
-
- The WPLib Box ==(Software) Stack== is the collection of software used by WPLib Box to perform its job for you. 
- 
- To host WordPress in WPLib Box your local development stack consists of a web server like Nginx or Apache, 
- a database server like MySQL or MariaDB, a version of PHP such as 5.6 or 7.2 and possibly a cache server 
- like Memcached or Redis.
- 
- To learn more about [WPLib Box Stacks](/architecture/stacks/), click the link.
-
- For a more general purpose definition of _"[Software Stack](https://en.wikipedia.org/wiki/Software_stack)"_ 
- click the link to see what Wikipedia has to say. 
- 
 ### Provisioning
 
  ==Provisioning== is the process of installing and configuring the [software stack](#software-stack) 
@@ -72,7 +55,7 @@ The following are terms are some of the ones we use in our documentation, althou
 
 ### Containers
 ==Containers== in the context of WPLib Box are used to package each [service and executable](/architecture/components/#categories)
-[component](#components) in its own sandbox to effectively eliminate the most common conflicts that occur 
+[component](#component) in its own sandbox to effectively eliminate the most common conflicts that occur 
 between services and executables, and to be more flexible in terms of which services and executables can 
 be incorporate into a project's [software stack](#software-stack). 
  
@@ -259,7 +242,144 @@ WordPress sites would never have the deep level of functionality that requires s
 expertise. So we are also very interested to hear from backend developers whose workflow may differ from our own
 so that we can make WPLib Box better for you.   
 
+### Project 
 
+Most everything in WPLib Box is organized around the _"Project."_  A Project is identified by a primary local
+domain name e.g. `example.local` or `example.test`.  
+
+A Project is assigned a [directory](#base-projects-directory) for its source packages and data and media files which
+will be a subdirectory of the name identified by the primary local domain contained within the 
+[base projects directory](#base-projects-directory).  Thus if the base projects directory is `~/Sites` and the 
+project's local domain is `example.local` then the the project subdirectory would be `~/Sites/example.local`.   
+
+A Project also has a configuration file found in project subdirectory with the name `project.json`. It _(should)_ 
+contain all the information required for WPLib Box to completely recreate a working local development environment 
+for its Project.  As such, `project.json` files are typically version controlled and easily shared by team members.  
+
+More specifically, a Project has an [Ad-hoc Stack](#ad-hoc-stack) that identifies the [Components](#component) that 
+WPLib Box will run and/or make available when the project is _activated_. This ad-hoc stack is declared in the 
+`project.json` file.   
+
+### Base Projects Directory 
+A directory on your [host computer](#host-machine) that is mapped to `/projects/` within WPLib Box. A typical 
+example Base Projects Directory might be `~/Sites` or `C:\Sites`, if you are on MacOS/Linux or Windows, respectively.  
+
+!!! info The projects directory inside the box will soon change
+    In a near future version of WPLib Bix the `/projects` directory will be changed to `/home/box/projects`. 
+
+### _(Software)_ Stack
+
+In general a _"(Software) Stack"_ is ==the collection of software== used by a software application to do its job. 
+ 
+ To host WordPress in WPLib Box the collection of software used consists of a web server like Nginx or Apache, 
+ a database server like MySQL or MariaDB, a version of PHP such as 5.6 or 7.2 and possibly a cache server 
+ like Memcached or Redis.
+ 
+??? info "_Software Stack_ On Wikipedia"
+    A _"[Software Stack](https://en.wikipedia.org/wiki/Solution_stack)"_ on Wikipedia &mdash; such as 
+     [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)), 
+    [WIMP](https://en.wikipedia.org/wiki/WIMP_(software_bundle)), and 
+    [MEAN](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) &mdash; 
+    is a name identifying ==sets of software needed to create a complete software solution==. 
+    
+    In the first of 
+    these _"L.A.M.P."_ identifies _L)inux_, _A)pache_, _M)ySQL_ and _P)HP_, and LAMP is a 
+    well-known stack that supports the WordPress platform.
+
+### Stack
+
+In the context of WPLib Box, a _"Stack"_ is ==the collection of software [components](#component)==
+that turn  a basic do-anything Linux [virtual machine](#virtual-machine) into a powerhouse tailor-made 
+for the local development of WordPress websites, or the development of any other web solution, for 
+that matter.
+
+Stacks can also extend other Stacks, or said another way one Stack and inherit the attributes of another. 
+Our `"wordpress"` stack inherits from our `"lxmp"` stack, for example.
+
+For WPLib Box you have both [Named Stacks](#named-stack) and [Ad-hoc Stacks](#ad-hoc-stack).
+
+### Named Stack 
+
+WPLib Box's _"Named Stacks"_ specifies the "[_Type_](#component-type)" of [components](#component) required 
+to support a web solution such as WordPress, or any other web solution. And a Named Stack also defines the 
+number of each component(s) of a given type that are required, which is typically one each.
+
+However, a Named Stack ==is **abstract** and never used directly==; [Ad-hoc Stacks](#ad-hoc-stacks)
+are used by WPLib Box instead.
+
+The detailed specifications for the Named Stacks WPLib Box supports at any given time can be found in the 
+JSON files located in `/opt/box/etc/stacks`.
+
+!!! attention 
+    The initial JSON files for specifiying Named Stacks have not yet been finalized as of version `0.17.0`.
+
+### Ad-hoc Stack 
+
+A WPLib Box _"Ad-hoc Stack"_ is specific to a [Project](#project), and is the collection of [components](#component) 
+specified in the `"stack"` property of a a project's `project.json` file. 
+
+Typically an Ad-hoc Stack will include all the required components for at least one named stack, such as `"wordpress"`, 
+possibly its optional components, and then zero (0) of more general purposes components and/or components of 
+other named stacks.  
+
+This is an example of the default Ad-hoc Stack from the default `project.json` for `0.17.0`:
+
+    {
+        "stack" : {
+            "wordpress/dbserver":	 "wplib/mysql:5.5.60",
+            "wordpress/webserver":	 "wplib/nginx:1.14.0",
+            "wordpress/processvm":	 "wplib/php:7.1.18",
+            "wordpress/cacheserver": "wplib/redis:4.0.9",
+            "wordpress/cliapp":		 "wplib/wp-cli:1.5.1",
+            "mkdocs/webserver":		 "wplib/mkdocs:0.15.3",
+            "box/mailsender":		 "wplib/mailhog:1.0.0",
+            "box/webproxy":			 "wplib/proxy:1.14.0",
+            "box/sqladmin":			 "wplib/adminer:4.6.2"
+        }
+    }
+
+  
+!!! attention 
+    As of version `0.17.0` Ad-hoc stacks are only partially implemented, with some of the functionality
+    being hard-coded into various aspects of WPLib Box. That however is planned to change in the near
+    future. 
+
+### Component Type 
+ 
+A _"Component Type"_ is ==identified by its two-part name==, e.g. `wordpress/webserver` or `wordpress/dbserver`.  The 
+first part of the name identifies the named stack and the second part identifies the 
+_"[Interface](#component-type-interface)"_ within that named stack.
+   
+The detailed specifications for the known Component Types can be found in `/opt/box/etc/types`.
+
+!!! attention 
+    The defining JSON files for Component Types have not yet been finalized as of version `0.17.0`.  
+
+### Component Type Interface 
+ 
+A _"Component Type Interface"_ specifies the details neededs by WPLib Box to install and activate a component 
+as part of a WPLib Box [project](#project). These details include the _"[Class](#component-class)"_ of component 
+and then the details that the specific class of component requires.  
+
+Looking specifically at Service Containers the details needed for them include port number(s), IP address(es), 
+volume(s), number and usage for mount points, etc.  
+
+The detailed specifications for the known component type interfaces can be found in JSON files 
+within `/opt/box/etc/interfaces`.        
+
+!!! attention 
+    The defining JSON files for Component Types Interfaces have not yet been finalized as of version `0.17.0`.  
+
+### Component Class 
+ 
+A _"Component Class"_ is one of the following: 
+
+- **Service Container**    &mdash; Services like Nginx and MySQL. 
+- **Executable Container** &mdash; Executables such as the PHP CLI.
+- **Script Package**       &mdash; Scripts like WP CLI, Composer and PHPUnit
+- **Source Package/Files** &mdash; Source code such as WordPress core, plugins and themes
+- **Data Files**           &mdash; Data like MySQL dumps, XML and JSON files. 
+- **Media Files**          &mdash; Media such as images, video and PDF files.
 
 ## Suggestions for Improvement
 If you have any terms to add or suggestions for improvement to our existing descriptions we **welcome** your 

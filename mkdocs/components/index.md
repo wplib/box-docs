@@ -1,17 +1,16 @@
 title: Components
 
-# NOT FINISHED
+# NOT COMPLETE 
+
 ## Components in WPLib Box 
 
-WPLib Box defines a concept called a _"Component"_ 
+_"Components"_ provide the underlying guts of WPLib Box. 
 
-!!! note 
-    The following describes our 1.0 vision for WPLib Box.<br>
-    Though not everything described below is implemented we plan to be feature-complete before 2019. 
+Components are collected together into an [Ad-hoc Stack](/glossary/#ad-hoc-stack) to drive the    
 
-## Categories
+## Component Classes
 
-In general Components will fall into one or more of these categories:
+In general Components will fall into one or more of these classes:
 
 1. **Service Containers**: Service apllications running in Docker containers; _i.e. web servers, 
    database servers, process VMs (e.g. a PHP version), etc._
@@ -22,6 +21,10 @@ In general Components will fall into one or more of these categories:
 1. **Data**: Data files; _i.e. MySQL dumps, XML files, JSON files, etc._
 1. **Media**: Media files; _i.e. Image files, video files, PDF files, etc._
  
+
+!!! note 
+    The page describes our 1.0 vision for WPLib Box.<br>
+    Though not everything described below is implemented we plan to be feature-complete before 2019. 
 
 ## Requirements
 

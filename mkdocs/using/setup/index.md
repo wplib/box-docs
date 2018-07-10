@@ -20,7 +20,7 @@ WPLib Box can be configured by **using terminal commands** and by **modifying co
 As of version `0.17.0` these are your configuration options _(many more configuration 
 options will be available in the future):_ 
 
-- The [`box` command](/docs/using/box-command.md)
-- [`project.json`](/docs/architecture/project.json.md) 
+- The [`box` command](/using/box-command.md)
+- [`project.json`](/using/project.json.md) 
 
 

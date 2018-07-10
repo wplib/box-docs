@@ -2,12 +2,6 @@ title: FAQ
 
 # OLDER CONTENT; NOT YET EDITED
 
-## FAQ about WPLib Box
-
-## How do I Run WP-CLI?
-
-Enter WPLib Box using [`vagrant ssh`](/docs/tutorials/secure-shell.md) and type `wp` at the command line to see WP CLI's help.
-
 ## How do I Deploy My Site from WPLib Box?
 Deployment to a production or staging server is extremely simple. Just:
 

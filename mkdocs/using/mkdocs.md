@@ -1,6 +1,9 @@
 title: MkDocs
 #NOT FINISHED
 
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
+https://github.com/Python-Markdown/markdown/wiki/Third-Party-Extensions
+
 ## Using MkDocs with WPLib Box
 
 While you certainly _can_ install MkDocs on your [host computer](/glossary/#host-machine) and use it with your 

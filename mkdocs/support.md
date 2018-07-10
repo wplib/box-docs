@@ -7,11 +7,12 @@ Our goal is for WPlib Box to be your ==preferred choice== for local WordPress de
 about your experience with WPLib Box  will allow us to make WPLib Box 
 that much better for you, and for everyone else. 
 
-## Slack for Urgent Help  
+## Slack 
+### Slack for Urgent Help  
 Please [**join our Slack**](https://launchpass.com/wplib) to get help direct 
 from our team in our `#box` channel.  
 
-### Also Slack for Non-urgent Help  
+#### Also Slack for Non-urgent Help  
 And even if your needs are not urgent, ==we really do want to talk to you== 
 so we can learn how WPLib Box can better meet your needs.  
 

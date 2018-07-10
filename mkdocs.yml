@@ -46,31 +46,31 @@ pages:
   - 'About': 'about.md'
   - 'Quick Start':
     - 'Getting Started': 'quick-start/index.md'
-  - 'Using':
-    - 'Overview': 'using/index.md'
+  - 'How To':
+    - 'Overview': 'how-to/index.md'
     - 'Initial Setup':
-        - 'Overview': 'using/setup/index.md'
-        - 'Directories': 'using/setup/directories.md'
-        - 'Hostname': 'using/setup/hostname.md'
-    - 'Box CLI': 'using/box-command.md'
-    - 'Composer': 'using/composer.md'
-    - 'MkDocs': 'using/mkdocs.md'
-    - 'PHP': 'using/processvm.md'
-    - 'project.json': 'using/project.json.md'
-    - 'Servers': 'using/servers.md'
-    - 'WP CLI': 'using/wp-cli.md'
+        - 'Overview': 'how-to/setup/index.md'
+        - 'Directories': 'how-to/setup/directories.md'
+        - 'Hostname': 'how-to/setup/hostname.md'
+    - 'Box CLI': 'how-to/box-command.md'
+    - 'Composer': 'how-to/composer.md'
+    - 'MkDocs': 'how-to/mkdocs.md'
+    - 'PHP': 'how-to/processvm.md'
+    - 'Servers': 'how-to/servers.md'
+    - 'WP CLI': 'how-to/wp-cli.md'
     - 'Tutorials':
-        - 'Host Entries': 'using/tutorials/host-entries.md'
-        - 'Secure Shell': 'using/tutorials/secure-shell.md'
-        - 'Terminal': 'using/tutorials/terminal.md'
-    - 'Architecture':
-        - 'Overview': 'using/architecture/index.md'
-  - 'Projects':
-    - 'Overview': 'projects/index.md'
-  - 'Stacks':
-    - 'Overview': 'stacks/index.md'
+        - 'Host Entries': 'how-to/tutorials/host-entries.md'
+        - 'Secure Shell': 'how-to/tutorials/secure-shell.md'
+        - 'Terminal': 'how-to/tutorials/terminal.md'
   - 'Components':
     - 'Overview': 'components/index.md'
+  - 'Architecture':
+    - 'Overview': 'architecture/index.md'
+    - 'Projects':
+        - 'Overview': 'architecture/projects/index.md'
+        - 'project.json': 'architecture/projects/project.json.md'
+    - 'Stacks': 'architecture/stacks.md'
+    - 'Components': 'architecture/components.md'
   - 'GitHub':
     - 'Overview': 'github/index.md'
   - 'Download':

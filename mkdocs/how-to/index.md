@@ -1,4 +1,4 @@
-title: Using
+title: How-To
 
 # NOT FINISHED
 ## Using Aspects of WPLib Box

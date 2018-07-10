@@ -2,29 +2,33 @@ title: Stacks
 
 # [Stacks](/glossary#stack) in WPLib Box 
 
-In WPLib Box, our _"Stacks"_  drive practically all functionality. 
+_"Stacks"_  empower practically all functionality found in In WPLib Box. 
 
-Our Stack is a collection of versioned [Components](/components/) that collectively implement WPLib Box's 
-functionality. It is this stack and these components that provides the ==power and flexibility no other 
-contemporary local development solution can match==. 
+A WPLib Box stack is a collection of versioned [Components](/components/) that together implement WPLib Box's 
+functionality. It is these Stacks and these Components that provide unmatched power and flexibility. 
 
-## WPLib Box defines abstract [Named Stacks](#/glossary#named-stack)
-In WPLib Box the default "_Named Stack"_ is the `"wordpress"` stack. 
 
-!!! info "No surprise there. You were expecting something else?"
+## Named Stacks
 
-The WordPress stack defines the [types of components](/glossary/#component-type) included in the stack. 
+In WPLib Box there is the concept of _"[Named Stack](/glossary#named-stack)"_. A Named Stack specifies a list of 
+[Components Types](/glossary/#component-type) that are either required or optional 
+to support the software the stack is designed for. 
 
-## [Projects](/glossary#project) get an [Ad-hoc Stack](/glossary#ad-hoc-stack)
-Each _"Project"_ gets an _"Ad-hoc Stack"_ comprised of the _"[Component Types](/glossary/#component-type)"_ needed 
-by the project. 
+And, no surprise, the default Named Stack for WPLib Box is the `"wordpress"` stack. 
+
+!!! info "You were expecting something else?"
+
+If you are familiar with object-oriented programming in PHP a Named Stack is like a _"class"_ and the Project Stacks 
+described next are similar to _"instances"_ of that class.  
+
+## Project Stacks
+Each _"[Project](projects/)"_ gets a _"[Project Stack](/glossary#project-stack)"_ comprised of the 
+[Component Types](/glossary/#component-type) needed by the project. 
 
 The list of components is derived from at least one [Named Stack](#/glossary#named-stack) &mdash; like `"wordpress"` 
-&mdash; and should include all the required components, any optional components and potentially some general purpose 
-components.  
-
-The Ad-hoc Stack can also include components from more than one Named Stack, assuming the components are not mutually 
-exclusive.
+&mdash; and should include all the Named Stack's required components, any of its optional components 
+and potentially some general purpose components. The Project Stack can also include components from other Named Stacks, 
+assuming the components are not mutually exclusive.
  
 ## The _"WordPress"_ Stack   
 

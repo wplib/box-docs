@@ -256,8 +256,8 @@ A Project also has a configuration file found in project subdirectory with the n
 contain all the information required for WPLib Box to completely recreate a working local development environment 
 for its Project.  As such, `project.json` files are typically version controlled and easily shared by team members.  
 
-More specifically, a Project has an [Ad-hoc Stack](#ad-hoc-stack) that identifies the [Components](#component) that 
-WPLib Box will run and/or make available when the project is _activated_. This ad-hoc stack is declared in the 
+More specifically, a Project has an [Project Stack](#project-stack) that identifies the [Components](#component) that 
+WPLib Box will run and/or make available when the project is _activated_. This project stack is declared in the 
 `project.json` file.   
 
 ### Base Projects Directory 
@@ -296,7 +296,7 @@ that matter.
 Stacks can also extend other Stacks, or said another way one Stack and inherit the attributes of another. 
 Our `"wordpress"` stack inherits from our `"lxmp"` stack, for example.
 
-For WPLib Box you have both [Named Stacks](#named-stack) and [Ad-hoc Stacks](#ad-hoc-stack).
+For WPLib Box you have both [Named Stacks](#named-stack) and [Project Stacks](#project-stack).
 
 ### Named Stack 
 
@@ -304,7 +304,7 @@ WPLib Box's _"Named Stacks"_ specifies the "[_Type_](#component-type)" of [compo
 to support a web solution such as WordPress, or any other web solution. And a Named Stack also defines the 
 number of each component(s) of a given type that are required, which is typically one each.
 
-However, a Named Stack ==is **abstract** and never used directly==; [Ad-hoc Stacks](#ad-hoc-stacks)
+However, a Named Stack ==is **abstract** and never used directly==; [Project Stacks](#project-stacks)
 are used by WPLib Box instead.
 
 The detailed specifications for the Named Stacks WPLib Box supports at any given time can be found in the 
@@ -313,16 +313,16 @@ JSON files located in `/opt/box/etc/stacks`.
 !!! attention 
     The initial JSON files for specifiying Named Stacks have not yet been finalized as of version `0.17.0`.
 
-### Ad-hoc Stack 
+### Project Stack 
 
-A WPLib Box _"Ad-hoc Stack"_ is specific to a [Project](#project), and is the collection of [components](#component) 
+A WPLib Box _"Project Stack"_ is specific to a [Project](#project), and is the collection of [components](#component) 
 specified in the `"stack"` property of a a project's `project.json` file. 
 
-Typically an Ad-hoc Stack will include all the required components for at least one named stack, such as `"wordpress"`, 
+Typically an Project Stack will include all the required components for at least one named stack, such as `"wordpress"`, 
 possibly its optional components, and then zero (0) of more general purposes components and/or components of 
 other named stacks.  
 
-This is an example of the default Ad-hoc Stack from the default `project.json` for `0.17.0`:
+This is an example of the default Project Stack from the default `project.json` for `0.17.0`:
 
     {
         "stack" : {
@@ -340,17 +340,23 @@ This is an example of the default Ad-hoc Stack from the default `project.json` f
 
   
 !!! attention 
-    As of version `0.17.0` Ad-hoc stacks are only partially implemented, with some of the functionality
+    As of version `0.17.0` Project stacks are only partially implemented, with some of the functionality
     being hard-coded into various aspects of WPLib Box. That however is planned to change in the near
     future. 
 
 ### Component Type 
  
-A _"Component Type"_ is ==identified by its two-part name==, e.g. `wordpress/webserver` or `wordpress/dbserver`.  The 
-first part of the name identifies the named stack and the second part identifies the 
-_"[Interface](#component-type-interface)"_ within that named stack.
+A _"Component Type"_ is a specially-formatted name that identifies a set of component properties and 
+behaviors that are required to support a given use-case within WPLib Box, for example a web server or 
+database server. 
+
+Component Types are ==identified by its two-part name==, e.g. `wordpress/webserver` or `wordpress/dbserver`. The 
+first part of the name identifies the _"[Named Stack](#named-stack)"_ and the second part identifies the 
+_"[Interface](#component-type-interface)"_ relative to that Named Stack.
    
-The detailed specifications for the known Component Types can be found in `/opt/box/etc/types`.
+The detailed specifications for the provided Component Types can be found inside of WPLib Box in the 
+`/opt/box/etc/types` directory. In future versions of WPLib Box _(beyond `0.17.0`)_ you will be able 
+to add your own Component Types.
 
 !!! attention 
     The defining JSON files for Component Types have not yet been finalized as of version `0.17.0`.  

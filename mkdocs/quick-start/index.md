@@ -10,7 +10,7 @@ title: Quick Start
 3. ==Unzip== WPLib Box into a new project directory,<br>e.g. `~/Sites/example.local` or 
 `C:\Sites\example.local`
 
-4. ==Open== a [terminal/command prompt](/using/tutorials/terminal.md)<br>
+4. ==Open== a [terminal/command prompt](/how-to/tutorials/terminal.md)<br>
    _(in the near future WPLib Box won't require you to use the command line.)_
    
 5. ==Change== to your project directory, i.e. 
@@ -28,7 +28,7 @@ title: Quick Start
         vagrant up
     
 7. ==Enter the password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
-_(or skip this step and [manually add entries](/using/tutorials/host-entries.md) for `wplib.box` to `/etc/hosts`)_
+_(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `wplib.box` to `/etc/hosts`)_
 
 
 8. ==Visit== `http://wplib.box` in your browser. 

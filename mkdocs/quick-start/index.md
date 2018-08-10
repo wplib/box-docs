@@ -27,7 +27,7 @@ title: Quick Start
     
         vagrant up
     
-7. ==Enter the password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
+7. _When prompted_ ==enter the password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
 _(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `wplib.box` to `/etc/hosts`)_
 
 

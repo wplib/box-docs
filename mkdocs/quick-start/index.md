@@ -7,8 +7,8 @@ title: Quick Start
    then ==[**Vagrant**](https://www.vagrantup.com/downloads.html)==<br> 
    _(in the near future WPLib Box will not require Vagrant.)_
 
-3. ==Unzip== WPLib Box into a new project directory,<br>e.g. `~/Sites/example.local` or 
-`C:\Sites\example.local`
+3. ==Unzip== WPLib Box into a new project directory,<br>use `~/Sites/example.local` or 
+`C:\Sites\example.local` for this quick start.
 
 4. ==Open== a [terminal/command prompt](/how-to/tutorials/terminal.md)<br>
    _(in the near future WPLib Box won't require you to use the command line.)_
@@ -31,7 +31,7 @@ title: Quick Start
 _(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts`)_
 
 
-8. ==Visit== `http://wplib.box` in your browser. 
+8. ==Visit== `http://example.local` in your browser. 
          
 9. ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have!
 

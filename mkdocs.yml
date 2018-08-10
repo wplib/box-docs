@@ -34,7 +34,7 @@ markdown_extensions:
       permalink: true
 
 
-pages:
+nav:
   - 'Home': 'index.md'
   - 'FAQ': 'faq.md'
   - 'Glossary': 'glossary.md'

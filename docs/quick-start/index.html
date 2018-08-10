@@ -985,8 +985,8 @@
    <em>(in the near future WPLib Box will not require Vagrant.)</em></p>
 </li>
 <li>
-<p><mark>Unzip</mark> WPLib Box into a new project directory,<br>e.g. <code>~/Sites/example.local</code> or 
-<code>C:\Sites\example.local</code></p>
+<p><mark>Unzip</mark> WPLib Box into a new project directory,<br>use <code>~/Sites/example.local</code> or 
+<code>C:\Sites\example.local</code> for this quick start.</p>
 </li>
 <li>
 <p><mark>Open</mark> a <a href="../how-to/tutorials/terminal.html">terminal/command prompt</a><br>
@@ -1013,11 +1013,22 @@
 
 </li>
 <li>
-<p><em>When prompted</em> <mark>enter the password</mark> for your Mac, Windows or Linux <a href="/glossary#host-machine">host computer</a><br>
+<p><em>When prompted</em> <mark>enter your password</mark> for your Mac, Windows or Linux <a href="/glossary#host-machine">host computer</a><br>
 <em>(or skip this step and <a href="../how-to/tutorials/host-entries.html">manually add entries</a> for <code>example.local</code> to <code>/etc/hosts</code>)</em></p>
 </li>
 <li>
-<p><mark>Visit</mark> <code>http://wplib.box</code> in your browser. </p>
+<p><mark>Open <code>project.json</code></mark> in your text editor and change the line:</p>
+<p>"hostname": "box.local",</p>
+</li>
+</ol>
+<p>To:</p>
+<div class="codehilite"><pre><span></span>   &quot;hostname&quot;: &quot;example.local&quot;,
+</pre></div>
+
+
+<ol>
+<li>
+<p>Now <mark>visit</mark> <code>http://example.local</code> in your browser. </p>
 </li>
 <li>
 <p><mark><a href="https://launchpad.com/wplib">Join our Slack</a></mark> to ask any questions you may have!</p>

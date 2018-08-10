@@ -27,12 +27,19 @@ title: Quick Start
     
         vagrant up
     
-7. _When prompted_ ==enter the password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
+7. _When prompted_ ==enter your password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
 _(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts`)_
 
+8. ==Open `project.json`== in your text editor and change the line:
+    
+   	"hostname": "box.local",
+   
+   To:
 
-8. ==Visit== `http://example.local` in your browser. 
+       "hostname": "example.local",
+
+9. Now ==visit== `http://example.local` in your browser. 
          
-9. ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have!
+10. ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have!
 
-10. That's it, you are ==now experiencing WPLib Box. :-)==
+11. That's it, you are ==now experiencing WPLib Box. :-)==

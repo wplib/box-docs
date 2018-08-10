@@ -28,7 +28,7 @@ title: Quick Start
         vagrant up
     
 7. _When prompted_ ==enter the password== for your Mac, Windows or Linux [host computer](/glossary#host-machine)<br>
-_(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `wplib.box` to `/etc/hosts`)_
+_(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts`)_
 
 
 8. ==Visit== `http://wplib.box` in your browser. 

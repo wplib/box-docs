@@ -975,25 +975,19 @@
                 
                 
                 <h1 id="wplib-box-quick-start">WPLib Box Quick Start<a class="headerlink" href="#wplib-box-quick-start" title="Permanent link">&para;</a></h1>
-<ol>
-<li>
-<p><a href="/download/"><mark>Download</mark></a> the latest WPLib Box.</p>
-</li>
-<li>
-<p>Download and install <mark><a href="https://www.virtualbox.org/wiki/Downloads"><strong>VirtualBox</strong></a></mark> and 
-   then <mark><a href="https://www.vagrantup.com/downloads.html"><strong>Vagrant</strong></a></mark><br> 
-   <em>(in the near future WPLib Box will not require Vagrant.)</em></p>
-</li>
-<li>
-<p><mark>Unzip</mark> WPLib Box into a new project directory,<br>use <code>~/Sites/example.local</code> or 
-<code>C:\Sites\example.local</code> for this quick start.</p>
-</li>
-<li>
-<p><mark>Open</mark> a <a href="../how-to/tutorials/terminal.html">terminal/command prompt</a><br>
-   <em>(in the near future WPLib Box won't require you to use the command line.)</em></p>
-</li>
-<li>
-<p><mark>Change</mark> to your project directory, i.e. </p>
+<p>The following looks a lot more complicated that it is. It is just that we wrote details instructions in hopes to allow you to breeze through. 
+<hr>
+1. <a href="/download/"><mark>Download</mark></a> the latest WPLib Box.
+<hr>
+2. Download and install <mark><a href="https://www.virtualbox.org/wiki/Downloads"><strong>VirtualBox</strong></a></mark> and 
+   then <mark><a href="https://www.vagrantup.com/downloads.html"><strong>Vagrant</strong></a></mark>  <em>(in the near future WPLib Box will not require Vagrant.)</em>
+<hr>
+3. <mark>Unzip</mark> WPLib Box into a new project directory; use <code>~/Sites/example.local</code> or 
+<code>C:\Sites\example.local</code> for this quick start.
+<hr>
+4. <mark>Open</mark> a <a href="../how-to/tutorials/terminal.html">terminal/command prompt</a> <em>(in the near future WPLib Box will have an installer and a GUI to make using the command line optional!)</em>
+<hr>
+5. <mark>Change</mark> to your project directory, i.e. if your sites are in a <code>Sites</code> directory off your root:</p>
 <p><strong>MacOS or Linux</strong>     </p>
 <div class="codehilite"><pre><span></span>cd ~/Sites/example.local
 </pre></div>
@@ -1004,20 +998,17 @@
 </pre></div>
 
 
-</li>
-<li>
-<p><mark>Type</mark> the following command:</p>
+<p><hr>
+6. <mark>Type</mark> the following command:</p>
 <div class="codehilite"><pre><span></span>vagrant up
 </pre></div>
 
 
-</li>
-<li>
-<p><em>When prompted</em> <mark>enter your password</mark> for your Mac, Windows or Linux <a href="/glossary#host-machine">host computer</a><br>
-<em>(or skip this step and <a href="../how-to/tutorials/host-entries.html">manually add entries</a> for <code>example.local</code> to <code>/etc/hosts</code>)</em></p>
-</li>
-<li>
-<p><mark>Open <code>project.json</code></mark> in your text editor and change the line:</p>
+<p>Normally <code>vagrant up</code> takes about five (<code>5</code>) minutes to download. Of course duration depends on your download speeds. After that, boot up usually takes less than one (<code>1</code>) minute.
+<hr>
+7. <em>When prompted</em> <mark>enter your password</mark> for your Mac, Windows or Linux <a href="/glossary#host-machine">host computer</a> <em>(or skip this step and <a href="../how-to/tutorials/host-entries.html">manually add entries</a> for <code>example.local</code> to <code>/etc/hosts</code> or <code>C:\Windows\System32\drivers\etc\hosts</code>. You should find the IP address you will need to add to your hosts file in the <code>IP</code> file of your project directory.)</em>
+<hr>
+8. <mark>Open <code>project.json</code></mark> in your text editor and change the line:</p>
 <div class="codehilite"><pre><span></span>&quot;hostname&quot;: &quot;box.local&quot;,
 </pre></div>
 
@@ -1027,14 +1018,10 @@
 </pre></div>
 
 
-</li>
-<li>
-<p>Now <mark>visit</mark> <code>http://example.local</code> in your browser. </p>
-</li>
-<li>
-<p>That's it, you are <mark>now experiencing WPLib Box!</mark> :-)</p>
-</li>
-</ol>
+<p><hr>
+9. Now <mark>visit</mark> <code>http://example.local</code> in your browser. 
+<hr>
+10. That's it, you are <mark>now experiencing WPLib Box!</mark> :-)</p>
 <hr />
 <p>P.S. Don't forget to <mark><a href="https://launchpad.com/wplib">Join our Slack</a></mark> to ask any questions you may have.</p>
                 

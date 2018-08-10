@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://wplib.org/docs/quick-start/index.html">
+        <link rel="canonical" href="http://wplib.org/docs/components/index.html">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Quick Start</title>
+        <title>Components</title>
       
     
     
@@ -92,7 +92,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#wplib-box-quick-start" tabindex="1" class="md-skip">
+      <a href="../#the-components-of-wplib-box" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -118,7 +118,7 @@
                 WPLib Box
               </span>
               <span class="md-header-nav__topic">
-                Getting Started
+                Overview
               </span>
             
           
@@ -227,7 +227,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="index.html" title="Quick Start" class="md-tabs__link md-tabs__link--active">
+        <a href="../quick-start/index.html" title="Quick Start" class="md-tabs__link">
           Quick Start
         </a>
       
@@ -253,7 +253,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../components/index.html" title="Components" class="md-tabs__link">
+        <a href="index.html" title="Components" class="md-tabs__link md-tabs__link--active">
           Components
         </a>
       
@@ -457,12 +457,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       Quick Start
@@ -478,20 +476,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="index.html" title="Getting Started" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../quick-start/index.html" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
-    
   </li>
 
         
@@ -732,10 +721,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       Components
@@ -751,11 +742,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../components/index.html" title="Overview" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="index.html" title="Overview" class="md-nav__link md-nav__link--active">
       Overview
     </a>
+    
   </li>
 
         
@@ -971,72 +971,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/wplib/wplib-docs/edit/master/docs/quick-start/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/wplib/wplib-docs/edit/master/docs/components/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="wplib-box-quick-start">WPLib Box Quick Start<a class="headerlink" href="#wplib-box-quick-start" title="Permanent link">&para;</a></h1>
-<ol>
-<li>
-<p><a href="/download/"><mark>Download</mark></a> the latest WPLib Box.</p>
-</li>
-<li>
-<p>Download and install <mark><a href="https://www.virtualbox.org/wiki/Downloads"><strong>VirtualBox</strong></a></mark> and 
-   then <mark><a href="https://www.vagrantup.com/downloads.html"><strong>Vagrant</strong></a></mark><br> 
-   <em>(in the near future WPLib Box will not require Vagrant.)</em></p>
-</li>
-<li>
-<p><mark>Unzip</mark> WPLib Box into a new project directory,<br>use <code>~/Sites/example.local</code> or 
-<code>C:\Sites\example.local</code> for this quick start.</p>
-</li>
-<li>
-<p><mark>Open</mark> a <a href="../how-to/tutorials/terminal.html">terminal/command prompt</a><br>
-   <em>(in the near future WPLib Box won't require you to use the command line.)</em></p>
-</li>
-<li>
-<p><mark>Change</mark> to your project directory, i.e. </p>
-<p><strong>MacOS or Linux</strong>     </p>
-<div class="codehilite"><pre><span></span>cd ~/Sites/example.local
-</pre></div>
-
-
-<p><strong>Windows</strong>     </p>
-<div class="codehilite"><pre><span></span>cd C:\Sites\example.local
-</pre></div>
-
-
-</li>
-<li>
-<p><mark>Type</mark> the following command:</p>
-<div class="codehilite"><pre><span></span>vagrant up
-</pre></div>
-
-
-</li>
-<li>
-<p><em>When prompted</em> <mark>enter your password</mark> for your Mac, Windows or Linux <a href="/glossary#host-machine">host computer</a><br>
-<em>(or skip this step and <a href="../how-to/tutorials/host-entries.html">manually add entries</a> for <code>example.local</code> to <code>/etc/hosts</code>)</em></p>
-</li>
-<li>
-<p><mark>Open <code>project.json</code></mark> in your text editor and change the line:</p>
-<div class="codehilite"><pre><span></span>&quot;hostname&quot;: &quot;box.local&quot;,
-</pre></div>
-
-
-<p>To:</p>
-<div class="codehilite"><pre><span></span>&quot;hostname&quot;: &quot;example.local&quot;,
-</pre></div>
-
-
-</li>
-<li>
-<p>Now <mark>visit</mark> <code>http://example.local</code> in your browser. </p>
-</li>
-<li>
-<p>That's it, you are <mark>now experiencing WPLib Box!</mark> :-)</p>
-</li>
-</ol>
-<hr />
-<p>P.S. Don't forget to <mark><a href="https://launchpad.com/wplib">Join our Slack</a></mark> to ask any questions you may have.</p>
+                <h1 id="the-components-of-wplib-box">The Components of WPLib Box<a class="headerlink" href="#the-components-of-wplib-box" title="Permanent link">&para;</a></h1>
+<p>Here we document the various <a href="/glossary#component">Components</a> available to you as a WPLib Box user.<br />
+To instead learn about Components in WPLib Box's architecture, <a href="../architecture/components.html">click here</a>. </p>
                 
                   
                 
@@ -1057,7 +997,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../about.html" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../how-to/tutorials/terminal.html" title="Terminal" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1066,13 +1006,13 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About
+                Terminal
               </span>
             </div>
           </a>
         
         
-          <a href="../how-to/index.html" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../architecture/index.html" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

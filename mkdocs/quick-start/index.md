@@ -31,15 +31,18 @@ title: Quick Start
 _(or skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts`)_
 
 8. ==Open `project.json`== in your text editor and change the line:
-    
-   	"hostname": "box.local",
+
+        "hostname": "box.local",
    
-   To:
+       To:
 
-       "hostname": "example.local",
-
+        "hostname": "example.local",
+    
 9. Now ==visit== `http://example.local` in your browser. 
          
-10. ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have!
+10. That's it, you are ==now experiencing WPLib Box!== :-)
 
-11. That's it, you are ==now experiencing WPLib Box. :-)==
+----
+
+P.S. Don't forget to ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have.
+     

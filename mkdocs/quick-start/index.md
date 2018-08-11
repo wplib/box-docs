@@ -39,12 +39,13 @@ Normally `vagrant up` takes about five (`5`) minutes to download. Of course dura
 <hr>
 8. _When prompted_ ==enter your password== for your Mac, Windows or Linux [host computer](/glossary#host-machine).
 
-Or you can skip this step and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts` or `C:\Windows\System32\drivers\etc\hosts`. You should find the IP address you will need to add to your hosts file in the `IP` file of your project' directory.
+Or you can ==skip this step== and [manually add entries](/how-to/tutorials/host-entries.md) for `example.local` to `/etc/hosts` or `C:\Windows\System32\drivers\etc\hosts`. You should find the IP address you will need to add to your hosts file in the `IP` file of your project' directory.
+<hr>
 9. Now ==visit== `http://example.local` in your browser _(The very first page load usually takes about 5-10 seconds, but after that they should be lightning quick.)_  
 <hr>
 10. And that's it, you are ==now experiencing WPLib Box!== :-)
-
-----
-
+<hr>
 P.S. Don't forget to ==[Join our Slack](https://launchpad.com/wplib)== to ask any questions you may have.
+
+
      

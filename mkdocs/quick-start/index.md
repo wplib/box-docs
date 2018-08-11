@@ -2,7 +2,7 @@ title: Quick Start
 # WPLib Box Quick Start
 The following looks a lot more complicated that it is. It is just that we wrote details instructions in hopes to allow you to breeze through. 
 <hr>
-1. [==Download==](/download/) the latest WPLib Box.
+1. [==Download==](https://github.com/wplib/wplib-box/archive/0.17.1.zip) the latest WPLib Box.
 <hr>
 2. Download and install ==[**VirtualBox**](https://www.virtualbox.org/wiki/Downloads)== and 
    then ==[**Vagrant**](https://www.vagrantup.com/downloads.html)==  _(in the near future WPLib Box will not require Vagrant.)_

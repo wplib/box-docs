@@ -108,7 +108,7 @@ The configuration file for Visual Studio Code is already included in the resposi
 
 The credentials are:
 
-+ Host: 172.17.0.1
++ Host: 172.42.0.1
 + Username: wordpress
 + Password: wordpress
 + database: wordpress
